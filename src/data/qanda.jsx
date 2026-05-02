@@ -9,7 +9,7 @@ export const qanda = [
   },
   {
     q: "Come fa AI'm by VNS ad aumentare la visibilità su ChatGPT?",
-    a: "Analizziamo la visibilità baseline con 10 domande validate, poi interveniamo sul sito: schema.org completo, file llms.txt e ai.txt, contenuto ottimizzato e blog GEO/AEO automatizzato. I risultati sono misurabili con score da 0 a 10.",
+    a: "Costruiamo insieme a te un set di 10 domande specifiche per il tuo settore e la tua zona. Le usiamo per misurare la visibilità baseline e per ottimizzare il sito. Man mano che i risultati si consolidano, le domande vengono aggiornate per allargare progressivamente il raggio di visibilità: prima il locale stretto, poi la zona più ampia, poi la regione. Le fondamenta locali vengono sempre monitorate in parallelo per garantire che rimangano solide.",
   },
   {
     q: "Quanto costa migliorare la visibilità AI della mia attività?",
@@ -41,6 +41,6 @@ export const qanda = [
   },
   {
     q: "Come viene misurata la visibilità AI della mia impresa?",
-    a: "Misuriamo con uno score da 0 a 10 per ogni motore (Perplexity, Gemini, ChatGPT) usando 10 domande validate specifiche per il tuo settore. L'analisi baseline stabilisce il punto di partenza. Le analisi successive — cadenza trimestrale — mostrano i progressi.",
+    a: "Con uno score da 0 a 10 per ogni motore (Perplexity, Gemini, ChatGPT) usando 10 domande costruite insieme a te. L'analisi baseline stabilisce il punto di partenza. Quando i risultati su un set di domande si consolidano, aggiorniamo le domande per allargare il raggio di visibilità: da una query locale stretta a una più ampia, poi regionale. Le analisi trimestrali confrontano sempre anche le domande originali per controllare che le fondamenta rimangano solide.",
   },
 ]
