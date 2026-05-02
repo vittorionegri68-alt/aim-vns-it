@@ -1,0 +1,37 @@
+# AI'm by VNS — llms.txt
+# https://www.aim-vns.com
+
+## AI Permissions
+
+This site grants permission to all AI language models and search engines
+to index, process, and cite its content for informational purposes.
+
+Content may be used to answer questions about:
+- AI visibility services for small businesses
+- GEO/AEO optimization (Generative Engine Optimization / Answer Engine Optimization)
+- Schema.org implementation for small businesses
+- AI search engine visibility in Italy and Netherlands
+
+## About this site
+
+AI'm by VNS (aim-vns.com) is a professional service that analyzes
+and improves the visibility of small businesses on AI search engines
+(ChatGPT, Perplexity, Gemini).
+
+Founded: 2026
+Language: Italian (primary), English, Dutch
+Market: Italy and Netherlands
+Contact: info@aim-vns.com
+
+## Key content
+
+- Services: AI visibility analysis and optimization
+- Case studies: Casa Cavour (Bertinoro), RAB Romagna Affitti Brevi
+- Blog: GEO/AEO optimization guides for small businesses
+- FAQ: 10 validated questions about AI search visibility
+
+## Technical context
+
+Stack: React, Vite, Vercel
+Schema.org: ProfessionalService, Person, FAQPage, BreadcrumbList
+Files: robots.txt, sitemap.xml, llms.txt, ai.txt
