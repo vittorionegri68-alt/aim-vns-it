@@ -19,11 +19,12 @@ const pacchetti = [
   {
     nome: 'Growth',
     tag: 'Starter + automazione',
-    desc: 'Tutto di Starter più blog GEO/AEO automatizzato bimensile e report trimestrale di misurazione progressi.',
+    desc: 'Tutto di Starter più blog GEO/AEO automatizzato bimensile, report trimestrale e interventi correttivi: a ogni report vengono applicate le modifiche necessarie per risolvere le criticità emerse e sfruttare i gap identificati dall\'analisi dei competitor AI.',
     incluso: [
       'Tutto del pacchetto Starter',
       'Blog GEO/AEO automatizzato (N8N)',
       'Report trimestrale GEO score',
+      'Interventi correttivi post-report',
       'Analisi competitor AI',
       'Supporto via email',
     ],
