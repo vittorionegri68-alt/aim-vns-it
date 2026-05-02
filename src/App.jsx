@@ -8,10 +8,12 @@ import FAQ from './components/FAQ.jsx'
 import Blog from './components/Blog.jsx'
 import Contatti from './components/Contatti.jsx'
 import Footer from './components/Footer.jsx'
+import LangBanner from './components/LangBanner.jsx'
 
 export default function App() {
   return (
     <>
+      <LangBanner />
       <Nav />
       <main>
         <Hero />
