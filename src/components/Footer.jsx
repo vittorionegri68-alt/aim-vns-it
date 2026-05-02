@@ -39,20 +39,20 @@ export default function Footer() {
             ].map(s => (
               <a key={s.label} href={s.url} target="_blank" rel="noopener noreferrer"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                  fontSize: '9px', color: '#222', letterSpacing: '0.15em',
+                  fontSize: '9px', color: '#888', letterSpacing: '0.15em',
                   textTransform: 'uppercase', textDecoration: 'none',
                   transition: 'color 0.2s' }}
-                onMouseEnter={e => e.target.style.color = '#555'}
-                onMouseLeave={e => e.target.style.color = '#222'}
+                onMouseEnter={e => e.target.style.color = '#ffffff'}
+                onMouseLeave={e => e.target.style.color = '#888'}
               >{s.label}</a>
             ))}
             <a href={config.brand.whatsapp} target="_blank" rel="noopener noreferrer"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                fontSize: '9px', color: '#222', letterSpacing: '0.15em',
+                fontSize: '9px', color: '#888', letterSpacing: '0.15em',
                 textTransform: 'uppercase', textDecoration: 'none',
                 transition: 'color 0.2s' }}
               onMouseEnter={e => e.target.style.color = '#25D366'}
-              onMouseLeave={e => e.target.style.color = '#222'}
+              onMouseLeave={e => e.target.style.color = '#888'}
             >WhatsApp</a>
           </div>
         </div>
@@ -61,19 +61,19 @@ export default function Footer() {
         <div style={{ display: 'flex', justifyContent: 'space-between',
           alignItems: 'center', padding: '20px 0', flexWrap: 'wrap', gap: '12px' }}>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '9px',
-            color: '#222', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+            color: '#888', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
             © 2026 AI'm by VNS · Vittorio Negri Services · Nijkerk NL
           </span>
           <div style={{ display: 'flex', gap: '20px' }}>
             <a href="/privacy.html" style={{ fontFamily: "'Inter', sans-serif",
-              fontSize: '9px', color: '#222', letterSpacing: '0.15em',
+              fontSize: '9px', color: '#888', letterSpacing: '0.15em',
               textTransform: 'uppercase', textDecoration: 'none',
               transition: 'color 0.2s' }}
-              onMouseEnter={e => e.target.style.color = '#555'}
-              onMouseLeave={e => e.target.style.color = '#222'}
+              onMouseEnter={e => e.target.style.color = '#ffffff'}
+              onMouseLeave={e => e.target.style.color = '#888'}
             >Privacy Policy</a>
             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '9px',
-              color: '#222', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              color: '#888', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
               IT · EN · NL
             </span>
           </div>
