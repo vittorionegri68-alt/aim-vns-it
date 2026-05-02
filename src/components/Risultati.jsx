@@ -7,6 +7,7 @@ const cases = [
     luogo: 'Bertinoro, FC',
     settore: 'Affitti brevi',
     url: 'casa-cavour.com',
+    siteUrl: 'https://www.casa-cavour.com',
     metriche: [
       { motore: 'Perplexity', before: 0, after: 4.3 },
       { motore: 'Gemini',     before: 0, after: 3.2 },
@@ -18,6 +19,7 @@ const cases = [
     luogo: 'Romagna, IT',
     settore: 'Affitti brevi multi-struttura',
     url: 'romagna-affitti-brevi.it',
+    siteUrl: 'https://www.romagna-affitti-brevi.it',
     metriche: [
       { motore: 'AEO',  before: 0, after: 8.2 },
       { motore: 'SEO',  before: 0, after: 7.2 },
@@ -105,11 +107,15 @@ export default function Risultati() {
                 textTransform: 'uppercase', letterSpacing: '0.02em', marginBottom: '0.25rem' }}>
                 {c.nome}
               </div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px',
-                color: '#333', letterSpacing: '0.1em', textTransform: 'uppercase',
-                marginBottom: '2rem' }}>
-                {c.luogo} · {c.url}
-              </div>
+              <a href={c.siteUrl} target="_blank" rel="noopener noreferrer"
+                style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px',
+                  color: '#333', letterSpacing: '0.1em', textTransform: 'uppercase',
+                  marginBottom: '2rem', display: 'block', textDecoration: 'none',
+                  transition: 'color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#A0782A'}
+                onMouseLeave={e => e.currentTarget.style.color = '#333'}>
+                {c.luogo} · {c.url} ↗
+              </a>
 
               {c.metriche.map((m, j) => (
                 <div key={j} style={{ marginBottom: '1.5rem' }}>

@@ -5,9 +5,9 @@ const pacchetti = [
   {
     nome: 'Starter',
     tag: 'Ottimizzazione tecnica',
-    desc: 'Analisi baseline GEO/AEO + ottimizzazione completa del sito esistente o nuovo. Schema.org, llms.txt, ai.txt, robots.txt con crawler AI espliciti.',
+    desc: 'Analisi baseline GEO/AEO + ottimizzazione completa del sito esistente o nuovo. Schema.org, llms.txt, ai.txt, robots.txt. Set iniziale di 10 domande costruite insieme a te.',
     incluso: [
-      'Analisi baseline 10 domande',
+      '10 domande validate insieme a te',
       'Schema.org completo validato',
       'llms.txt + ai.txt',
       'robots.txt con crawler AI',

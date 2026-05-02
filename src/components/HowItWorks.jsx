@@ -5,7 +5,7 @@ const steps = [
   {
     num: '01',
     title: 'Analisi',
-    desc: 'Misuriamo la tua visibilità attuale su ChatGPT, Perplexity e Gemini con 10 domande validate per il tuo settore. Score da 0 a 10 per ogni motore AI.',
+    desc: 'Misuriamo la tua visibilità attuale su ChatGPT, Perplexity e Gemini con 10 domande validate insieme a te. Man mano che i risultati si consolidano, le domande vengono aggiornate per allargare progressivamente il raggio di visibilità AI.',
   },
   {
     num: '02',
