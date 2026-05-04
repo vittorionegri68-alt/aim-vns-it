@@ -85,7 +85,7 @@ export const posts = [
     }
   ],
   "attivo": true
-}
+},
   {
     id: "perche-chatgpt-non-trova-la-tua-piccola-impresa-2026",
     titolo: "Perché ChatGPT non trova la tua piccola impresa (e come cambiarlo)",
