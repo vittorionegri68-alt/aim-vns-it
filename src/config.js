@@ -40,7 +40,7 @@ export const config = {
     ogImage: "/og-image.jpg",
   },
   ga4: {
-    id: "G-TEST123", // sostituire con ID reale prima del deploy
+    id: "G-0YW3LVX1EN", // sostituire con ID reale prima del deploy
   },
   // Design tokens — AI Dark Brutalist (Brand Identity v1.0)
   design: {
