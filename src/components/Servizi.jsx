@@ -1,48 +1,53 @@
 // Servizi.jsx — AI'm by VNS IT
+// v1.1 — 04/05/2026 — testi pacchetti aggiornati
 import { useEffect, useRef } from 'react'
 
 const pacchetti = [
   {
     nome: 'Starter',
-    tag: 'Ottimizzazione tecnica',
-    desc: 'Analisi baseline GEO/AEO + ottimizzazione completa del sito esistente o nuovo. Schema.org, llms.txt, ai.txt, robots.txt. Set iniziale di 10 domande costruite insieme a te.',
+    tag: 'Primo passo',
+    desc: 'Hai già un sito web ma non sai se ChatGPT, Gemini o Perplexity ti trovano? Misuriamo la tua visibilità attuale sui motori AI, ti mostriamo cosa manca e consegniamo i file tecnici ottimizzati per colmare i gap. Pagamento unico, nessun abbonamento.',
     incluso: [
-      '10 domande validate insieme a te',
-      'Schema.org completo validato',
-      'llms.txt + ai.txt',
-      'robots.txt con crawler AI',
-      'Report baseline iniziale',
+      'Analisi baseline gratuita nel primo colloquio — nessun impegno successivo',
+      'Audit completo: schema.org, robots.txt, llms.txt, ai.txt, sitemap',
+      'File tecnici ottimizzati pronti all\'uso per il tuo settore',
+      'Secondo baseline a 30 giorni per misurare i miglioramenti',
+      'Suggerimento Google Business Profile',
     ],
-    cta: 'Parla con noi',
+    cta: 'Richiedi il tuo audit',
     highlight: false,
   },
   {
     nome: 'Growth',
-    tag: 'Starter + automazione',
-    desc: 'Tutto di Starter più blog GEO/AEO automatizzato bimensile, report trimestrale e interventi correttivi: a ogni report vengono applicate le modifiche necessarie per risolvere le criticità emerse e sfruttare i gap identificati dall\'analisi dei competitor AI.',
+    tag: 'Servizio principale',
+    desc: 'Costruiamo il tuo sito da zero, ottimizzato per essere trovato da ChatGPT, Perplexity e Gemini fin dal primo giorno. Poi lo manteniamo vivo con contenuto fresco e ti mostriamo come cresce la tua visibilità, con dati reali. Se hai già un sito e vuoi mantenerlo, parliamone: valutiamo ogni situazione caso per caso.',
     incluso: [
-      'Tutto del pacchetto Starter',
-      'Blog GEO/AEO automatizzato (N8N)',
-      'Report trimestrale GEO score',
-      'Interventi correttivi post-report',
-      'Analisi competitor AI',
-      'Supporto via email',
+      'Analisi baseline prima di iniziare',
+      'Creazione sito React ottimizzato per i motori AI',
+      'Google Business Profile — creazione e configurazione incluse',
+      'Validazione Rich Results Test prima del deploy',
+      '10 domande GEO/AEO validate per il tuo settore',
+      'Blog ogni due settimane, automatizzato',
+      'Report mensili i primi 3 mesi, poi trimestrale',
+      'Chiamata post-report con Vittorio per analizzare i dati',
+      'Esecuzione delle azioni correttive',
+      'Supporto continuo via email',
     ],
-    cta: 'Parla con noi',
+    cta: 'Parliamo del tuo progetto',
     highlight: true,
   },
   {
     nome: 'Pro',
-    tag: 'Growth + Instagram',
-    desc: 'Tutto di Growth più automazione Instagram, analisi competitor AI avanzata e supporto prioritario.',
+    tag: 'Visibilità massima',
+    desc: 'Tutto il Growth, più una sezione Q&A pubblica sul sito, una dashboard personalizzata con i tuoi dati di visibilità sempre aggiornati e la pubblicazione automatizzata dei contenuti Instagram. La relazione con i tuoi follower rimane a te.',
     incluso: [
-      'Tutto del pacchetto Growth',
-      'Instagram automation (N8N)',
-      'Analisi competitor AI avanzata',
-      'Supporto prioritario WhatsApp',
-      'Check-in mensile video call',
+      'Tutto il pacchetto Growth',
+      'Blocco Q&A pubblico con le 10 domande validate e risposte complete',
+      'Dashboard personale online — dati di visibilità AI sempre aggiornati',
+      'Pubblicazione automatizzata su Instagram',
+      'Report mensili invece che trimestrali',
     ],
-    cta: 'Parla con noi',
+    cta: 'Parliamo del tuo progetto',
     highlight: false,
   },
 ]
@@ -78,6 +83,12 @@ export default function Servizi() {
             SCEGLI IL TUO<br />
             <span style={{ color: '#A0782A' }}>PUNTO DI PARTENZA.</span>
           </h2>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(13px,1vw,15px)',
+            color: '#444', lineHeight: 1.7, marginTop: '1.5rem', maxWidth: '600px' }}>
+            Ogni progetto è una collaborazione diretta con Vittorio. Niente intermediari,
+            niente soluzioni standard: ogni intervento viene costruito insieme a te e
+            validato prima di andare online. Siamo qui per farti crescere insieme.
+          </p>
         </div>
 
         {/* Cards */}
@@ -142,7 +153,7 @@ export default function Servizi() {
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#333',
           letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '1.5rem',
           textAlign: 'center' }}>
-          Prezzi disponibili su richiesta · IT e NL · Contattaci per un preventivo
+          Sito monolingua da 480 € · Lingua aggiuntiva 100 € · Abbonamento da 500 €/anno
         </p>
       </div>
 
