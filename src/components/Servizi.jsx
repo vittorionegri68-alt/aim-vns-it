@@ -14,6 +14,8 @@ const pacchetti = [
       'Secondo baseline a 30 giorni per misurare i miglioramenti',
       'Suggerimento Google Business Profile',
     ],
+    prezzo: 'Da 180 €',
+    prezzoSub: 'Pagamento unico · Nessun abbonamento',
     cta: 'Richiedi il tuo audit',
     highlight: false,
   },
@@ -33,6 +35,8 @@ const pacchetti = [
       'Esecuzione delle azioni correttive',
       'Supporto continuo via email',
     ],
+    prezzo: 'Da 480 €',
+    prezzoSub: '+ abbonamento annuale da 500 €',
     cta: 'Parliamo del tuo progetto',
     highlight: true,
   },
@@ -47,6 +51,8 @@ const pacchetti = [
       'Pubblicazione automatizzata su Instagram',
       'Report mensili invece che trimestrali',
     ],
+    prezzo: 'Da 580 €',
+    prezzoSub: '+ abbonamento annuale da 780 €',
     cta: 'Parliamo del tuo progetto',
     highlight: false,
   },
@@ -127,6 +133,15 @@ export default function Servizi() {
                 ))}
               </ul>
 
+              {/* Blocco prezzo */}
+              <div style={{ borderTop: '1px solid #141414', paddingTop: '1.25rem', marginBottom: '1.5rem' }}>
+                <div style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700,
+                  fontSize: 'clamp(24px,2vw,32px)', color: p.highlight ? '#A0782A' : '#ffffff',
+                  letterSpacing: '0.02em', lineHeight: 1 }}>{p.prezzo}</div>
+                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px',
+                  color: '#444', marginTop: '4px', letterSpacing: '0.05em' }}>{p.prezzoSub}</div>
+              </div>
+
               <a href="#contatti" style={{
                 fontFamily: "'Inter', sans-serif", fontWeight: 700,
                 fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase',
@@ -153,7 +168,7 @@ export default function Servizi() {
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#333',
           letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '1.5rem',
           textAlign: 'center' }}>
-          Sito monolingua da 480 € · Lingua aggiuntiva 100 € · Abbonamento da 500 €/anno
+          Tutti i prezzi sono IVA esclusa · Lingua aggiuntiva 100 € · Durata minima 12 mesi per Growth e Pro
         </p>
       </div>
 
