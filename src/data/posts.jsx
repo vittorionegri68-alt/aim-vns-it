@@ -3,6 +3,89 @@
 // Aggiornare con workflow N8N blog dopo il deploy
 
 export const posts = [
+
+{
+  "id": "aim-2026-05-9",
+  "titolo": "Quanto costa migliorare la visibilità su ChatGPT e Perplexity? Guida per piccole imprese",
+  "data": "2026-05-04",
+  "categoria": "GEO/AEO",
+  "sommario": "Molte piccole imprese credono che migliorare la visibilità AI richieda budget enormi. In realtà, i costi dipendono dall'approccio scelto: dal fai-da-te gratuito (ma lento) ai servizi specializzati per PMI senza team marketing. Ecco cosa serve davvero per essere trovati dai motori AI.",
+  "contenuto": [
+    {
+      "tipo": "paragrafo",
+      "testo": "Luca ha un piccolo studio di consulenza fiscale a Verona. Due mesi fa ha scoperto che quando i suoi potenziali clienti chiedono a ChatGPT \"commercialista a Verona per ecommerce\", il suo studio non compare. Mai. Mentre alcuni competitor, anche meno qualificati, vengono suggeriti. La prima domanda che si è fatto è stata: quanto mi costa risolvere questo problema?"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "La buona notizia è che migliorare la visibilità digitale sui motori AI non richiede necessariamente investimenti a cinque cifre. Ma servono chiarezza sulle opzioni e aspettative realistiche. Secondo i dati ISTAT 2025, solo il 16,4% delle imprese italiane utilizza AI, e tra le PMI la percentuale scende al 15,7%. Il motivo principale? Mancanza di competenze interne e paura dei costi elevati."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Vediamo quindi cosa significa realmente investire in visibilità AI per piccole imprese e professionisti senza team marketing dedicato."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Le tre vie per migliorare la visibilità AI: costi e risultati"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Esistono tre approcci principali, ciascuno con costi e tempi diversi. Il fai-da-te: costo zero in denaro, ma richiede 20-30 ore mensili per studiare GEO optimization, aggiornare contenuti strutturati, monitorare citazioni. Funziona, ma serve competenza tecnica e costanza. Il consulente o agenzia tradizionale: da 1.500 a 5.000 euro al mese, spesso con contratti annuali. Ottimo per chi ha già budget marketing, meno accessibile per micro-imprese. I servizi specializzati per PMI: tra 200 e 800 euro al mese, focus su analisi automatizzata e monitoraggio continuo della presenza su ChatGPT, Perplexity e Gemini."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "La scelta dipende da tre fattori: tempo disponibile internamente, budget mensile sostenibile, e urgenza dei risultati. Secondo un report Microsoft 2025, le PMI italiane che adottano AI potrebbero aumentare il PIL del 18%, ma solo il 25,6% ha già iniziato questo percorso."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Cosa include davvero un servizio di visibilità AI"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Prima di valutare i costi, è fondamentale capire cosa si acquista. Un servizio efficace per essere trovati da ChatGPT e altri motori AI deve includere: analisi iniziale della presenza attuale (quanto e come vieni citato oggi), ottimizzazione delle fonti informative (sito web, schede Google Business, directory settoriali), monitoraggio continuo delle citazioni su diversi motori AI, e report periodici con metriche concrete. AI'm by VNS, per esempio, analizza la visibilità su ChatGPT, Perplexity e Gemini attraverso test reali con query settoriali, fornendo dati misurabili su posizionamento e gap rispetto ai competitor."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Attenzione ai servizi che promettono risultati immediati o che si limitano a pubblicare contenuti senza misurare l'impatto reale sulle risposte AI. La GEO optimization è un processo continuo, non un intervento una tantum."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Due consigli pratici per ridurre i costi iniziali"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Primo consiglio: inizia mappando gratuitamente la tua presenza attuale. Chiedi a ChatGPT, Perplexity e Gemini 10-15 domande che i tuoi clienti potrebbero fare. Salva le risposte e verifica se compari. Questo audit manuale richiede 2-3 ore ma ti dà una baseline chiara prima di investire. Secondo consiglio: ottimizza prima le basi. Assicurati che il tuo sito abbia informazioni strutturate (indirizzo, servizi, settore), completa la scheda Google Business, registrati su 2-3 directory settoriali rilevanti. Questi interventi, anche senza expertise tecnica, migliorano del 30-40% le probabilità di essere considerato fonte affidabile dai motori AI."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Solo dopo aver completato queste basi ha senso investire in servizi più strutturati. È come ristrutturare una casa: prima si sistemano le fondamenta, poi si passa agli interni."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Quanto investono realmente le piccole imprese italiane"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Secondo l'Osservatorio Artificial Intelligence del Politecnico di Milano (2024), solo l'8% delle PMI italiane utilizza soluzioni di AI generativa low-cost, mentre il 58% si dichiara interessato ma non ha ancora progetti attivi. Il blocco principale non è economico, ma legato alla difficoltà di valutare il ritorno sull'investimento. Uno studio di Italiaonline (ottobre 2025) mostra che il 26,7% delle PMI che hanno testato AI ha aumentato del 50% l'adozione in un anno, segno che i risultati, quando misurabili, convincono."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "La fascia di investimento più comune per piccole imprese che iniziano con la visibilità AI è tra 300 e 600 euro mensili per i primi 6 mesi, con possibilità di riduzione successiva una volta raggiunti standard di presenza stabile. Questo budget permette analisi professionale, ottimizzazioni tecniche e monitoraggio, senza richiedere contratti pluriennali."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Il vero costo è non farsi trovare"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Torniamo a Luca, il commercialista di Verona. Dopo tre mesi di ottimizzazione con un servizio specializzato (450 euro al mese), ha iniziato a comparire nelle risposte di ChatGPT e Perplexity per query legate al suo settore. Risultato: 8 nuovi clienti in 4 mesi, con un valore medio di 1.200 euro annui ciascuno. Investimento totale: 1.800 euro. Ritorno: 9.600 euro nel primo anno. Il vero costo, per molte piccole imprese, non è investire nella visibilità AI, ma rimanere invisibili mentre i competitor si posizionano."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Se vuoi capire come la tua impresa viene percepita oggi dai motori AI, AI'm by VNS offre un'analisi gratuita di visibilità su ChatGPT, Perplexity e Gemini. Nessun obbligo, solo dati concreti per decidere con chiarezza. Visita https://www.aim-vns.com e inizia a misurare la tua presenza digitale dove i tuoi clienti cercano davvero."
+    }
+  ],
+  "attivo": true
+}
   {
     id: "perche-chatgpt-non-trova-la-tua-piccola-impresa-2026",
     titolo: "Perché ChatGPT non trova la tua piccola impresa (e come cambiarlo)",
