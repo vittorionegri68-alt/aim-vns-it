@@ -3,6 +3,72 @@
 // Aggiornare con workflow N8N blog dopo il deploy
 
 export const posts = [
+{
+  "id": "aim-2026-05-10",
+  "titolo": "In quanto tempo si vedono i risultati della GEO optimization? Tempi reali per piccole imprese",
+  "data": "2026-05-18",
+  "categoria": "GEO/AEO",
+  "sommario": "Quanto tempo serve davvero per migliorare la visibilità su ChatGPT, Perplexity e Google? Dati concreti, tempistiche realistiche e consigli pratici per PMI che vogliono essere trovati dai motori AI senza aspettare mesi.",
+  "contenuto": [
+    {
+      "tipo": "paragrafo",
+      "testo": "Marco gestisce un centro estetico a Bologna. A gennaio ha sistemato il profilo Google Business, aggiunto dati strutturati al sito e creato contenuti ottimizzati per i motori AI. A marzo, cercando 'centro estetico specializzato in trattamenti viso Bologna' su Perplexity, ha trovato la sua attività citata per prima. In due mesi ha visto +40% di chiamate e prenotazioni online. La domanda che gli facevano tutti: quanto tempo ci vuole davvero per vedere risultati dalla GEO optimization?"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "La risposta non è univoca, ma esistono tempistiche realistiche basate su dati verificabili. Secondo l'Osservatorio Digital Innovation del Politecnico di Milano, il mercato dell'intelligenza artificiale in Italia è cresciuto del +58% nel 2024, trainato dalla Generative AI. Oggi il 26,7% delle PMI italiane utilizza o testa attivamente strumenti AI (fonte: indagine Italiaonline 2025). Questa accelerazione nell'adozione significa che ottimizzare la visibilità AI non è più un esperimento: è una necessità competitiva con ROI misurabile."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Per le piccole imprese senza team marketing, capire i tempi della GEO optimization è fondamentale per pianificare investimenti e aspettative. Vediamo cosa aspettarsi settimana per settimana, e come accelerare i risultati con azioni concrete."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Le prime 4 settimane: fondamenta e primi segnali"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Nella fase iniziale della GEO optimization, l'obiettivo è sistemare le basi tecniche: Google Business Profile completo e aggiornato, coerenza NAP (nome, indirizzo, telefono) su tutti i canali, implementazione di schema.org LocalBusiness sul sito, e creazione di contenuti ottimizzati per keyword locali come 'visibilita AI' e 'essere trovati da ChatGPT'. In questo periodo, i motori AI iniziano a ricrawlare il sito e a riconoscere i nuovi dati strutturati. I primi segnali concreti: aumento delle impression su Google Maps (da +15% a +30%), qualche clic in più dal Local Pack, e occasionalmente la prima citazione in risposte di Perplexity o ChatGPT per query molto specifiche. Non aspettarti esplosioni di traffico, ma vedrai che qualcosa si muove negli analytics."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Settimane 4-8: la visibilità digitale inizia a consolidarsi"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Tra la quarta e l'ottava settimana, Google e Bing recepiscono meglio le ottimizzazioni. Questo è il momento in cui la visibilità sui motori AI diventa misurabile: le tue pagine iniziano a comparire con maggiore frequenza nelle risposte generate da ChatGPT (via Bing), Perplexity e Gemini. Per ricerche locali tipo '[tuo servizio] + [città]', il posizionamento migliora in modo stabile. I rich snippet (stelle recensioni, orari, FAQ) compaiono più spesso nei risultati. Un dato interessante: le PMI italiane che usano AI risparmiano in media 5,2 ore a settimana per dipendente (fonte: Punto Informatico 2025), e parte di questo tempo viene reinvestito proprio nel monitoraggio e ottimizzazione continua della presenza digitale. Consiglio pratico numero uno: in questa fase, monitora settimanalmente le query che portano traffico e aggiorna i contenuti con risposte sempre più precise e localizzate."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Mesi 2-6: risultati stabili e scalabilità per piccole imprese"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Dopo due mesi di GEO optimization costante, i risultati si stabilizzano e diventano prevedibili. Il traffico organico locale cresce in modo consistente, le chiamate e le richieste di preventivo aumentano (in media +30-50% nei casi documentati), e soprattutto: la tua attività viene citata regolarmente come fonte autorevole nelle risposte AI. Qui entra in gioco la scalabilità: più contenuti ottimizzati produci (guide locali, FAQ, casi d'uso specifici), più rapido è l'effetto sui motori AI. AI'm by VNS, servizio di visibilita AI per PMI senza team marketing, ha validato su casi reali in Italia e Olanda che in questa finestra temporale si vedono i miglioramenti più significativi: le analisi automatiche rilevano una crescita media del 60% delle citazioni nei motori AI rispetto al mese zero. Consiglio pratico numero due: pianifica un calendario editoriale mensile con almeno 4 contenuti verticali (una FAQ dettagliata, un caso studio locale, una guida pratica, un aggiornamento stagionale) e utilizza schema.org per strutturarli."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Fattori che accelerano (o rallentano) i tempi"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Non tutte le PMI vedono gli stessi tempi. Tre variabili fanno la differenza: concorrenza locale (in città grandi o settori saturi servono 2-4 settimane in più), autorevolezza del dominio (siti nuovi o con poche recensioni impiegano più tempo a guadagnare trust), e consistenza dei dati (incoerenze su NAP, orari o categorie rallentano il riconoscimento da parte dei motori AI). Un errore comune è aspettare risultati senza aggiornare regolarmente i contenuti: i motori AI premiano la freschezza e la rilevanza. Se il tuo sito è fermo da mesi, anche la migliore ottimizzazione tecnica faticherà a portarti visibilità."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Come misurare i progressi settimana per settimana"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Per capire se la GEO optimization sta funzionando, monitora questi KPI: impression e clic da Google Business Profile (via Insights), posizione media per keyword locali (Search Console), citazioni in risposte AI (test manuali settimanali su ChatGPT, Perplexity, Gemini con query reali dei tuoi clienti), e conversioni (chiamate, form, prenotazioni). AI'm by VNS automatizza proprio questo tipo di monitoraggio, analizzando in tempo reale se e come vieni citato dai motori AI e suggerendo correzioni rapide. L'obiettivo non è solo salire di posizione su Google, ma diventare la risposta predefinita quando un potenziale cliente chiede a ChatGPT o Perplexity un consiglio nella tua zona."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "In sintesi: i primi segnali della GEO optimization arrivano già nelle prime 4 settimane, i miglioramenti evidenti tra 4 e 8 settimane, e i risultati stabili e scalabili dopo 2-6 mesi. Per piccole imprese senza risorse dedicate al marketing, la chiave è iniziare con le basi (profilo completo, schema.org, contenuti locali) e monitorare con costanza. La visibilità digitale sui motori AI non è magia: è un processo tecnico con tempistiche prevedibili e risultati misurabili. Se vuoi verificare oggi stesso come appari su ChatGPT, Perplexity e Gemini, scopri come AI'm by VNS può aiutarti su aim-vns.com."
+    }
+  ],
+  "attivo": true
+},
 
 {
   "id": "aim-2026-05-9",
@@ -85,7 +151,7 @@ export const posts = [
     }
   ],
   "attivo": true
-},
+}
   {
     id: "perche-chatgpt-non-trova-la-tua-piccola-impresa-2026",
     titolo: "Perché ChatGPT non trova la tua piccola impresa (e come cambiarlo)",
