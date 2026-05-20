@@ -94,7 +94,7 @@ export default function Nav() {
           </a>
 
           {/* CTA primario */}
-          <a href="#contatti" style={{
+          <a href="https://calendly.com/aim-vns-info/30min" target="_blank" rel="noopener" style={{
             fontFamily: "'Inter', sans-serif", fontWeight: 700,
             fontSize: '11px', letterSpacing: '0.12em', color: '#080808',
             textTransform: 'uppercase', background: '#A0782A',
