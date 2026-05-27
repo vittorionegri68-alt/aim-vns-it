@@ -1,5 +1,5 @@
 // Blog.jsx — AI'm by VNS IT
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { posts } from '../data/posts.jsx'
 
 function ArticoloEsteso({ post, onClose }) {
@@ -68,16 +68,49 @@ function ArticoloEsteso({ post, onClose }) {
           return null
         })}
       </div>
+
+      <div style={{ marginTop: '3rem', paddingTop: '2rem',
+        borderTop: '1px solid #1A1A1A', display: 'flex', justifyContent: 'center' }}>
+        <button onClick={onClose} style={{
+          background: 'transparent', border: '1px solid #A0782A',
+          color: '#A0782A', fontFamily: "'Inter', sans-serif",
+          fontWeight: 700, fontSize: '10px', letterSpacing: '0.15em',
+          textTransform: 'uppercase', cursor: 'pointer',
+          padding: '10px 28px', transition: 'all 0.2s',
+        }}
+        onMouseEnter={e => { e.currentTarget.style.background = '#A0782A'; e.currentTarget.style.color = '#000' }}
+        onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#A0782A' }}
+        >← Torna agli articoli</button>
+      </div>
     </div>
   )
 }
 
 export default function Blog() {
   const [aperto, setAperto] = useState(null)
+  const sectionRef = useRef(null)
   const attivi = posts.filter(p => p.attivo)
 
+  function apriArticolo(id) {
+    setAperto(id)
+    setTimeout(() => {
+      if (sectionRef.current) {
+        sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 50)
+  }
+
+  function chiudi() {
+    setAperto(null)
+    setTimeout(() => {
+      if (sectionRef.current) {
+        sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 50)
+  }
+
   return (
-    <section id="blog"
+    <section ref={sectionRef} id="blog"
       style={{ background: '#0d0d0d', padding: 'clamp(64px,8vw,120px) 0',
         borderTop: '1px solid #141414' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px,4vw,64px)' }}>
@@ -94,57 +127,56 @@ export default function Blog() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)',
-          gap: '1px', background: '#141414' }}
-          className="blog-grid">
-          {attivi.map((p) => (
-            <article key={p.id}
-              style={{
-                background: aperto === p.id ? '#0f0f0f' : '#0a0a0a',
-                padding: 'clamp(24px,2.5vw,40px) clamp(20px,2vw,32px)',
-                display: 'flex', flexDirection: 'column',
-                borderTop: aperto === p.id ? '2px solid #A0782A' : '2px solid transparent',
-                transition: 'all 0.2s',
-              }}>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                fontSize: '9px', color: '#333', letterSpacing: '0.2em',
-                textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                {p.categoria} · {p.data}
-              </div>
-              <h3 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700,
-                fontSize: 'clamp(18px,1.8vw,24px)', color: '#ffffff',
-                textTransform: 'uppercase', letterSpacing: '0.02em',
-                lineHeight: 1.15, marginBottom: '1rem', flex: 1 }}>
-                {p.titolo}
-              </h3>
-              <div style={{ width: '24px', height: '1px', background: '#1A1A1A', marginBottom: '1rem' }} />
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px',
-                color: '#444', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                {p.sommario}
-              </p>
-              <button onClick={() => setAperto(aperto === p.id ? null : p.id)}
+        {aperto ? (
+          <ArticoloEsteso
+            post={attivi.find(p => p.id === aperto)}
+            onClose={chiudi}
+          />
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)',
+            gap: '1px', background: '#141414' }}
+            className="blog-grid">
+            {attivi.map((p) => (
+              <article key={p.id}
                 style={{
-                  background: 'none', border: 'none', cursor: 'pointer', padding: 0,
-                  fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                  fontSize: '10px', color: aperto === p.id ? '#ffffff' : '#A0782A',
-                  letterSpacing: '0.15em', textTransform: 'uppercase',
-                  textAlign: 'left', transition: 'opacity 0.2s',
+                  background: '#0a0a0a',
+                  padding: 'clamp(24px,2.5vw,40px) clamp(20px,2vw,32px)',
+                  display: 'flex', flexDirection: 'column',
+                  borderTop: '2px solid transparent',
+                  transition: 'all 0.2s',
                 }}
-                onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
-                onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                onMouseEnter={e => e.currentTarget.style.borderTopColor = '#A0782A'}
+                onMouseLeave={e => e.currentTarget.style.borderTopColor = 'transparent'}
               >
-                {aperto === p.id ? 'Chiudi' : 'Leggi'}
-              </button>
-            </article>
-          ))}
-        </div>
-
-        {aperto && (
-          <div style={{ background: '#141414', padding: '1px 0 0' }}>
-            <ArticoloEsteso
-              post={attivi.find(p => p.id === aperto)}
-              onClose={() => setAperto(null)}
-            />
+                <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
+                  fontSize: '9px', color: '#333', letterSpacing: '0.2em',
+                  textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                  {p.categoria} · {p.data}
+                </div>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700,
+                  fontSize: 'clamp(18px,1.8vw,24px)', color: '#ffffff',
+                  textTransform: 'uppercase', letterSpacing: '0.02em',
+                  lineHeight: 1.15, marginBottom: '1rem', flex: 1 }}>
+                  {p.titolo}
+                </h3>
+                <div style={{ width: '24px', height: '1px', background: '#1A1A1A', marginBottom: '1rem' }} />
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px',
+                  color: '#444', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                  {p.sommario}
+                </p>
+                <button onClick={() => apriArticolo(p.id)}
+                  style={{
+                    background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+                    fontFamily: "'Inter', sans-serif", fontWeight: 700,
+                    fontSize: '10px', color: '#A0782A',
+                    letterSpacing: '0.15em', textTransform: 'uppercase',
+                    textAlign: 'left', transition: 'opacity 0.2s',
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+                  onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                >Leggi</button>
+              </article>
+            ))}
           </div>
         )}
 
