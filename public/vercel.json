@@ -8,6 +8,9 @@
       "statusCode": 308
     }
   ],
+  "rewrites": [
+    { "source": "/", "destination": "/index-IT.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
