@@ -3,6 +3,72 @@
 // Aggiornare con workflow N8N blog dopo il deploy
 
 export const posts = [
+  {
+  "id": "aim-2026-06-2",
+  "titolo": "Come Apparire su Perplexity: Guida Pratica per Professionisti e Piccole Imprese",
+  "data": "2026-06-08",
+  "categoria": "GEO/AEO",
+  "sommario": "I professionisti e le piccole imprese possono aumentare la visibilità su Perplexity lavorando su tre elementi chiave: contenuti strutturati con schema.org, presenza locale ottimizzata e case study con dati misurabili. Questa guida offre strategie concrete di GEO optimization per essere trovati dai motori AI.",
+  "contenuto": [
+    {
+      "tipo": "paragrafo",
+      "testo": "Marco, consulente di marketing digitale a Bologna, ha pubblicato un case study dettagliato su come ha aiutato una piccola impresa locale a ridurre del 30% i tempi di risposta ai clienti usando ChatGPT. Tre settimane dopo, ha notato qualcosa di sorprendente: quando i potenziali clienti lo contattavano, molti dicevano di averlo trovato attraverso Perplexity, che aveva citato proprio quel case study come esempio virtuoso di adozione AI nelle PMI italiane."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Questa non è fantascienza, ma la nuova realtà della visibilità digitale. Con il 17,4% delle PMI che ora utilizza l'intelligenza artificiale (secondo il report OCSE 2025) e il 79% dei decisori che usano strumenti AI a fini professionali, i motori AI come Perplexity, ChatGPT e Gemini stanno diventando canali di ricerca sempre più rilevanti. Per i professionisti senza team marketing, capire come farsi trovare su questi nuovi canali è diventato essenziale."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Ma cosa devono fare concretamente i professionisti per apparire su Perplexity? La risposta non è complessa, ma richiede un approccio strutturato che combina contenuti di qualità, ottimizzazione tecnica e visibilità locale."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Pubblica Contenuti con Dati Misurabili"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Perplexity e altri motori AI privilegiano fonti che offrono informazioni concrete e verificabili. Per un professionista o una piccola impresa, questo significa pubblicare case study e articoli che includano numeri reali. Secondo una ricerca Marketing01 del 2025, il 96% delle PMI italiane che usano AI dichiara un risparmio di tempo significativo, con una media di oltre 5 ore settimanali recuperate per persona. Questi sono esattamente i dati che rendono un contenuto citabile. Quando scrivi di un progetto, includi sempre: il problema iniziale del cliente, la soluzione implementata (specificando strumenti come ChatGPT, Perplexity o Gemini), e i risultati quantificabili (percentuali di miglioramento, ore risparmiate, aumento delle conversioni). Questo tipo di contenuto non solo aiuta i potenziali clienti a capire il tuo valore, ma diventa anche materiale perfetto per essere ripreso nelle risposte generate dai motori AI quando qualcuno cerca informazioni su come le PMI stanno usando l'intelligenza artificiale nel tuo settore."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Ottimizza il Sito con Schema.org e Dati Strutturati"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "I motori AI leggono il web in modo diverso dagli esseri umani. Per farsi capire chiaramente, è fondamentale usare i dati strutturati schema.org in formato JSON-LD. Questo significa inserire nel codice del tuo sito informazioni strutturate che descrivono chi sei (Organization o Person), quali servizi offri (Service), dove operi (LocalBusiness con indirizzo e coordinate) e quali contenuti hai pubblicato (Article, BlogPosting). Per un professionista che offre consulenza AI alle piccole imprese, includere nei dati strutturati termini come visibilità AI, GEO optimization e motori AI aiuta gli algoritmi a capire esattamente quando sei rilevante. Usa anche la proprietà sameAs per collegare il tuo sito ai profili LinkedIn, alle directory professionali e alla Camera di Commercio: questi collegamenti rafforzano la tua autorevolezza. AI'm by VNS analizza proprio questi aspetti tecnici quando valuta la visibilità digitale di professionisti e PMI sui motori AI, identificando rapidamente quali elementi strutturali mancano o sono mal configurati."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Cura la Presenza Locale e la GEO Optimization"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Quando qualcuno chiede a Perplexity 'trova un consulente AI per piccole imprese a Milano', il motore attinge a diverse fonti, tra cui profili Google Business, directory locali e contenuti geolocalizzati. Per essere trovati da ChatGPT e altri motori AI nelle ricerche locali, devi lavorare sulla GEO optimization: ottimizza il tuo profilo Google Business Profile con categorie precise (es. 'Consulente marketing digitale'), descrizione che includa le keyword rilevanti (AI, PMI, intelligenza artificiale generativa), foto professionali e post regolari. Assicurati che il tuo NAP (Name, Address, Phone) sia identico su tutti i siti e le directory. Crea nel tuo sito pagine specifiche per query locali, come 'Consulenza AI per PMI a [città]', con contenuti originali che descrivono come aiuti le imprese locali. Questo approccio multicanale aumenta esponenzialmente la probabilità che i motori AI ti identifichino come risorsa pertinente per la tua area geografica e il tuo settore."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Rendi il Sito Accessibile agli LLM"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Un aspetto spesso trascurato è l'accessibilità tecnica per i Large Language Models. Verifica che il tuo file robots.txt non blocchi i crawler dei motori AI (alcuni siti bloccano per errore GPTBot o altri user-agent). Struttura il sito con HTML pulito, titoli H1/H2 chiari e paragrafi brevi: questa organizzazione aiuta i modelli a estrarre informazioni in modo accurato. Considera l'adozione di un file llms.txt (analogo al robots.txt ma specifico per LLM) per indicare quali sezioni del sito possono essere usate liberamente dai motori AI e quali sono riservate. Mantieni i contenuti aggiornati e indica sempre le date di pubblicazione: gli algoritmi privilegiano fonti recenti, specialmente per argomenti in rapida evoluzione come l'AI. Questi accorgimenti tecnici, pur sembrando dettagli, fanno la differenza tra essere ignorati o citati come fonte affidabile."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Monitora e Adatta la Strategia"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Apparire su Perplexity e altri motori AI non è un risultato che si ottiene una volta per tutte. Il panorama della visibilità digitale evolve rapidamente: nuovi algoritmi, nuovi formati di risposta, nuove fonti privilegiate. Per i professionisti senza team marketing, monitorare manualmente questa complessità è quasi impossibile. Testa regolarmente: cerca su Perplexity, ChatGPT e Gemini le query per cui vorresti essere trovato (es. 'consulente AI per PMI in [settore] a [città]') e verifica se appari nei risultati. Analizza quali competitor vengono citati e studia cosa fanno di diverso. Aggiorna i contenuti con nuovi dati, case study freschi e statistiche recenti. Il mercato AI italiano vale 1,2 miliardi di euro nel 2024 con una crescita del 58% annuo, e solo il 15,7% delle PMI ha adottato l'AI: significa che c'è un enorme spazio per posizionarsi come riferimento locale. AI'm by VNS automatizza proprio questo processo di monitoraggio continuo, verificando la tua visibilità su ChatGPT, Perplexity e Gemini e fornendo indicazioni concrete su come migliorarla, senza bisogno di competenze tecniche avanzate."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Iniziare a lavorare sulla visibilità AI non richiede budget enormi o team dedicati. Bastano contenuti autentici, struttura tecnica corretta e presenza locale coerente. Il professionista che dedica qualche ora a queste attività oggi si troverà domani nella posizione di Marco: citato, trovato e contattato attraverso canali che la maggioranza dei competitor ancora ignora. Per verificare subito come sei posizionato sui motori AI e ricevere un'analisi dettagliata, visita aim-vns.com e scopri come AI'm by VNS può aiutarti a emergere nella nuova era della ricerca intelligente."
+    }
+  ],
+  "attivo": true
+},
 {
   "id": "aim-2026-05-1",
   "titolo": "Come possono le piccole imprese essere trovate da ChatGPT: guida pratica alla visibilità AI",
