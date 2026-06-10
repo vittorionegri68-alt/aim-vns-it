@@ -4,6 +4,26 @@
 
 export const posts = [
   {
+    id: "audit-geo-automatico-vs-visibilita-reale-2026",
+    titolo: "83/100 nel test GEO. Zero citazioni su Perplexity. Cosa manca davvero.",
+    data: "2026-06-09",
+    categoria: "Visibilita AI",
+    sommario: "Un punteggio GEO alto non significa essere citati dai motori AI. Dati reali di Casa Cavour: 83/100 nell audit tecnico, primo su ChatGPT, assente su Perplexity. Ecco perche un dato negativo con metodo vale piu di un punteggio verde senza contesto.",
+    contenuto: [
+      { tipo: "paragrafo", testo: "Prendo un caso reale. Un sito viene analizzato con uno dei tool di audit GEO disponibili online. Punteggio: 83 su 100. GEO-Ready, dice il report. Struttura tecnica solida, contenuto fresco, schema markup presente. Tutto verde. Stessa settimana. Stessa attivita. Query reali del settore su ChatGPT e Perplexity. Su ChatGPT compare al primo posto. Su Perplexity non esiste. Al suo posto: competitor con siti tecnicamente meno ottimizzati. Il punteggio non era sbagliato. Era incompleto." },
+      { tipo: "titoletto", testo: "Cosa misura un audit automatico" },
+      { tipo: "paragrafo", testo: "Gli strumenti di analisi GEO misurano la leggibilita tecnica del sito. Verificano se i crawler AI riescono a leggere il contenuto, se lo schema markup e presente, se il contenuto e strutturato in modo comprensibile. E un lavoro utile. E la precondizione necessaria per essere citati. Non e la citazione. Un sito puo essere perfettamente leggibile dai modelli AI e non venire comunque menzionato. Perche i modelli non citano tutto quello che riescono a leggere. Citano cio che riconoscono come rilevante e autorevole per una query specifica, ripetutamente, nel tempo." },
+      { tipo: "titoletto", testo: "Il problema che i punteggi non mostrano" },
+      { tipo: "paragrafo", testo: "I tool automatici non ti dicono quale query hanno usato per testare la tua visibilita. Non sai se hanno cercato il nome del brand o una query transazionale reale del settore. Non sai se il test e stato ripetuto su piu motori con le stesse domande. Non sai se il risultato di oggi e stabile o casuale. I modelli AI sono stocastici: la stessa query fatta due volte puo restituire risultati diversi. Una singola misurazione non ti dice se sei visibile. Ti dice solo che in quel momento, con quella query, su quel motore, eri presente o assente." },
+      { tipo: "titoletto", testo: "Dati reali, positivi e negativi" },
+      { tipo: "paragrafo", testo: "Questo e il caso di Casa Cavour, una struttura ricettiva a Bertinoro che seguiamo con AI'm da aprile 2026. Baseline aprile 2026: Perplexity 4.3 su 10, Gemini 3.2 su 10. Situazione giugno 2026: ChatGPT primo posto sulle query del settore, Perplexity ancora il punto debole principale. Pubblico entrambi i dati. Non solo quello positivo. Perche un dato negativo non e un problema da nascondere. E una direzione di lavoro precisa. Sappiamo esattamente quale motore non cita Casa Cavour, su quali query, e perche. Sappiamo quindi quali contenuti produrre, quale struttura rafforzare, quali domande aggiungere al set. Un dato negativo con metodo e piu utile di un punteggio alto senza contesto." },
+      { tipo: "titoletto", testo: "Come funziona l approccio AI'm" },
+      { tipo: "paragrafo", testo: "Per ogni cliente definiamo un set di 10 domande validate, specifiche per il settore. Non domande generiche: domande che i clienti reali di quella categoria fanno a ChatGPT, Perplexity e Gemini ogni giorno. Le stesse 10 domande vengono usate in tutto il sistema: schema FAQPage sul sito, pagina Q&A, blog, workflow di monitoraggio. La coerenza tra questi punti e quello che costruisce la stabilita nelle citazioni nel tempo. Misuriamo la baseline prima di qualsiasi intervento. Misuriamo di nuovo dopo ogni ciclo. I risultati sono pubblici, verificabili da chiunque, buoni o cattivi." },
+      { tipo: "link", testo: "mailto:info@aim-vns.com", etichetta: "Analisi gratuita: scrivi a info@aim-vns.com" },
+    ],
+    attivo: true,
+  },
+  {
   "id": "aim-2026-06-2",
   "titolo": "Come Apparire su Perplexity: Guida Pratica per Professionisti e Piccole Imprese",
   "data": "2026-06-08",
@@ -354,23 +374,4 @@ export const posts = [
     ],
     attivo: true,
   },
-  {
-    id: "audit-geo-automatico-vs-visibilita-reale-2026",
-    titolo: "83/100 nel test GEO. Zero citazioni su Perplexity. Cosa manca davvero.",
-    data: "2026-06-09",
-    categoria: "Visibilita AI",
-    sommario: "Un punteggio GEO alto non significa essere citati dai motori AI. Dati reali di Casa Cavour: 83/100 nell audit tecnico, primo su ChatGPT, assente su Perplexity. Ecco perche un dato negativo con metodo vale piu di un punteggio verde senza contesto.",
-    contenuto: [
-      { tipo: "paragrafo", testo: "Prendo un caso reale. Un sito viene analizzato con uno dei tool di audit GEO disponibili online. Punteggio: 83 su 100. GEO-Ready, dice il report. Struttura tecnica solida, contenuto fresco, schema markup presente. Tutto verde. Stessa settimana. Stessa attivita. Query reali del settore su ChatGPT e Perplexity. Su ChatGPT compare al primo posto. Su Perplexity non esiste. Al suo posto: competitor con siti tecnicamente meno ottimizzati. Il punteggio non era sbagliato. Era incompleto." },
-      { tipo: "titoletto", testo: "Cosa misura un audit automatico" },
-      { tipo: "paragrafo", testo: "Gli strumenti di analisi GEO misurano la leggibilita tecnica del sito. Verificano se i crawler AI riescono a leggere il contenuto, se lo schema markup e presente, se il contenuto e strutturato in modo comprensibile. E un lavoro utile. E la precondizione necessaria per essere citati. Non e la citazione. Un sito puo essere perfettamente leggibile dai modelli AI e non venire comunque menzionato. Perche i modelli non citano tutto quello che riescono a leggere. Citano cio che riconoscono come rilevante e autorevole per una query specifica, ripetutamente, nel tempo." },
-      { tipo: "titoletto", testo: "Il problema che i punteggi non mostrano" },
-      { tipo: "paragrafo", testo: "I tool automatici non ti dicono quale query hanno usato per testare la tua visibilita. Non sai se hanno cercato il nome del brand o una query transazionale reale del settore. Non sai se il test e stato ripetuto su piu motori con le stesse domande. Non sai se il risultato di oggi e stabile o casuale. I modelli AI sono stocastici: la stessa query fatta due volte puo restituire risultati diversi. Una singola misurazione non ti dice se sei visibile. Ti dice solo che in quel momento, con quella query, su quel motore, eri presente o assente." },
-      { tipo: "titoletto", testo: "Dati reali, positivi e negativi" },
-      { tipo: "paragrafo", testo: "Questo e il caso di Casa Cavour, una struttura ricettiva a Bertinoro che seguiamo con AI'm da aprile 2026. Baseline aprile 2026: Perplexity 4.3 su 10, Gemini 3.2 su 10. Situazione giugno 2026: ChatGPT primo posto sulle query del settore, Perplexity ancora il punto debole principale. Pubblico entrambi i dati. Non solo quello positivo. Perche un dato negativo non e un problema da nascondere. E una direzione di lavoro precisa. Sappiamo esattamente quale motore non cita Casa Cavour, su quali query, e perche. Sappiamo quindi quali contenuti produrre, quale struttura rafforzare, quali domande aggiungere al set. Un dato negativo con metodo e piu utile di un punteggio alto senza contesto." },
-      { tipo: "titoletto", testo: "Come funziona l approccio AI'm" },
-      { tipo: "paragrafo", testo: "Per ogni cliente definiamo un set di 10 domande validate, specifiche per il settore. Non domande generiche: domande che i clienti reali di quella categoria fanno a ChatGPT, Perplexity e Gemini ogni giorno. Le stesse 10 domande vengono usate in tutto il sistema: schema FAQPage sul sito, pagina Q&A, blog, workflow di monitoraggio. La coerenza tra questi punti e quello che costruisce la stabilita nelle citazioni nel tempo. Misuriamo la baseline prima di qualsiasi intervento. Misuriamo di nuovo dopo ogni ciclo. I risultati sono pubblici, verificabili da chiunque, buoni o cattivi." },
-      { tipo: "link", testo: "mailto:info@aim-vns.com", etichetta: "Analisi gratuita: scrivi a info@aim-vns.com" },
-    ],
-    attivo: true,
-  },]
+]
