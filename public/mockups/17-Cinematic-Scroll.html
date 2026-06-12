@@ -1,0 +1,446 @@
+<!-- @dsCard group="Mockup 17" viewport="1440x900" name="17 — Cinematic Scroll" subtitle="Sequenza d'apertura di un film. GSAP ScrollTrigger + Lenis, parallax/zoom, gallery orizzontale, cursore custom. Demo: residenze d'autore." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<script>document.documentElement.className += " js";</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Meridiana — Stile 17 Cinematic Scroll</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --void: #080808;
+    --void-2: #1A1A1A;
+    --ivory: #F5F0E8;
+    --gold: #C4A35A;
+    --gold-soft: #D8BE84;
+    --veil: rgba(255,255,255,0.06);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "DM Sans", system-ui, sans-serif;
+    --script: "Pinyon Script", cursive;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: var(--void); color: var(--ivory); }
+  body { font-family: var(--sans); font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+
+  /* cursor */
+  @media (hover: hover) and (pointer: fine) {
+    body { cursor: none; }
+    .cursor { position: fixed; top: 0; left: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); z-index: 9999; pointer-events: none; transform: translate(-50%,-50%); mix-blend-mode: difference; }
+    .cursor-ring { position: fixed; top: 0; left: 0; width: 46px; height: 46px; border: 1px solid rgba(196,163,90,0.6); border-radius: 50%; z-index: 9998; pointer-events: none; transform: translate(-50%,-50%); transition: width .3s, height .3s, background .3s; }
+    .cursor-ring.grow { width: 78px; height: 78px; background: rgba(196,163,90,0.08); }
+  }
+
+  /* grain overlay */
+  body::after {
+    content: ""; position: fixed; inset: 0; z-index: 9000; pointer-events: none; opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* nav */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 26px 48px; mix-blend-mode: difference; }
+  .nav .mark { font-family: var(--serif); font-size: 22px; letter-spacing: 0.5em; text-indent: 0.5em; text-align: center; }
+  .nav .links { display: flex; gap: 30px; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }
+  .nav .right { justify-self: end; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; }
+  .nav a { opacity: 0.7; } .nav a:hover { opacity: 1; }
+
+  /* progress */
+  .prog { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: var(--gold); z-index: 300; }
+
+  /* photo placeholder helper */
+  .photo { position: absolute; inset: 0; overflow: hidden; }
+  .photo .img { position: absolute; inset: -12%; background-size: cover; background-position: center; will-change: transform; }
+  .ph-a { background:
+      radial-gradient(120% 90% at 70% 10%, rgba(196,163,90,0.20), transparent 55%),
+      linear-gradient(160deg, #14110c 0%, #2a2118 42%, #0c0a07 100%); }
+  .ph-b { background:
+      radial-gradient(100% 80% at 20% 80%, rgba(120,140,170,0.22), transparent 60%),
+      linear-gradient(200deg, #0c0f14 0%, #1c2733 50%, #07090d 100%); }
+  .ph-c { background:
+      radial-gradient(110% 90% at 80% 30%, rgba(196,163,90,0.18), transparent 55%),
+      linear-gradient(150deg, #161310 0%, #322a1d 55%, #0a0805 100%); }
+  .ph-d { background: linear-gradient(135deg, #1a1714 0%, #0c0a07 100%); }
+  .ph-cap { position: absolute; left: 16px; bottom: 14px; z-index: 3; font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,232,0.5); }
+  .ph-cap::before { content: "◳ "; color: var(--gold); }
+
+  /* ============ HERO ============ */
+  .hero { position: relative; height: 100vh; overflow: hidden; }
+  .hero .img { background:
+      radial-gradient(90% 70% at 60% 20%, rgba(196,163,90,0.16), transparent 55%),
+      linear-gradient(180deg, #100d09 0%, #251d14 45%, #070605 100%); }
+  .hero .vign { position: absolute; inset: 0; z-index: 2; background: radial-gradient(120% 120% at 50% 40%, transparent 40%, rgba(0,0,0,0.7) 100%); }
+  .ghost17 { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 3; font-family: var(--serif); font-weight: 300; font-size: 62vh; line-height: 1; color: transparent; -webkit-text-stroke: 1.2px rgba(245,240,232,0.16); pointer-events: none; user-select: none; }
+  .hero-content { position: absolute; inset: 0; z-index: 4; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 24px; }
+  .hero .kick { font-size: 12px; letter-spacing: 0.46em; text-transform: uppercase; color: var(--gold); margin-bottom: 30px; overflow: hidden; }
+  .hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(48px, 8vw, 124px); line-height: 0.98; letter-spacing: 0.01em; }
+  .hero h1 .line { display: block; overflow: hidden; }
+  .hero h1 .line > span { display: inline-block; }
+  .hero h1 .scr { font-family: var(--script); font-weight: 400; color: var(--gold-soft); font-size: 1.15em; }
+  .hero .sub { margin-top: 30px; max-width: 38ch; font-size: 14px; line-height: 1.9; color: rgba(245,240,232,0.6); letter-spacing: 0.02em; }
+  .scroll-cue { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(245,240,232,0.5); }
+  .scroll-cue .ln { width: 1px; height: 40px; background: linear-gradient(var(--gold), transparent); animation: cue 2.2s ease-in-out infinite; transform-origin: top; }
+  @keyframes cue { 0%,100% { transform: scaleY(0.4); opacity: .4; } 50% { transform: scaleY(1); opacity: 1; } }
+
+  /* reveal helper — hidden only when JS is active so print/no-JS show content */
+  .js .reveal { opacity: 0; transform: translateY(28px); }
+  @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1 !important; transform: none !important; } }
+
+  /* ============ FRAME SECTIONS (scroll snap) ============ */
+  .scenes { position: relative; }
+  .scene { position: relative; height: 100vh; overflow: hidden; display: flex; align-items: center; }
+  .scene .vign { position: absolute; inset: 0; z-index: 2; background: linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.2) 55%, transparent 100%); }
+  .scene.right .vign { background: linear-gradient(270deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.2) 55%, transparent 100%); }
+  .scene-text { position: relative; z-index: 3; width: min(560px, 84vw); padding: 0 60px; }
+  .scene.right .scene-text { margin-left: auto; text-align: right; }
+  .scene .idx { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+  .scene h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(38px, 5vw, 76px); line-height: 1.04; }
+  .scene h2 em { font-family: var(--script); font-style: normal; color: var(--gold-soft); font-size: 1.1em; }
+  .scene p { margin-top: 24px; font-size: 14px; line-height: 1.9; color: rgba(245,240,232,0.66); }
+
+  /* ============ COUNTERS ============ */
+  .stats { padding: 140px 48px; text-align: center; border-top: 1px solid var(--veil); }
+  .stats .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto; }
+  .stat .num { font-family: var(--serif); font-weight: 300; font-size: clamp(56px, 7vw, 104px); line-height: 1; color: var(--gold-soft); }
+  .stat .lab { margin-top: 14px; font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(245,240,232,0.55); }
+
+  /* ============ HORIZONTAL GALLERY ============ */
+  .gallery-wrap { position: relative; height: 100vh; overflow: hidden; }
+  .gallery-pin { position: absolute; top: 0; left: 0; height: 100%; display: flex; align-items: center; will-change: transform; }
+  .g-intro { flex: 0 0 60vw; padding: 0 8vw; }
+  .g-intro .idx { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .g-intro h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(40px, 5vw, 76px); line-height: 1.04; }
+  .g-intro p { margin-top: 22px; max-width: 36ch; font-size: 14px; line-height: 1.9; color: rgba(245,240,232,0.6); }
+  .card { flex: 0 0 40vw; height: 70vh; margin: 0 2vw; position: relative; }
+  .card .photo { border: 1px solid rgba(196,163,90,0.2); }
+  .card .meta { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; padding: 28px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); }
+  .card .meta .no { font-size: 11px; letter-spacing: 0.3em; color: var(--gold); }
+  .card .meta h3 { font-family: var(--serif); font-weight: 400; font-size: 34px; margin-top: 8px; }
+  .card .meta .loc { font-size: 12px; letter-spacing: 0.12em; color: rgba(245,240,232,0.6); margin-top: 4px; }
+
+  /* ============ ROOM / SERVICE CARD detail ============ */
+  .offer { padding: 150px 48px; border-top: 1px solid var(--veil); }
+  .offer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 70px; align-items: center; }
+  .offer .photo-box { position: relative; aspect-ratio: 4/5; }
+  .offer .photo-box .photo { border: 1px solid rgba(196,163,90,0.22); }
+  .offer .photo-box::after { content: "17"; position: absolute; top: -34px; right: -10px; font-family: var(--serif); font-size: 110px; color: transparent; -webkit-text-stroke: 1px rgba(196,163,90,0.4); z-index: 5; }
+  .offer .lbl { font-size: 11px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold); }
+  .offer h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(36px, 4vw, 60px); line-height: 1.06; margin-top: 16px; }
+  .offer .desc { margin-top: 22px; font-size: 14px; line-height: 1.9; color: rgba(245,240,232,0.66); max-width: 42ch; }
+  .offer ul { list-style: none; margin-top: 30px; }
+  .offer ul li { display: flex; justify-content: space-between; padding: 16px 0; border-top: 1px solid var(--veil); font-size: 13px; letter-spacing: 0.04em; }
+  .offer ul li span:last-child { color: var(--gold-soft); font-family: var(--serif); font-size: 18px; }
+  .btn { display: inline-flex; align-items: center; gap: 14px; margin-top: 36px; padding: 16px 34px; border: 1px solid var(--gold); color: var(--ivory); font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; border-radius: 999px; transition: background .35s, color .35s; overflow: hidden; position: relative; }
+  .btn::after { content: "→"; transition: transform .35s; }
+  .btn:hover { background: var(--gold); color: var(--void); }
+  .btn:hover::after { transform: translateX(6px); }
+
+  /* ============ CTA ============ */
+  .cta { position: relative; height: 86vh; min-height: 560px; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .cta .img { background: linear-gradient(160deg, #1a150d 0%, #070605 100%); }
+  .cta .vign { position: absolute; inset: 0; z-index: 2; background: radial-gradient(120% 120% at 50% 50%, transparent 30%, rgba(0,0,0,0.8)); }
+  .cta-inner { position: relative; z-index: 3; padding: 0 24px; }
+  .cta .scr { font-family: var(--script); color: var(--gold-soft); font-size: clamp(40px, 6vw, 92px); line-height: 1; }
+  .cta h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(34px, 4.4vw, 64px); margin-top: 6px; }
+  .cta p { margin: 26px auto 0; max-width: 40ch; font-size: 14px; line-height: 1.9; color: rgba(245,240,232,0.6); }
+
+  /* ============ PALETTE ============ */
+  .palette { padding: 110px 48px; border-top: 1px solid var(--veil); }
+  .palette .head { display: flex; justify-content: space-between; align-items: baseline; max-width: 1100px; margin: 0 auto 36px; }
+  .palette .head h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; }
+  .palette .head span { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); }
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; max-width: 1100px; margin: 0 auto; }
+  .sw { height: 150px; display: flex; align-items: flex-end; padding: 14px; font-size: 10px; letter-spacing: 0.12em; }
+  .sw.dark-text { color: var(--void); } .sw.light-text { color: var(--ivory); }
+
+  /* ============ FOOTER ============ */
+  footer { padding: 90px 48px 50px; text-align: center; }
+  .fmark { font-family: var(--serif); font-weight: 300; font-size: clamp(60px, 16vw, 220px); line-height: 1; letter-spacing: 0.16em; text-indent: 0.16em; color: transparent; -webkit-text-stroke: 1px rgba(196,163,90,0.4); }
+  .fbar { margin-top: 40px; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.55); }
+  .fcredit { margin-top: 34px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245,240,232,0.4); }
+  .fcredit .chip { color: var(--gold-soft); }
+
+  @media (max-width: 880px) {
+    .nav { padding: 18px; } .nav .links, .nav .right { display: none; }
+    .offer-inner { grid-template-columns: 1fr; gap: 40px; }
+    .stats .grid { grid-template-columns: 1fr; gap: 50px; }
+    .ghost17 { font-size: 44vh; }
+    .card { flex: 0 0 78vw; }
+    .swatches { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .nav { padding: 16px 16px; grid-template-columns: 1fr auto; }
+    .nav .r { display: none; }
+    .panel { padding: 0 16px; }
+    .panel h1 { font-size: clamp(28px, 9vw, 50px); }
+    .panel .sub { font-size: 15px; }
+    .ghost17 { font-size: 40vw !important; }
+    .stats { padding: 60px 16px; }
+    .stats .grid { grid-template-columns: 1fr; gap: 24px; }
+    .stats .num { font-size: clamp(40px, 12vw, 70px); }
+    .offer { padding: 60px 16px; }
+    .offer-inner { grid-template-columns: 1fr; gap: 36px; }
+    .offer h2 { font-size: clamp(24px, 7vw, 40px); }
+    .offer .photo-box { min-height: 280px; }
+    footer { padding: 30px 16px; flex-direction: column; gap: 10px; font-size: 11px; }
+  }
+</style>>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#080808">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#080808"/>
+      <text x="600" y="640" font-family="Georgia, serif" font-size="640" fill="none" stroke="#C4A35A" stroke-width="3" text-anchor="middle">17</text>
+      <text x="600" y="280" font-family="Georgia, serif" font-size="58" fill="#F5F0E8" text-anchor="middle" letter-spacing="22">MERIDIANA</text>
+    </svg>
+  </template>
+
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+  <div class="prog"></div>
+
+  <nav class="nav">
+    <div class="links">
+      <a href="#scenes" data-cursor>Residenze</a>
+      <a href="#gallery" data-cursor>Portfolio</a>
+    </div>
+    <div class="mark">MERIDIANA</div>
+    <div class="right"><a href="#cta" data-cursor>Prenota una visita</a></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="photo"><div class="img" data-parallax="0.25"></div></div>
+    <div class="vign"></div>
+    <div class="ghost17" data-parallax="-0.12">17</div>
+    <div class="hero-content">
+      <div class="kick reveal">Residenze d'autore · dal 1971</div>
+      <h1>
+        <span class="line"><span class="reveal">Architettura</span></span>
+        <span class="line"><span class="reveal">che trattiene la <span class="scr">luce</span></span></span>
+      </h1>
+      <p class="sub reveal">Dimore progettate come sequenze. Ogni stanza un'inquadratura, ogni soglia un cambio di scena.</p>
+    </div>
+    <div class="scroll-cue"><span>Scorri</span><span class="ln"></span></div>
+  </section>
+
+  <!-- CINEMATIC SCENES -->
+  <div class="scenes" id="scenes">
+    <section class="scene left">
+      <div class="photo"><div class="img ph-a" data-parallax="0.2"></div><span class="ph-cap">foto · soggiorno doppia altezza</span></div>
+      <div class="vign"></div>
+      <div class="scene-text">
+        <div class="idx reveal">Scena 01 · La soglia</div>
+        <h2 class="reveal">Si entra dal <em>silenzio</em></h2>
+        <p class="reveal">Un volume cieco verso strada, completamente vetrato sul parco. La luce arriva da nord, costante, senza ombre dure. Il cemento è lasciato grezzo e accarezza il legno di rovere.</p>
+      </div>
+    </section>
+    <section class="scene right">
+      <div class="photo"><div class="img ph-b" data-parallax="0.2"></div><span class="ph-cap">foto · loggia sul parco</span></div>
+      <div class="vign"></div>
+      <div class="scene-text">
+        <div class="idx reveal">Scena 02 · La pausa</div>
+        <h2 class="reveal">L'acqua come <em>specchio</em></h2>
+        <p class="reveal">La piscina a sfioro continua la linea dell'orizzonte. Al tramonto la facciata si ribalta sull'acqua e la casa raddoppia, sospesa tra cielo e riflesso.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- COUNTERS -->
+  <section class="stats">
+    <div class="grid">
+      <div class="stat"><div class="num" data-count="1971">0</div><div class="lab">Anno di fondazione</div></div>
+      <div class="stat"><div class="num" data-count="38" data-suffix="">0</div><div class="lab">Residenze realizzate</div></div>
+      <div class="stat"><div class="num" data-count="14" data-suffix=" mesi">0</div><div class="lab">Tempo medio di cantiere</div></div>
+    </div>
+  </section>
+
+  <!-- HORIZONTAL GALLERY -->
+  <section class="gallery-wrap" id="gallery">
+    <div class="gallery-pin">
+      <div class="g-intro">
+        <div class="idx">Portfolio</div>
+        <h2>Tre opere,<br />tre paesaggi</h2>
+        <p>Trascina lo sguardo: ogni progetto è un frame della stessa pellicola. Scorri per attraversarli.</p>
+      </div>
+      <article class="card" data-cursor>
+        <div class="photo"><div class="img ph-a"></div></div>
+        <div class="meta"><div class="no">№ 01</div><h3>Casa Sull'Argine</h3><div class="loc">Mantova · 2024</div></div>
+      </article>
+      <article class="card" data-cursor>
+        <div class="photo"><div class="img ph-b"></div></div>
+        <div class="meta"><div class="no">№ 02</div><h3>Villa Controluce</h3><div class="loc">Como · 2023</div></div>
+      </article>
+      <article class="card" data-cursor>
+        <div class="photo"><div class="img ph-c"></div></div>
+        <div class="meta"><div class="no">№ 03</div><h3>Rifugio Meridiana</h3><div class="loc">Dolomiti · 2025</div></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- OFFER / SERVICE CARD -->
+  <section class="offer" id="offer">
+    <div class="offer-inner">
+      <div class="photo-box reveal"><div class="photo"><div class="img ph-c"></div><span class="ph-cap">foto · render residenza tipo</span></div></div>
+      <div>
+        <div class="lbl reveal">Il servizio</div>
+        <h2 class="reveal">Progetto su misura,<br />dalla terra al lume</h2>
+        <p class="desc reveal">Un unico studio segue tutto: rilievo del lotto, concept, esecutivo, direzione lavori e curatela degli interni. Un solo interlocutore, una sola visione.</p>
+        <ul>
+          <li class="reveal"><span>Concept e studio di fattibilità</span><span>incluso</span></li>
+          <li class="reveal"><span>Progetto esecutivo + DL</span><span>su preventivo</span></li>
+          <li class="reveal"><span>Interior e light design</span><span>opzionale</span></li>
+        </ul>
+        <a href="#cta" class="btn reveal" data-cursor>Richiedi un incontro</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <div class="photo"><div class="img" data-parallax="0.2"></div></div>
+    <div class="vign"></div>
+    <div class="cta-inner">
+      <div class="scr reveal">Costruiamo</div>
+      <h2 class="reveal">la vostra prossima scena</h2>
+      <p class="reveal">Raccontateci il luogo. Vi mostreremo come la luce vi abiterà.</p>
+      <a href="#" class="btn reveal" data-cursor>Prenota una visita allo studio</a>
+    </div>
+  </section>
+
+  <!-- PALETTE -->
+  <section class="palette">
+    <div class="head">
+      <h3>Palette</h3>
+      <span>Stile 17 · Cinematic Scroll</span>
+    </div>
+    <div class="swatches">
+      <div class="sw light-text" style="background:#080808">#080808</div>
+      <div class="sw dark-text" style="background:#F5F0E8">#F5F0E8</div>
+      <div class="sw dark-text" style="background:#C4A35A">#C4A35A</div>
+      <div class="sw light-text" style="background:#1A1A1A">#1A1A1A</div>
+      <div class="sw light-text" style="background:#0f0f0f;border:1px solid rgba(255,255,255,0.06)">white 6%</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="fmark">MERIDIANA</div>
+    <div class="fbar">
+      <a href="#" data-cursor>Studio</a>
+      <a href="#" data-cursor>Portfolio</a>
+      <a href="#" data-cursor>Pubblicazioni</a>
+      <a href="#" data-cursor>Contatti</a>
+    </div>
+    <div class="fcredit">© 2026 Meridiana · Residenze d'autore · <span class="chip">Generato con AI'm · Stile 17 Cinematic Scroll</span></div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script>
+  (function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    /* ---------- custom cursor ---------- */
+    var dot = document.querySelector(".cursor");
+    var ring = document.querySelector(".cursor-ring");
+    if (dot && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      var rx = 0, ry = 0, tx = 0, ty = 0;
+      window.addEventListener("mousemove", function (e) {
+        dot.style.left = e.clientX + "px"; dot.style.top = e.clientY + "px";
+        tx = e.clientX; ty = e.clientY;
+      });
+      (function loop() {
+        rx += (tx - rx) * 0.18; ry += (ty - ry) * 0.18;
+        ring.style.left = rx + "px"; ring.style.top = ry + "px";
+        requestAnimationFrame(loop);
+      })();
+      document.querySelectorAll("[data-cursor]").forEach(function (el) {
+        el.addEventListener("mouseenter", function () { ring.classList.add("grow"); });
+        el.addEventListener("mouseleave", function () { ring.classList.remove("grow"); });
+      });
+    }
+
+    /* ---------- Lenis smooth scroll ---------- */
+    var lenis = null;
+    if (window.Lenis && !reduce) {
+      lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+      function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+    }
+
+    if (!window.gsap) return;
+    gsap.registerPlugin(ScrollTrigger);
+    if (lenis) { lenis.on("scroll", ScrollTrigger.update); }
+
+    /* progress bar */
+    var prog = document.querySelector(".prog");
+    ScrollTrigger.create({
+      start: 0, end: "max",
+      onUpdate: function (self) { prog.style.width = (self.progress * 100) + "%"; }
+    });
+
+    /* hero entrance */
+    var heroTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    heroTl.to(".hero .kick.reveal", { opacity: 1, y: 0, duration: 0.9 }, 0.2)
+          .to(".hero h1 .reveal", { opacity: 1, y: 0, duration: 1.1, stagger: 0.16 }, 0.35)
+          .to(".hero .sub.reveal", { opacity: 1, y: 0, duration: 0.9 }, 0.9);
+
+    /* generic reveals on scroll */
+    gsap.utils.toArray(".reveal").forEach(function (el) {
+      if (el.closest(".hero")) return;
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: 1, ease: "power3.out",
+        scrollTrigger: { trigger: el, start: "top 86%" }
+      });
+    });
+
+    /* parallax + progressive zoom on photos */
+    gsap.utils.toArray("[data-parallax]").forEach(function (el) {
+      var amt = parseFloat(el.getAttribute("data-parallax"));
+      gsap.fromTo(el, { yPercent: -amt * 60, scale: 1.18 }, {
+        yPercent: amt * 60, scale: 1.0, ease: "none",
+        scrollTrigger: { trigger: el.closest("section") || el, start: "top bottom", end: "bottom top", scrub: true }
+      });
+    });
+    /* gallery card subtle zoom */
+    gsap.utils.toArray(".card .img").forEach(function (el) {
+      gsap.fromTo(el, { scale: 1.2 }, { scale: 1.0, ease: "none",
+        scrollTrigger: { trigger: ".gallery-wrap", start: "top bottom", end: "center top", scrub: true } });
+    });
+
+    /* counters */
+    gsap.utils.toArray("[data-count]").forEach(function (el) {
+      var end = parseFloat(el.getAttribute("data-count"));
+      var suffix = el.getAttribute("data-suffix") || "";
+      var obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: "top 85%", once: true,
+        onEnter: function () {
+          gsap.to(obj, { v: end, duration: 1.8, ease: "power2.out",
+            onUpdate: function () { el.textContent = Math.round(obj.v) + suffix; } });
+        }
+      });
+    });
+
+    /* horizontal gallery pin */
+    var pin = document.querySelector(".gallery-pin");
+    if (pin) {
+      var scrollLen = pin.scrollWidth - window.innerWidth;
+      gsap.to(pin, {
+        x: -scrollLen, ease: "none",
+        scrollTrigger: {
+          trigger: ".gallery-wrap", start: "top top",
+          end: function () { return "+=" + scrollLen; },
+          scrub: 1, pin: true, anticipatePin: 1, invalidateOnRefresh: true
+        }
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

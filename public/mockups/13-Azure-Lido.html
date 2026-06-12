@@ -1,0 +1,195 @@
+<!-- @dsCard group="Mockup 17" viewport="1440x900" name="13 — Azure Lido" subtitle="Cartolina split-screen anni 60. Schermo diviso a metà: mare fisso a sinistra, testo che scorre a destra. Demo: stabilimento balneare." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lido Miramare — Stile 13 Azure Lido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #FAF8F4;
+    --navy: #1A3A5C;
+    --gold: #A0782A;
+    --foam: rgba(255,255,255,0.6);
+    --sky: #F0F7FF;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "DM Sans", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--navy); font-family: var(--sans); font-weight: 300; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+
+  /* fixed left half — the sea, immobile */
+  .sea { position: fixed; top: 0; left: 0; width: 50%; height: 100vh; overflow: hidden; z-index: 1;
+    background:
+      linear-gradient(180deg, #cfe6f5 0%, #cfe6f5 38%, #2f6f9e 38%, #1a3a5c 100%); }
+  .sea .sun { position: absolute; top: 16%; left: 50%; transform: translateX(-50%); width: 130px; height: 130px; border-radius: 50%; background: radial-gradient(circle, #f6e6c4, #e9c987); box-shadow: 0 0 70px rgba(233,201,135,0.7); }
+  .sea .horizon { position: absolute; top: 38%; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.45); }
+  .sea .ripple { position: absolute; left: 0; right: 0; height: 2px; background: rgba(255,255,255,0.35); }
+  .sea .r1 { top: 50%; } .sea .r2 { top: 60%; opacity: 0.7; } .sea .r3 { top: 72%; opacity: 0.5; } .sea .r4 { top: 86%; opacity: 0.35; }
+  .sea .frameline { position: absolute; inset: 28px; border: 1px solid var(--foam); pointer-events: none; }
+  .sea .label { position: absolute; left: 44px; bottom: 46px; z-index: 3; color: #fff; }
+  .sea .label .lab { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; opacity: 0.85; }
+  .sea .label .name { font-family: var(--serif); font-weight: 300; font-size: 46px; line-height: 1; margin-top: 8px; }
+  .sea .bignum { position: absolute; top: 50%; right: 40px; transform: translateY(-50%); font-family: var(--serif); font-weight: 300; font-size: 30vh; line-height: 0.8; color: transparent; -webkit-text-stroke: 1px var(--foam); z-index: 2; }
+  .sea .vert { position: absolute; top: 44px; right: 40px; writing-mode: vertical-rl; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: #fff; opacity: 0.8; z-index: 3; }
+
+  /* the gutter — the two halves never touch */
+  .gutter { position: fixed; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--gold); z-index: 5; transform: translateX(-50%); }
+
+  /* right half — scrolls independently */
+  .content { margin-left: 50%; min-height: 100vh; padding: 0; position: relative; z-index: 4; background: var(--paper); }
+  .pad { padding: 64px clamp(40px, 6vw, 96px); }
+
+  .topbar { display: flex; justify-content: space-between; align-items: center; padding: 30px clamp(40px,6vw,96px); border-bottom: 1px solid rgba(26,58,92,0.14); }
+  .topbar .mk { font-family: var(--serif); font-size: 22px; letter-spacing: 0.04em; }
+  .topbar nav { display: flex; gap: 24px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .topbar nav a:hover { color: var(--gold); }
+
+  .intro { padding: 90px clamp(40px,6vw,96px) 70px; }
+  .intro .kick { font-size: 11px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--gold); }
+  .intro h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(44px, 6vw, 84px); line-height: 1.02; margin-top: 24px; letter-spacing: 0.005em; }
+  .intro h1 em { font-style: italic; color: var(--gold); }
+  .intro p { margin-top: 26px; max-width: 46ch; font-size: 16px; line-height: 1.95; color: rgba(26,58,92,0.82); }
+
+  .block { padding: 56px clamp(40px,6vw,96px); border-top: 1px solid rgba(26,58,92,0.14); }
+  .block .lab { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+  .block h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(32px, 4vw, 52px); line-height: 1.06; }
+
+  /* service / cabana card */
+  .card { background: var(--sky); border: 1px solid rgba(26,58,92,0.14); padding: 34px; margin-top: 8px; }
+  .card .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .card h3 { font-family: var(--serif); font-weight: 400; font-size: 34px; }
+  .card .pr { font-family: var(--serif); font-size: 26px; color: var(--gold); }
+  .card .pr small { font-size: 13px; color: rgba(26,58,92,0.6); font-family: var(--sans); }
+  .card p { margin-top: 14px; font-size: 14px; line-height: 1.8; color: rgba(26,58,92,0.78); max-width: 46ch; }
+  .card ul { list-style: none; margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .card ul li { font-size: 13px; letter-spacing: 0.02em; padding-left: 18px; position: relative; color: rgba(26,58,92,0.85); }
+  .card ul li::before { content: ""; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; border: 1px solid var(--gold); border-radius: 50%; }
+
+  .btn { display: inline-flex; align-items: center; gap: 12px; margin-top: 28px; padding: 15px 30px; background: var(--navy); color: #fff; border-radius: 999px; font-size: 13px; letter-spacing: 0.1em; transition: background .25s, transform .25s; }
+  .btn:hover { background: var(--gold); transform: translateY(-2px); }
+
+  /* palette */
+  .palette .swatches { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; margin-top: 24px; }
+  .palette .sw { display: flex; flex-direction: column; gap: 8px; }
+  .palette .sw .chip { height: 90px; border-radius: 4px; box-shadow: inset 0 0 0 1px rgba(26,58,92,0.1); }
+  .palette .sw span { font-size: 11px; color: rgba(26,58,92,0.7); }
+
+  footer { padding: 40px clamp(40px,6vw,96px); border-top: 1px solid rgba(26,58,92,0.14); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(26,58,92,0.6); }
+  footer .chip { color: var(--gold); }
+
+  @media (max-width: 480px) {
+    .nav { padding: 14px 14px; }
+    .nav .links { display: none; }
+    .sea { height: 45vh; }
+    .sea .bignum { font-size: 18vh; right: 10px; }
+    .content { padding: 30px 14px; }
+    .content h1 { font-size: clamp(24px, 7vw, 38px); }
+    .tagline { font-size: 12px; }
+    .card { padding: 20px 14px; }
+    .card h2 { font-size: 20px; }
+    .card ul { grid-template-columns: 1fr; }
+    .btn { padding: 12px 22px; font-size: 12px; margin-top: 20px; }
+    .palette .swatches { grid-template-columns: repeat(3,1fr); }
+    footer { flex-direction: column; gap: 6px; padding: 16px 14px; font-size: 11px; }
+  }
+  @media (max-width: 860px) {
+    .sea { position: relative; width: 100%; height: 56vh; }
+    .gutter { display: none; }
+    .content { margin-left: 0; }
+    .topbar nav { display: none; }
+    .sea .bignum { font-size: 24vh; }
+  }
+</style>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#1A3A5C">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="600" height="800" fill="#1A3A5C"/>
+      <rect x="0" y="0" width="600" height="300" fill="#cfe6f5"/>
+      <circle cx="300" cy="150" r="70" fill="#e9c987"/>
+      <rect x="600" width="600" height="800" fill="#FAF8F4"/>
+      <text x="560" y="560" font-family="Georgia, serif" font-size="360" fill="none" stroke="#ffffff" stroke-width="2" text-anchor="end">13</text>
+      <text x="660" y="420" font-family="Georgia, serif" font-size="80" fill="#1A3A5C">Lido</text>
+      <text x="660" y="500" font-family="Georgia, serif" font-size="80" fill="#A0782A">Miramare</text>
+    </svg>
+  </template>
+
+  <!-- LEFT: the sea, fixed -->
+  <div class="sea">
+    <div class="sun"></div>
+    <div class="horizon"></div>
+    <span class="ripple r1"></span><span class="ripple r2"></span><span class="ripple r3"></span><span class="ripple r4"></span>
+    <div class="bignum">13</div>
+    <div class="frameline"></div>
+    <div class="vert">Riviera · Cabina 13</div>
+    <div class="label"><div class="lab">Stabilimento balneare · dal 1962</div><div class="name">Lido Miramare</div></div>
+  </div>
+
+  <div class="gutter"></div>
+
+  <!-- RIGHT: scrolls -->
+  <main class="content">
+    <div class="topbar">
+      <div class="mk">Miramare</div>
+      <nav>
+        <a href="#">Spiaggia</a>
+        <a href="#">Cabine</a>
+        <a href="#">Bar</a>
+        <a href="#">Prenota</a>
+      </nav>
+    </div>
+
+    <section class="intro">
+      <p class="kick">Una finestra sul mare</p>
+      <h1>La giornata<br />comincia <em>quando<br />tocchi l'acqua</em></h1>
+      <p>Sabbia pettinata all'alba, ombrelloni color crema, un bar che serve granita di mandorla fino al tramonto. Da sessant'anni lo stesso ritmo: lento, salato, perfetto.</p>
+    </section>
+
+    <section class="block">
+      <div class="lab">Il posto</div>
+      <h2>Ottanta ombrelloni, due file dal bagnasciuga, niente di più.</h2>
+    </section>
+
+    <!-- SERVICE / CABANA CARD -->
+    <section class="block">
+      <div class="lab">Abbonamento stagionale</div>
+      <div class="card">
+        <div class="row">
+          <h3>Ombrellone prima fila</h3>
+          <div class="pr">1.450 €<small> / stagione</small></div>
+        </div>
+        <p>Postazione fissa con vista diretta sul mare, due lettini e una sdraio, accesso anticipato alle 7:30 e cabina riservata.</p>
+        <ul>
+          <li>2 lettini + 1 sdraio</li>
+          <li>Cabina riservata</li>
+          <li>Doccia calda</li>
+          <li>Parcheggio incluso</li>
+        </ul>
+        <a href="#" class="btn">Prenota la postazione →</a>
+      </div>
+    </section>
+
+    <!-- PALETTE -->
+    <section class="block palette">
+      <div class="lab">Palette · Stile 13</div>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#FAF8F4"></div><span>#FAF8F4</span></div>
+        <div class="sw"><div class="chip" style="background:#1A3A5C"></div><span>#1A3A5C</span></div>
+        <div class="sw"><div class="chip" style="background:#A0782A"></div><span>#A0782A</span></div>
+        <div class="sw"><div class="chip" style="background:rgba(255,255,255,0.6);background-color:#fff;border:1px dashed #A0782A"></div><span>white 60%</span></div>
+        <div class="sw"><div class="chip" style="background:#F0F7FF"></div><span>#F0F7FF</span></div>
+      </div>
+    </section>
+
+    <footer>
+      Lido Miramare · Lungomare degli Oleandri 13 · <span class="chip">Generato con AI'm · Stile 13 Azure Lido</span>
+    </footer>
+  </main>
+</body>
+</html>

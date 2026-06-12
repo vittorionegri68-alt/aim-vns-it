@@ -1,0 +1,281 @@
+<!-- @dsCard group="Stili" viewport="1440x900" name="15 — Risograph" subtitle="Stampa Risograph, texture sovrapposte, palette limitata, tono giocoso e artigianale. Ideale per: birrifici artigianali, caffetterie di quartiere, negozi vinili, mercati locali, brand indipendenti creativi, illustratori, piccole etichette musicali." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Birrificio Bruma — Stile 15 Risograph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #F1E9D6;
+    --paper-2: #EADFC6;
+    --ink: #1B1A17;
+    --pink: #F0408A;
+    --blue: #2336B8;
+    --purple: #6A2C8F;     /* sovrastampa pink+blue */
+    --disp: "Syne", system-ui, sans-serif;
+    --sans: "DM Sans", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  /* paper grain */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+
+  /* ---------- Nav ---------- */
+  nav.bar { display: flex; align-items: center; gap: 24px; padding: 22px 0 18px; position: relative; z-index: 2; }
+  nav.bar .brand { font-family: var(--disp); font-weight: 800; font-size: 24px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; }
+  nav.bar .brand .b { width: 22px; height: 22px; border-radius: 50%; background: var(--pink); box-shadow: 3px 3px 0 var(--blue); }
+  nav.bar .links { display: flex; gap: 8px; margin-left: 12px; }
+  nav.bar .links a { text-decoration: none; color: var(--ink); font-weight: 700; font-size: 14px; padding: 8px 14px; border-radius: 999px; }
+  nav.bar .links a:hover { background: var(--pink); color: var(--paper); }
+  nav.bar .pill { margin-left: auto; font-family: var(--disp); font-weight: 700; font-size: 14px; text-decoration: none; color: var(--paper); background: var(--blue); padding: 11px 22px; border-radius: 999px; box-shadow: 3px 3px 0 var(--pink); transition: transform .14s; }
+  nav.bar .pill:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--pink); }
+
+  /* ---------- Hero: press sheet ---------- */
+  .sheet-wrap { padding: 8px 0 60px; position: relative; z-index: 2; }
+  .sheet {
+    position: relative; border: 2px solid var(--ink); padding: 54px 48px 40px;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 31px, rgba(27,26,23,0.04) 31px 32px);
+    overflow: hidden;
+  }
+  /* crop marks */
+  .crop { position: absolute; width: 26px; height: 26px; z-index: 4; }
+  .crop::before, .crop::after { content: ""; position: absolute; background: var(--ink); }
+  .crop::before { width: 100%; height: 2px; top: 12px; }
+  .crop::after { height: 100%; width: 2px; left: 12px; }
+  .crop.tl { top: -14px; left: -14px; } .crop.tr { top: -14px; right: -14px; }
+  .crop.bl { bottom: -14px; left: -14px; } .crop.br { bottom: -14px; right: -14px; }
+  /* registration target */
+  .reg { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--ink); z-index: 4; }
+  .reg::before, .reg::after { content: ""; position: absolute; background: var(--ink); }
+  .reg::before { width: 36px; height: 1.5px; top: 50%; left: -6px; transform: translateY(-50%); }
+  .reg::after { height: 36px; width: 1.5px; left: 50%; top: -6px; transform: translateX(-50%); }
+
+  .sheet-top { display: flex; justify-content: space-between; font-family: var(--sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6a6457; font-weight: 700; }
+
+  .hero-stage { position: relative; padding: 18px 0 6px; text-align: center; }
+  .kicker { position: relative; z-index: 2; font-family: var(--disp); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; color: var(--blue); margin-bottom: 6px; }
+  .hero-stage h1 {
+    position: relative; z-index: 2; font-family: var(--disp); font-weight: 800;
+    font-size: clamp(48px, 7.6vw, 116px); line-height: 0.9; letter-spacing: -0.03em;
+    color: var(--blue); text-shadow: 5px 5px 0 var(--pink); text-transform: uppercase;
+  }
+  .numbox { position: relative; display: flex; align-items: center; justify-content: center; margin: 10px 0 0; }
+  .halftone {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 320px; height: 320px; border-radius: 50%; z-index: 0;
+    background-image: radial-gradient(var(--pink) 32%, transparent 33%);
+    background-size: 13px 13px; opacity: 0.7;
+  }
+  .bignum {
+    position: relative; z-index: 1; font-family: var(--disp); font-weight: 800;
+    font-size: clamp(150px, 24vw, 300px); line-height: 0.8; letter-spacing: -0.04em;
+    color: transparent;
+    background-image: radial-gradient(var(--purple) 38%, transparent 40%);
+    background-size: 14px 14px; -webkit-background-clip: text; background-clip: text;
+  }
+  .hero-sub { position: relative; z-index: 2; max-width: 44ch; margin: 58px auto 0; font-size: 17px; line-height: 1.55; color: #44403a; font-weight: 500; }
+  .hero-cta { position: relative; z-index: 2; display: flex; gap: 14px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+  .btn { font-family: var(--disp); font-weight: 700; font-size: 15px; text-decoration: none; padding: 14px 26px; border: 2px solid var(--ink); transition: transform .14s, box-shadow .14s; }
+  .btn.pink { background: var(--pink); color: var(--paper); box-shadow: 4px 4px 0 var(--ink); }
+  .btn.line { background: var(--paper); color: var(--ink); }
+  .btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+
+  /* ---------- Beers ---------- */
+  .beers { padding: 18px 0 70px; }
+  .sec-h { display: flex; align-items: baseline; gap: 14px; border-bottom: 2px solid var(--ink); padding-bottom: 12px; margin-bottom: 30px; }
+  .sec-h .tag { font-family: var(--disp); font-weight: 800; color: var(--pink); font-size: 18px; }
+  .sec-h h2 { font-family: var(--disp); font-weight: 800; font-size: clamp(26px,3vw,40px); letter-spacing: -0.02em; }
+  .sec-h .r { margin-left: auto; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: #6a6457; }
+  .beer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .beer { border: 2px solid var(--ink); background: var(--paper-2); padding: 0; overflow: hidden; transition: transform .16s; }
+  .beer:hover { transform: translateY(-5px); }
+  .beer .label { height: 168px; position: relative; border-bottom: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .beer .label .dotfill { position: absolute; inset: 0; background-size: 11px 11px; }
+  .beer .label .nm { position: relative; z-index: 2; font-family: var(--disp); font-weight: 800; font-size: 40px; color: var(--paper); text-shadow: 2px 2px 0 var(--ink); }
+  .beer .body { padding: 18px 18px 20px; }
+  .beer .body .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .beer .body h3 { font-family: var(--disp); font-weight: 700; font-size: 21px; }
+  .beer .body .abv { font-weight: 700; color: var(--blue); font-size: 14px; }
+  .beer .body p { margin-top: 8px; font-size: 14px; line-height: 1.5; color: #504b43; }
+
+  /* ---------- Strip ---------- */
+  .strip { background: var(--blue); color: var(--paper); overflow: hidden; white-space: nowrap; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+  .strip .t { display: inline-block; padding: 12px 0; font-family: var(--disp); font-weight: 800; font-size: 17px; letter-spacing: 0.02em; animation: roll 20s linear infinite; }
+  .strip .t span { padding: 0 22px; }
+  .strip .t span::before { content: "✺ "; color: var(--pink); }
+  @keyframes roll { to { transform: translateX(-50%); } }
+
+  /* ---------- Story ---------- */
+  .story { padding: 70px 0; text-align: center; }
+  .story .lead { font-family: var(--disp); font-weight: 700; font-size: clamp(26px,3.6vw,46px); line-height: 1.12; max-width: 18ch; margin: 0 auto; letter-spacing: -0.02em; }
+  .story .lead em { font-style: normal; color: var(--pink); }
+  .story p { max-width: 50ch; margin: 22px auto 0; font-size: 16px; line-height: 1.6; color: #504b43; }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 2px solid var(--ink); padding: 50px 0 30px; }
+  .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 24px; }
+  .foot-grid h3 { font-family: var(--disp); font-weight: 800; font-size: 40px; letter-spacing: -0.02em; }
+  .foot-grid h3 span { color: var(--pink); }
+  .foot-grid .ls { margin-top: 10px; color: #504b43; max-width: 26ch; line-height: 1.5; }
+  .fc h4 { font-family: var(--disp); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; }
+  .fc a, .fc p { display: block; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.9; }
+  .fc a:hover { color: var(--pink); }
+  .foot-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--ink); font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: #6a6457; }
+  .foot-bar .chip { color: var(--blue); }
+
+  @media (max-width: 900px) {
+    .beer-grid { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; }
+    nav.bar .links { display: none; }
+    .halftone { width: 320px; height: 320px; }
+  }
+
+  @media (max-width: 480px) {
+    nav.bar { padding: 12px 14px; }
+    nav.bar .links { display: none; }
+    .hero { padding: 70px 14px 40px; }
+    .hero h1 { font-size: clamp(30px, 10vw, 56px); }
+    .hero .numbox { width: 100px; height: 100px; }
+    .hero .bignum { font-size: 70px; }
+    .hero-sub { font-size: 14px; }
+    .intro { padding: 30px 14px; }
+    .intro p { font-size: 14px; }
+    .beers { padding: 30px 14px 40px; }
+    .beer-grid { gap: 14px; }
+    .beer { padding: 36px 28px 24px; }
+    .foot-grid { grid-template-columns: 1fr; padding: 30px 14px; }
+    .bot { padding: 14px; flex-direction: column; gap: 6px; font-size: 10px; }
+  }
+</style>>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#F1E9D6">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#F1E9D6"/>
+      <circle cx="600" cy="400" r="240" fill="#F0408A" opacity="0.85"/>
+      <text x="610" y="560" font-family="Arial, sans-serif" font-weight="800" font-size="420" fill="#6A2C8F" text-anchor="middle" letter-spacing="-20">15</text>
+      <text x="600" y="300" font-family="Arial, sans-serif" font-weight="800" font-size="120" fill="#2336B8" text-anchor="middle">BRUMA</text>
+    </svg>
+  </template>
+
+  <div class="wrap">
+    <nav class="bar">
+      <span class="brand"><span class="b"></span>BRUMA</span>
+      <div class="links">
+        <a href="#birre">Birre</a>
+        <a href="#storia">Storia</a>
+        <a href="#dove">Taproom</a>
+      </div>
+      <a class="pill" href="#dove">Vieni a bere →</a>
+    </nav>
+  </div>
+
+  <div class="wrap sheet-wrap">
+    <div class="sheet">
+      <span class="crop tl"></span><span class="crop tr"></span>
+      <span class="crop bl"></span><span class="crop br"></span>
+      <span class="reg"></span>
+      <div class="sheet-top">
+        <span>Birrificio Bruma · Stampa n.05</span>
+        <span>Fucsia / Blu · 2 colori</span>
+      </div>
+      <div class="hero-stage">
+        <span class="halftone"></span>
+        <p class="kicker">Birra cruda, non filtrata, dal 2016</p>
+        <h1>Schiuma<br />onesta</h1>
+        <div class="numbox"><span class="halftone"></span><div class="bignum">15</div></div>
+        <p class="hero-sub">Un piccolo birrificio di paese. Cotte limitate, ingredienti veri e nessuna scorciatoia. La beviamo prima noi.</p>
+        <div class="hero-cta">
+          <a class="btn pink" href="#birre">Le nostre birre</a>
+          <a class="btn line" href="#dove">Trova la taproom</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap beers" id="birre">
+    <div class="sec-h">
+      <span class="tag">✺</span>
+      <h2>Sei cotte fisse</h2>
+      <span class="r">Piu' le stagionali</span>
+    </div>
+    <div class="beer-grid">
+      <div class="beer">
+        <div class="label"><span class="dotfill" style="background-image:radial-gradient(#F0408A 36%, transparent 38%);"></span><span class="nm">Nebbia</span></div>
+        <div class="body">
+          <div class="row"><h3>Pilsner</h3><span class="abv">4.8%</span></div>
+          <p>Secca e pulita, luppolo erbaceo. La birra di tutti i giorni.</p>
+        </div>
+      </div>
+      <div class="beer">
+        <div class="label"><span class="dotfill" style="background-image:radial-gradient(#2336B8 36%, transparent 38%);"></span><span class="nm">Rovo</span></div>
+        <div class="body">
+          <div class="row"><h3>Stout</h3><span class="abv">6.2%</span></div>
+          <p>Caffe' e cioccolato fondente, corpo pieno. Per le sere fredde.</p>
+        </div>
+      </div>
+      <div class="beer">
+        <div class="label"><span class="dotfill" style="background-image:radial-gradient(#6A2C8F 36%, transparent 38%);"></span><span class="nm">Lampo</span></div>
+        <div class="body">
+          <div class="row"><h3>IPA</h3><span class="abv">6.5%</span></div>
+          <p>Agrumi e resina, amaro deciso. La piu' richiesta al banco.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="t">
+      <span>NON FILTRATA</span><span>NON PASTORIZZATA</span><span>COTTE DA 800 LITRI</span><span>MALTO ITALIANO</span>
+      <span>NON FILTRATA</span><span>NON PASTORIZZATA</span><span>COTTE DA 800 LITRI</span><span>MALTO ITALIANO</span>
+    </div>
+  </div>
+
+  <div class="wrap story" id="storia">
+    <p class="lead">Stampiamo etichette come <em>manifesti</em> e facciamo birra come si stampa.</p>
+    <p>Bruma nasce in un garage con un impianto da 200 litri. Oggi siamo in tre, l'impianto e' cresciuto ma il metodo no: poche cotte, fatte bene, raccontate con un'etichetta diversa ogni volta.</p>
+  </div>
+
+  <footer id="dove">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <h3>Bevi alla<br />font<span>e</span></h3>
+          <p class="ls">Taproom aperta giovedi', venerdi' e sabato dalle 18. Si riempiono le growler.</p>
+        </div>
+        <div class="fc">
+          <h4>Dove</h4>
+          <p>Via del Mulino 12</p>
+          <p>Reggio Emilia</p>
+          <a href="#">ciao@bruma.beer</a>
+        </div>
+        <div class="fc">
+          <h4>Seguici</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Untappd</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="foot-bar">
+        <span>© 2026 Birrificio Bruma</span>
+        <span class="chip">Generato con AI'm · Stile 15 Risograph</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

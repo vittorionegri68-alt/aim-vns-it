@@ -1,0 +1,269 @@
+<!-- @dsCard group="Stili" viewport="1440x900" name="03 — Brutalista" subtitle="Terminale a celle bordate, mono, verde acido, numero come blocco strutturale. Demo: web studio, studi creativi, agenzie digitali, fotografi di moda, brand streetwear." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kernel — Stile 03 Brutalista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #F3F3EE;
+    --ink: #0B0B0B;
+    --acid: #CDF60A;
+    --acid-deep: #A6C700;
+    --grot: "Space Grotesk", system-ui, sans-serif;
+    --mono: "Space Mono", ui-monospace, monospace;
+    --bw: 2.5px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--grot); -webkit-font-smoothing: antialiased;
+  }
+  .frame { border-left: var(--bw) solid var(--ink); border-right: var(--bw) solid var(--ink); max-width: 1340px; margin: 0 auto; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    display: flex; align-items: stretch; border-bottom: var(--bw) solid var(--ink);
+    border-top: var(--bw) solid var(--ink); font-family: var(--mono);
+  }
+  .topbar .brand {
+    display: flex; align-items: center; gap: 10px; padding: 14px 20px;
+    font-weight: 700; font-size: 17px; letter-spacing: -0.02em;
+    border-right: var(--bw) solid var(--ink);
+  }
+  .blink { width: 12px; height: 12px; background: var(--acid); border: 2px solid var(--ink); animation: blink 1.1s steps(1) infinite; }
+  @keyframes blink { 50% { background: var(--bg); } }
+  .topbar nav { display: flex; margin-left: auto; }
+  .topbar nav a {
+    display: flex; align-items: center; padding: 0 22px; text-decoration: none;
+    color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
+    border-left: var(--bw) solid var(--ink); text-transform: uppercase;
+  }
+  .topbar nav a:hover { background: var(--acid); }
+  .topbar nav a.cta { background: var(--ink); color: var(--acid); }
+  .topbar nav a.cta:hover { background: var(--acid); color: var(--ink); }
+
+  /* ---------- Hero terminal grid ---------- */
+  .hero { display: grid; grid-template-columns: 1.15fr 1fr 1fr; border-bottom: var(--bw) solid var(--ink); }
+  .cell { border-right: var(--bw) solid var(--ink); padding: 22px; position: relative; }
+  .cell:last-child { border-right: none; }
+  .cell .tl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #555; }
+
+  .cell-num {
+    grid-row: span 2; display: flex; flex-direction: column; justify-content: space-between;
+    background: var(--ink); color: var(--bg); padding: 22px;
+    border-right: var(--bw) solid var(--ink);
+  }
+  .cell-num .tl { color: var(--acid); }
+  .bignum {
+    font-family: var(--grot); font-weight: 700; font-size: 300px; line-height: 0.74;
+    letter-spacing: -0.05em; color: var(--acid); margin: 8px 0;
+  }
+  .cell-num .meta { font-family: var(--mono); font-size: 12px; line-height: 1.7; color: #C9C9C9; }
+  .cell-num .meta b { color: var(--bg); }
+
+  .cell-head { display: flex; flex-direction: column; gap: 14px; }
+  .cell-head h1 {
+    font-weight: 700; font-size: clamp(34px, 3.6vw, 58px); line-height: 0.92;
+    letter-spacing: -0.03em; text-transform: uppercase;
+  }
+  .cell-head h1 .hl { background: var(--acid); padding: 0 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .cell-desc { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+  .cell-desc p { font-size: 15px; line-height: 1.55; max-width: 34ch; }
+  .ascii { font-family: var(--mono); font-size: 12px; line-height: 1.25; color: var(--acid-deep); white-space: pre; }
+
+  .cell-cta { background: var(--acid); display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+  .cell-cta .big { font-weight: 700; font-size: 22px; line-height: 1.05; letter-spacing: -0.02em; }
+  .btn-block {
+    display: inline-flex; align-items: center; gap: 10px; align-self: flex-start;
+    background: var(--ink); color: var(--acid); font-family: var(--mono); font-weight: 700;
+    font-size: 13px; padding: 13px 18px; text-decoration: none; border: var(--bw) solid var(--ink);
+  }
+  .btn-block:hover { background: var(--bg); color: var(--ink); }
+
+  /* stats row */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: var(--bw) solid var(--ink); }
+  .stat { border-right: var(--bw) solid var(--ink); padding: 18px 22px; }
+  .stat:last-child { border-right: none; }
+  .stat .n { font-weight: 700; font-size: 40px; letter-spacing: -0.03em; }
+  .stat .l { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #555; margin-top: 2px; }
+
+  /* ---------- Marquee ---------- */
+  .marquee { background: var(--ink); color: var(--acid); overflow: hidden; border-bottom: var(--bw) solid var(--ink); white-space: nowrap; }
+  .marquee .track { display: inline-block; padding: 14px 0; font-family: var(--mono); font-weight: 700; font-size: 15px; letter-spacing: 0.04em; animation: scroll 22s linear infinite; }
+  .marquee .track span { padding: 0 26px; }
+  .marquee .track span::before { content: "◆ "; color: var(--bg); }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- Services table ---------- */
+  .svc-head { display: flex; align-items: baseline; gap: 16px; padding: 24px 22px; border-bottom: var(--bw) solid var(--ink); font-family: var(--mono); }
+  .svc-head .idx { font-weight: 700; }
+  .svc-head h2 { font-family: var(--grot); font-weight: 700; font-size: 24px; text-transform: uppercase; letter-spacing: -0.02em; }
+  .svc-head .r { margin-left: auto; font-size: 12px; color: #555; }
+  .svc { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: var(--bw) solid var(--ink); }
+  .svc .item { border-right: var(--bw) solid var(--ink); padding: 24px 22px; min-height: 200px; display: flex; flex-direction: column; transition: background .14s; }
+  .svc .item:last-child { border-right: none; }
+  .svc .item:hover { background: var(--acid); }
+  .svc .item .no { font-family: var(--mono); font-size: 12px; font-weight: 700; }
+  .svc .item h3 { font-weight: 700; font-size: 26px; letter-spacing: -0.02em; margin-top: 8px; }
+  .svc .item p { font-size: 14px; line-height: 1.5; color: #333; margin-top: auto; }
+
+  /* ---------- Footer ---------- */
+  .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; border-bottom: var(--bw) solid var(--ink); }
+  .foot .fc { border-right: var(--bw) solid var(--ink); padding: 30px 22px; }
+  .foot .fc:last-child { border-right: none; }
+  .foot .fc h3 { font-weight: 700; font-size: 34px; line-height: 0.95; text-transform: uppercase; letter-spacing: -0.03em; }
+  .foot .fc .em { font-family: var(--mono); margin-top: 16px; font-size: 14px; }
+  .foot .fc h4 { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 12px; }
+  .foot .fc a, .foot .fc p { display: block; color: var(--ink); text-decoration: none; font-size: 15px; line-height: 1.9; }
+  .foot .fc a:hover { background: var(--acid); }
+  .botbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 22px; border-bottom: var(--bw) solid var(--ink); font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .botbar b { background: var(--ink); color: var(--acid); padding: 2px 8px; }
+
+  @media (max-width: 980px) {
+    .hero { grid-template-columns: 1fr; }
+    .cell, .cell-num { border-right: none; border-bottom: var(--bw) solid var(--ink); }
+    .cell-num { grid-row: auto; }
+    .bignum { font-size: 200px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .svc { grid-template-columns: 1fr; }
+    .svc .item { border-right: none; border-bottom: var(--bw) solid var(--ink); }
+    .foot { grid-template-columns: 1fr; }
+    .foot .fc { border-right: none; border-bottom: var(--bw) solid var(--ink); }
+  }
+  @media (max-width: 480px) {
+    .frame { border-left: none; border-right: none; }
+    .bignum { font-size: clamp(80px, 28vw, 140px); }
+    .cell-head h1 { font-size: clamp(28px, 9vw, 48px); }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat .n { font-size: 28px; }
+    .svc-head { flex-wrap: wrap; gap: 6px; padding: 16px 14px; }
+    .svc-head h2 { font-size: 18px; }
+    .svc .item { padding: 18px 14px; min-height: auto; }
+    .svc .item h3 { font-size: 20px; }
+    .foot .fc { padding: 20px 14px; }
+    .foot .fc h3 { font-size: 22px; }
+    .botbar { flex-direction: column; gap: 6px; padding: 12px 14px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#0B0B0B">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#0B0B0B"/>
+      <rect x="120" y="150" width="500" height="500" fill="none" stroke="#CDF60A" stroke-width="10"/>
+      <text x="370" y="520" font-family="Arial, sans-serif" font-weight="700" font-size="360" fill="#CDF60A" text-anchor="middle" letter-spacing="-18">02</text>
+      <rect x="680" y="150" width="400" height="240" fill="none" stroke="#CDF60A" stroke-width="10"/>
+      <rect x="680" y="410" width="400" height="240" fill="#CDF60A"/>
+    </svg>
+  </template>
+  <div class="frame">
+    <div class="topbar">
+      <div class="brand"><span class="blink"></span>KERNEL.STUDIO</div>
+      <nav>
+        <a href="#lavoro">Lavoro</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#studio">Studio</a>
+        <a href="#contatti" class="cta">Preventivo →</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="cell-num">
+        <span class="tl">// stile</span>
+        <div class="bignum">03</div>
+        <div class="meta">SISTEMA: <b>BRUTALISTA</b><br />GRID: 4COL / NO-RADIUS<br />BUILD: <b>REACT + VITE</b></div>
+      </div>
+      <div class="cell cell-head">
+        <span class="tl">// hero</span>
+        <h1>Siti che <span class="hl">non chiedono</span> scusa</h1>
+        <div class="ascii">┌───────────────┐
+│  ⌁ 100/100    │
+│  PAGESPEED    │
+└───────────────┘</div>
+      </div>
+      <div class="cell cell-cta">
+        <span class="tl" style="color:#3a4400">// azione</span>
+        <div class="big">Costruiamo siti veloci, indicizzati e onesti.</div>
+        <a class="btn-block" href="#contatti">INIZIA UN PROGETTO</a>
+      </div>
+      <div class="cell cell-desc">
+        <span class="tl">// manifesto</span>
+        <p>Niente template gonfi. Codice essenziale, ottimizzato GEO e AEO, pronto a farsi trovare dai motori e dalle AI. La struttura e' a vista, come deve essere.</p>
+        <div class="ascii">$ npm run build --prod</div>
+      </div>
+      <div class="cell cell-cta" style="background:var(--bg)">
+        <span class="tl">// proof</span>
+        <div class="big" style="font-family:var(--mono);font-size:15px;line-height:1.6;">Tempo medio di consegna<br />→ 14 giorni<br />Core Web Vitals<br />→ tutto verde</div>
+        <a class="btn-block" href="#lavoro" style="background:var(--bg);color:var(--ink)">VEDI I CASI ↗</a>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stat"><div class="n">100</div><div class="l">Lighthouse</div></div>
+      <div class="stat"><div class="n">0.4s</div><div class="l">Time to interactive</div></div>
+      <div class="stat"><div class="n">x3</div><div class="l">Lead organici</div></div>
+      <div class="stat"><div class="n">48</div><div class="l">Imprese servite</div></div>
+    </div>
+
+    <div class="marquee">
+      <div class="track">
+        <span>REACT</span><span>VITE</span><span>GEO</span><span>AEO</span><span>SEO</span><span>SCHEMA.ORG</span><span>EDGE</span><span>A11Y</span>
+        <span>REACT</span><span>VITE</span><span>GEO</span><span>AEO</span><span>SEO</span><span>SCHEMA.ORG</span><span>EDGE</span><span>A11Y</span>
+      </div>
+    </div>
+
+    <section id="servizi">
+      <div class="svc-head">
+        <span class="idx">[ 03.1 ]</span>
+        <h2>Cosa facciamo</h2>
+        <span class="r">// tre moduli, zero fronzoli</span>
+      </div>
+      <div class="svc">
+        <div class="item">
+          <span class="no">01 //</span>
+          <h3>Siti React/Vite</h3>
+          <p>Single build, statici dove serve, dinamici dove conta. Niente plugin che rallentano.</p>
+        </div>
+        <div class="item">
+          <span class="no">02 //</span>
+          <h3>GEO + AEO</h3>
+          <p>Markup semantico e structured data perche' Google e le AI capiscano chi sei.</p>
+        </div>
+        <div class="item">
+          <span class="no">03 //</span>
+          <h3>Manutenzione</h3>
+          <p>Monitoraggio Core Web Vitals e aggiornamenti, a canone fisso e trasparente.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contatti" class="foot">
+      <div class="fc">
+        <h3>Hai un'idea?<br />Compiliamola.</h3>
+        <p class="em">ciao@kernel.studio</p>
+      </div>
+      <div class="fc">
+        <h4>// indirizzo</h4>
+        <p>Via Ventura 5</p>
+        <p>Milano, IT</p>
+      </div>
+      <div class="fc">
+        <h4>// canali</h4>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Telegram</a>
+      </div>
+    </footer>
+    <div class="botbar">
+      <span>© 2026 Kernel Studio</span>
+      <span>Generato con AI'm · Stile <b>03 BRUTALISTA</b></span>
+    </div>
+  </div>
+</body>
+</html>

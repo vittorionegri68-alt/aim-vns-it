@@ -1,0 +1,256 @@
+<!-- @dsCard group="Mockup 17" viewport="1440x900" name="09 — Digital Nomad Friendly" subtitle="Terminale hacker. Sfondo scuro, monospace verde, badge come tag di sistema, barra disponibilità, CTA come comando. Demo: co-living workation." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nodo — Stile 09 Digital Nomad Friendly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0d141f;
+    --panel: #1F2937;
+    --line: #2b3849;
+    --slate: #F9FAFB;
+    --blue: #3B82F6;
+    --green: #10B981;
+    --sky: #EFF6FF;
+    --sans: "DM Sans", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--slate); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: var(--mono); }
+
+  .layout { display: grid; grid-template-columns: 1fr 340px; min-height: 100vh; }
+  .main { border-right: 1px solid var(--line); }
+
+  /* terminal top bar */
+  .tbar { display: flex; align-items: center; gap: 10px; padding: 12px 22px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12px; color: #7b8aa0; }
+  .tbar .dots { display: flex; gap: 7px; margin-right: 12px; }
+  .tbar .dots i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+  .tbar .dots i:nth-child(1){ background:#ff5f57; } .tbar .dots i:nth-child(2){ background:#febc2e; } .tbar .dots i:nth-child(3){ background:#28c840; }
+  .tbar .path { color: var(--green); }
+  .tbar .spacer { flex: 1; }
+
+  .pad { padding: 56px 48px; }
+
+  /* hero */
+  .hero .line { font-family: var(--mono); font-size: 14px; color: var(--green); margin-bottom: 10px; }
+  .hero .line .c { color: #5b6b80; }
+  .hero h1 { font-size: clamp(40px, 6vw, 86px); font-weight: 700; line-height: 1.0; letter-spacing: -0.02em; margin: 16px 0; }
+  .hero h1 .green { color: var(--green); }
+  .hero h1 .blue { color: var(--blue); }
+  .hero p { font-size: 17px; line-height: 1.7; color: #b6c2d4; max-width: 52ch; }
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .tag { font-family: var(--mono); font-size: 12px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 6px; color: #9fb0c6; }
+  .tag b { color: var(--green); font-weight: 500; }
+  .tag.blue b { color: var(--blue); }
+
+  /* command CTA */
+  .cmd { margin-top: 32px; display: inline-flex; align-items: center; gap: 12px; background: #0a1018; border: 1px solid var(--green); border-radius: 8px; padding: 16px 22px; font-family: var(--mono); font-size: 15px; cursor: pointer; transition: background .2s, box-shadow .2s; }
+  .cmd .p { color: var(--green); } .cmd .t { color: var(--slate); }
+  .cmd .cur { width: 9px; height: 18px; background: var(--green); animation: bk 1s steps(1) infinite; }
+  @keyframes bk { 50% { opacity: 0; } }
+  .cmd:hover { background: #0e1622; box-shadow: 0 0 0 4px rgba(16,185,129,0.12); }
+
+  /* huge id number */
+  .idblock { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 30px; display: flex; align-items: flex-end; justify-content: space-between; }
+  .idblock .n { font-family: var(--mono); font-weight: 700; font-size: clamp(90px, 16vw, 220px); line-height: 0.8; color: transparent; -webkit-text-stroke: 1.5px var(--blue); }
+  .idblock .meta { font-family: var(--mono); font-size: 12px; color: #7b8aa0; text-align: right; }
+  .idblock .meta b { color: var(--green); display: block; font-weight: 500; }
+
+  /* unit / service card */
+  .unit { margin-top: 56px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .unit .uhead { display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12px; }
+  .unit .uhead .ok { color: var(--green); display: inline-flex; align-items: center; gap: 7px; }
+  .unit .uhead .ok::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
+  .unit .ubody { display: grid; grid-template-columns: 1fr 1fr; }
+  .unit .pic { background: linear-gradient(140deg, #24344a, #16202e); position: relative; min-height: 240px; }
+  .unit .pic::after { content: "// foto · stanza + zona lavoro"; position: absolute; left: 16px; bottom: 14px; font-family: var(--mono); font-size: 11px; color: #6b7c93; }
+  .unit .pic .grid-ov { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 28px 28px; opacity: 0.4; }
+  .unit .uinfo { padding: 28px; }
+  .unit .uinfo h3 { font-size: 26px; font-weight: 700; }
+  .unit .uinfo .specs { font-family: var(--mono); font-size: 13px; margin-top: 18px; }
+  .unit .uinfo .specs div { display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--line); color: #9fb0c6; }
+  .unit .uinfo .specs div b { color: var(--slate); font-weight: 500; }
+  .unit .uinfo .price { margin-top: 18px; font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--green); }
+  .unit .uinfo .price small { color: #7b8aa0; font-size: 13px; font-weight: 400; }
+
+  /* palette */
+  .palette { margin-top: 56px; }
+  .palette .h { font-family: var(--mono); font-size: 12px; color: #7b8aa0; margin-bottom: 14px; }
+  .swatches { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; }
+  .sw { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+  .sw .chip { height: 50px; border-radius: 5px; margin-bottom: 10px; }
+  .sw .hex { font-family: var(--mono); font-size: 11px; color: #9fb0c6; }
+
+  /* sidebar — live availability */
+  .side { position: sticky; top: 0; align-self: start; height: 100vh; padding: 22px; display: flex; flex-direction: column; gap: 16px; overflow: auto; }
+  .side .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .side .card .t { font-family: var(--mono); font-size: 11px; color: #7b8aa0; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
+  .side .avail .room { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 13px; }
+  .side .avail .room:first-of-type { border-top: none; }
+  .side .avail .st { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; }
+  .side .avail .st.free { color: var(--green); } .side .avail .st.busy { color: #7b8aa0; }
+  .side .avail .st .d { width: 8px; height: 8px; border-radius: 50%; }
+  .side .avail .st.free .d { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .side .avail .st.busy .d { background: #4b5a70; }
+  .side .net { font-family: var(--mono); font-size: 12px; color: #9fb0c6; }
+  .side .net div { display: flex; justify-content: space-between; padding: 7px 0; }
+  .side .net div b { color: var(--green); font-weight: 500; }
+  .side .ping { display: flex; align-items: baseline; gap: 8px; }
+  .side .ping .big { font-family: var(--mono); font-size: 40px; font-weight: 700; color: var(--blue); }
+  .side .logo { font-family: var(--mono); font-weight: 700; font-size: 18px; color: var(--slate); display: flex; align-items: center; gap: 8px; }
+  .side .logo .d { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
+
+  footer { border-top: 1px solid var(--line); padding: 22px 48px; font-family: var(--mono); font-size: 12px; color: #6b7c93; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  footer .chip { color: var(--green); }
+
+  @media (max-width: 480px) {
+    .tbar { padding: 8px 14px; font-size: 10px; }
+    .tbar .dots { display: none; }
+    .pad { padding: 28px 14px; }
+    .hero h1 { font-size: clamp(28px, 9vw, 48px); }
+    .hero-sub { font-size: 14px; }
+    .cmd { padding: 12px 14px; font-size: 13px; }
+    .unit .ubody { grid-template-columns: 1fr; }
+    .side { padding: 20px 14px; }
+    .side .ping .big { font-size: 40px; }
+    .swatches { grid-template-columns: repeat(3,1fr); }
+    footer { padding: 16px 14px; flex-direction: column; gap: 6px; }
+  }
+  @media (max-width: 980px) {
+    .layout { grid-template-columns: 1fr; }
+    .main { border-right: none; }
+    .side { position: static; height: auto; border-top: 1px solid var(--line); }
+    .pad { padding: 40px 24px; }
+    .unit .ubody { grid-template-columns: 1fr; }
+    .swatches { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#0d141f">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#0d141f"/>
+      <text x="80" y="600" font-family="monospace" font-weight="700" font-size="560" fill="none" stroke="#3B82F6" stroke-width="4">09</text>
+      <text x="80" y="220" font-family="monospace" font-weight="700" font-size="90" fill="#10B981">~/nodo</text>
+      <text x="80" y="300" font-family="monospace" font-size="34" fill="#9fb0c6">$ co-living for nomads</text>
+    </svg>
+  </template>
+
+  <div class="layout">
+    <!-- MAIN -->
+    <div class="main">
+      <div class="tbar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span class="path">~/nodo</span>
+        <span>— bash — 80×24</span>
+        <span class="spacer"></span>
+        <span>uptime 312d</span>
+      </div>
+
+      <div class="pad">
+        <!-- HERO -->
+        <section class="hero">
+          <div class="line"><span class="c">$</span> whoami</div>
+          <h1>Lavora da <span class="green">ovunque</span>,<br />vivi in un <span class="blue">nodo</span>.</h1>
+          <p>Co-living per chi programma, scrive e progetta da remoto. Fibra simmetrica, scrivanie regolabili, una community che capisce cosa vuol dire un deploy alle 23.</p>
+          <div class="tags">
+            <span class="tag">net: <b>1 Gbps ↑↓</b></span>
+            <span class="tag blue">desk: <b>ergonomica</b></span>
+            <span class="tag">meeting_room: <b>2</b></span>
+            <span class="tag">coffee: <b>illimitato</b></span>
+          </div>
+          <div class="cmd"><span class="p">&gt;</span> <span class="t">book --room loft-09 --from 12giu</span><span class="cur"></span></div>
+        </section>
+
+        <!-- ID NUMBER -->
+        <div class="idblock">
+          <div class="n">09</div>
+          <div class="meta">STYLE_ID<b>digital nomad</b>build · stable</div>
+        </div>
+
+        <!-- UNIT CARD -->
+        <section class="unit">
+          <div class="uhead">
+            <span>// unit · loft-09</span>
+            <span class="ok">disponibile ora</span>
+          </div>
+          <div class="ubody">
+            <div class="pic"><div class="grid-ov"></div></div>
+            <div class="uinfo">
+              <h3>Loft con postazione</h3>
+              <div class="specs">
+                <div><span>superficie</span><b>26 mq</b></div>
+                <div><span>scrivania</span><b>sit-stand 140cm</b></div>
+                <div><span>banda dedicata</span><b>500 Mbps</b></div>
+                <div><span>soggiorno minimo</span><b>7 notti</b></div>
+              </div>
+              <div class="price">€ 820 <small>/ mese · all-inclusive</small></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PALETTE -->
+        <section class="palette">
+          <div class="h">// palette --style 09</div>
+          <div class="swatches">
+            <div class="sw"><div class="chip" style="background:#F9FAFB"></div><span class="hex">#F9FAFB</span></div>
+            <div class="sw"><div class="chip" style="background:#1F2937"></div><span class="hex">#1F2937</span></div>
+            <div class="sw"><div class="chip" style="background:#3B82F6"></div><span class="hex">#3B82F6</span></div>
+            <div class="sw"><div class="chip" style="background:#10B981"></div><span class="hex">#10B981</span></div>
+            <div class="sw"><div class="chip" style="background:#EFF6FF"></div><span class="hex">#EFF6FF</span></div>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <span>nodo · co-living &amp; workation · v9.0</span>
+        <span class="chip">Generato con AI'm · Stile 09 Digital Nomad</span>
+      </footer>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="side">
+      <div class="logo"><span class="d"></span> nodo</div>
+      <div class="card avail">
+        <div class="t">disponibilità live</div>
+        <div class="room"><span>loft-09</span><span class="st free"><span class="d"></span>libero</span></div>
+        <div class="room"><span>studio-04</span><span class="st free"><span class="d"></span>libero</span></div>
+        <div class="room"><span>suite-11</span><span class="st busy"><span class="d"></span>occupato</span></div>
+        <div class="room"><span>desk flex</span><span class="st free"><span class="d"></span>3 posti</span></div>
+      </div>
+      <div class="card net">
+        <div class="t">stato rete</div>
+        <div><span>download</span><b>982 Mbps</b></div>
+        <div><span>upload</span><b>954 Mbps</b></div>
+        <div><span>ping</span><b>6 ms</b></div>
+      </div>
+      <div class="card">
+        <div class="t">nomadi online</div>
+        <div class="ping"><span class="big" id="online">23</span><span class="net">in casa adesso</span></div>
+      </div>
+      <div class="card">
+        <div class="t">prossimo evento</div>
+        <div class="net" style="color:var(--slate)">Demo night · giovedì 21:00</div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+  (function(){
+    var el = document.getElementById("online");
+    setInterval(function(){
+      var n = 20 + Math.floor(Math.random()*9);
+      if (el) el.textContent = n;
+    }, 2600);
+  })();
+  </script>
+</body>
+</html>

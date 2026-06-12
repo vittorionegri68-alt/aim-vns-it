@@ -1,0 +1,291 @@
+<!-- @dsCard group="Stili" viewport="1440x900" name="12 — Organico" subtitle="Texture naturali, palette earthy, tipografia soft, sigillo rotante artigianale. Ideale per: fattorie biologiche, erboristerie, produttori locali, yoga retreat, cosmetici naturali, negozi zero-waste." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Terra — Stile 12 Organico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #FBEFD9;
+    --cream-2: #F6E2C2;
+    --tang: #E8551F;        /* accento arancio acceso */
+    --tang-deep: #C53E10;
+    --amber: #F4A020;       /* secondario caldo */
+    --clay: #2A1810;        /* scuro per contrasto */
+    --clay-2: #3D2417;
+    --sage: #5F7A4B;        /* verde acceso */
+    --peach: #F6C98A;
+    --serif: "Instrument Serif", Georgia, serif;
+    --disp: "Bricolage Grotesque", system-ui, sans-serif;
+    --sans: "Hanken Grotesk", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    color: var(--clay);
+    font-family: var(--sans); -webkit-font-smoothing: antialiased;
+    text-align: center;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #FFD9A0 0%, transparent 55%),
+      radial-gradient(90% 70% at 85% 12%, rgba(232,85,31,0.18) 0%, transparent 50%),
+      radial-gradient(90% 70% at 8% 20%, rgba(95,122,75,0.14) 0%, transparent 48%),
+      linear-gradient(180deg, #FBEFD9 0%, #F8E6C8 60%, #F4DBB4 100%);
+    background-attachment: fixed;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- Nav: barra scura flottante ad alto contrasto ---------- */
+  .navshell { position: sticky; top: 0; z-index: 40; padding: 18px 20px 0; }
+  nav.bar {
+    max-width: 1140px; margin: 0 auto;
+    display: flex; align-items: center; gap: 22px;
+    padding: 12px 12px 12px 26px;
+    background: var(--clay);
+    border-radius: 999px;
+    box-shadow: 0 14px 34px rgba(42,24,16,0.30), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  nav.bar .brand {
+    font-family: var(--disp); font-weight: 800; font-size: 25px; letter-spacing: -0.02em;
+    color: var(--cream); display: flex; align-items: center; gap: 9px;
+  }
+  nav.bar .brand .dot { width: 12px; height: 12px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: var(--tang); transform: rotate(-12deg); box-shadow: 0 0 0 3px rgba(232,85,31,0.25); }
+  nav.bar .links { display: flex; gap: 6px; margin-left: 14px; }
+  nav.bar .links a {
+    color: var(--peach); text-decoration: none; font-weight: 600; font-size: 14px;
+    padding: 9px 16px; border-radius: 999px; transition: background .18s, color .18s; white-space: nowrap;
+  }
+  nav.bar .links a:hover { background: rgba(246,201,138,0.16); color: #fff; }
+  nav.bar .pill {
+    margin-left: auto; background: var(--tang); color: #fff; padding: 12px 24px;
+    border-radius: 999px; font-family: var(--disp); font-weight: 700; font-size: 14px;
+    text-decoration: none; white-space: nowrap; transition: background .18s, transform .15s;
+    box-shadow: 0 6px 16px rgba(232,85,31,0.4);
+  }
+  nav.bar .pill:hover { background: var(--amber); transform: translateY(-1px); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 48px 0 30px; display: flex; flex-direction: column; align-items: center; }
+  .seal-wrap { position: relative; width: 230px; height: 230px; margin-bottom: 4px; }
+  .seal-glow { position: absolute; inset: -30px; border-radius: 50%; background: radial-gradient(circle, rgba(232,85,31,0.28), transparent 65%); }
+  .seal-ring { position: absolute; inset: 0; animation: spin 24s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .seal-ring text { font-family: var(--sans); font-size: 11.4px; font-weight: 700; letter-spacing: 0.30em; fill: var(--tang-deep); text-transform: uppercase; }
+  .seal-num {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--disp); font-weight: 800; font-size: 104px; line-height: 1; color: var(--clay);
+    text-shadow: 0 2px 0 rgba(244,160,32,0.4);
+  }
+  .seal-bean { position: absolute; left: 50%; top: -4px; transform: translateX(-50%); width: 18px; height: 18px; background: var(--tang); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; box-shadow: 0 4px 10px rgba(197,62,16,0.5); }
+
+  .hero h1 {
+    font-family: var(--disp); font-weight: 800; font-size: clamp(48px, 6vw, 92px);
+    line-height: 0.98; letter-spacing: -0.03em; max-width: 15ch; margin: 18px 0 0;
+  }
+  .hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--tang); letter-spacing: 0; }
+  .hero .sub { margin: 26px auto 0; max-width: 46ch; font-size: 18px; line-height: 1.6; color: var(--clay-2); }
+  .hero-cta { display: flex; gap: 14px; justify-content: center; margin-top: 32px; }
+  .btn { border-radius: 999px; font-family: var(--disp); font-size: 15px; font-weight: 700; padding: 16px 32px; text-decoration: none; transition: transform .15s, background .2s, box-shadow .2s; display: inline-flex; align-items: center; gap: 9px; }
+  .btn:active { transform: scale(0.96); }
+  .btn.solid { background: var(--tang); color: #fff; box-shadow: 0 10px 24px rgba(232,85,31,0.38); }
+  .btn.solid:hover { background: var(--tang-deep); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(232,85,31,0.45); }
+  .btn.ghost { background: transparent; color: var(--clay); border: 2px solid rgba(42,24,16,0.28); }
+  .btn.ghost:hover { border-color: var(--clay); background: rgba(42,24,16,0.04); }
+
+  /* big organic image blob */
+  .blob-wrap { margin-top: 54px; position: relative; width: min(780px, 92vw); }
+  .blob {
+    width: 100%; aspect-ratio: 16 / 10;
+    border-radius: 48% 52% 56% 44% / 60% 56% 44% 40%;
+    background:
+      radial-gradient(120% 130% at 30% 18%, #F4A020 0%, transparent 44%),
+      radial-gradient(120% 130% at 80% 92%, #3A1B0C 0%, transparent 52%),
+      linear-gradient(135deg, #B23A12 0%, #E8551F 52%, #F4A020 100%);
+    box-shadow: 0 34px 80px rgba(42,24,16,0.34);
+    position: relative; overflow: hidden;
+  }
+  .blob::after {
+    content: ""; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.2'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+  .blob-cap { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); color: #fff8ef; font-family: var(--serif); font-style: italic; font-size: 24px; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+  .blob-badge {
+    position: absolute; top: -24px; right: 3%; background: var(--sage); color: #fff;
+    width: 104px; height: 104px; border-radius: 50%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; font-size: 12px; font-weight: 700; line-height: 1.2;
+    text-transform: uppercase; letter-spacing: 0.05em; transform: rotate(-12deg); box-shadow: 0 12px 28px rgba(42,24,16,0.3);
+  }
+  .blob-badge b { font-family: var(--disp); font-size: 30px; font-weight: 800; }
+
+  /* curved divider */
+  .curve { display: block; width: 100%; height: 90px; margin-top: -2px; }
+
+  /* ---------- Products ---------- */
+  .menu { background: linear-gradient(180deg, #2A1810 0%, #3D2417 100%); color: var(--cream); padding: 36px 0 78px; }
+  .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); }
+  .menu h2 { font-family: var(--disp); font-weight: 800; letter-spacing: -0.02em; font-size: clamp(38px, 4.6vw, 66px); margin: 10px 0 44px; color: var(--cream); }
+  .menu h2 em { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--amber); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .card {
+    background: rgba(251,239,217,0.06); border: 1px solid rgba(246,201,138,0.16);
+    border-radius: 28px; padding: 32px 26px; text-align: center;
+    backdrop-filter: blur(2px); transition: transform .2s, box-shadow .2s, border-color .2s, background .2s;
+  }
+  .card:hover { transform: translateY(-8px); box-shadow: 0 22px 46px rgba(0,0,0,0.34); border-color: var(--tang); background: rgba(251,239,217,0.1); }
+  .card .disc { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 18px; box-shadow: inset 0 -8px 18px rgba(0,0,0,0.4), 0 8px 20px rgba(0,0,0,0.3); }
+  .card h3 { font-family: var(--disp); font-weight: 700; font-size: 27px; margin-bottom: 8px; color: var(--cream); }
+  .card p { font-size: 14px; line-height: 1.55; color: var(--peach); opacity: 0.85; }
+  .card .price { display: inline-block; margin-top: 16px; font-family: var(--disp); font-weight: 700; color: var(--amber); font-size: 17px; }
+
+  /* ---------- Story ---------- */
+  .story { padding: 86px 0; }
+  .story .lead { font-family: var(--disp); font-weight: 700; letter-spacing: -0.02em; font-size: clamp(30px, 3.8vw, 52px); line-height: 1.2; max-width: 22ch; margin: 0 auto; }
+  .story .lead em { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--tang); letter-spacing: 0; }
+  .dots { display: flex; gap: 12px; justify-content: center; margin: 36px 0; }
+  .dots span { width: 12px; height: 12px; border-radius: 50%; background: var(--amber); }
+  .dots span:nth-child(2) { background: var(--tang); }
+  .dots span:nth-child(3) { background: var(--sage); }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--clay); color: var(--cream); padding: 76px 0 38px; border-radius: 60px 60px 0 0; }
+  footer .fbrand { font-family: var(--disp); font-weight: 800; letter-spacing: -0.03em; font-size: 72px; line-height: 1; }
+  footer .fbrand span { color: var(--tang); }
+  footer .fsub { opacity: 0.7; margin: 14px 0 32px; }
+  footer .fnav { display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; font-size: 15px; font-weight: 600; }
+  footer .fnav a { color: var(--cream); text-decoration: none; opacity: 0.85; }
+  footer .fnav a:hover { color: var(--amber); opacity: 1; }
+  footer .fbar { margin-top: 42px; padding-top: 22px; border-top: 1px solid rgba(244,232,213,0.18); font-size: 13px; opacity: 0.7; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  footer .fbar .chip { color: var(--amber); font-weight: 700; opacity: 1; }
+
+  @media (max-width: 860px) {
+    nav.bar .links { display: none; }
+    nav.bar .pill { margin-left: auto; }
+    .cards { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .navshell { padding: 12px 14px 0; }
+    .hero { padding: 60px 14px 40px; }
+    .hero h1 { font-size: clamp(28px, 9vw, 52px); }
+    .hero .sub { font-size: 15px; }
+    .hero .seal-wrap { width: 110px; height: 110px; }
+    .seal-num { font-size: 70px; }
+    .origin { padding: 40px 14px; }
+    .origin p { font-size: 14px; }
+    .cards { padding: 0 14px 40px; gap: 16px; }
+    .palette-section { padding: 30px 14px; }
+    .swatches { gap: 10px; }
+    footer { padding: 20px 14px; flex-direction: column; gap: 6px; font-size: 11px; }
+  }
+</style>>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#FBEFD9">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#FBEFD9"/>
+      <circle cx="600" cy="400" r="250" fill="none" stroke="#E8551F" stroke-width="8" stroke-dasharray="14 18"/>
+      <circle cx="600" cy="150" r="18" fill="#E8551F"/>
+      <text x="600" y="500" font-family="Arial, sans-serif" font-weight="800" font-size="280" fill="#2A1810" text-anchor="middle" letter-spacing="-10">12</text>
+    </svg>
+  </template>
+  <div class="navshell">
+    <nav class="bar">
+      <span class="brand"><span class="dot"></span>Terra</span>
+      <div class="links">
+        <a href="#menu">Caffe'</a>
+        <a href="#storia">Storia</a>
+        <a href="#dove">Dove siamo</a>
+      </div>
+      <a class="pill" href="#dove">Ordina online</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="seal-wrap">
+      <span class="seal-glow"></span>
+      <svg class="seal-ring" viewBox="0 0 230 230" aria-hidden="true">
+        <defs><path id="ring" d="M115,115 m-90,0 a90,90 0 1,1 180,0 a90,90 0 1,1 -180,0" /></defs>
+        <text><textPath href="#ring" startOffset="0">· Torrefazione artigianale · Stile 12 · Dal 2014 · Tostato a mano </textPath></text>
+      </svg>
+      <span class="seal-bean"></span>
+      <div class="seal-num">12</div>
+    </div>
+    <h1>Il caffe' <em>tostato</em> come una volta</h1>
+    <p class="sub">Piccola torrefazione di quartiere. Selezioniamo chicchi di singola origine e li tostiamo lentamente, ogni mattina, dietro al banco.</p>
+    <div class="hero-cta">
+      <a class="btn solid" href="#menu">Scopri le miscele →</a>
+      <a class="btn ghost" href="#storia">La nostra storia</a>
+    </div>
+
+    <div class="blob-wrap">
+      <div class="blob">
+        <span class="blob-cap">Tostatura del mattino, lotto n.214</span>
+      </div>
+      <div class="blob-badge"><b>100%</b>arabica</div>
+    </div>
+  </section>
+
+  <svg class="curve" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,90 L0,40 C360,90 1080,0 1440,46 L1440,90 Z" fill="#2A1810"></path>
+  </svg>
+
+  <section id="menu" class="menu">
+    <div class="wrap">
+      <p class="eyebrow">Il banco</p>
+      <h2>Tre tostature, <em>una cura</em></h2>
+      <div class="cards">
+        <div class="card">
+          <div class="disc" style="background:radial-gradient(circle at 35% 30%, #F4A020, #B23A12);"></div>
+          <h3>Chiara</h3>
+          <p>Note floreali e di agrumi. Per chi ama il caffe' filtrato e delicato.</p>
+          <span class="price">€ 12 / 250g</span>
+        </div>
+        <div class="card">
+          <div class="disc" style="background:radial-gradient(circle at 35% 30%, #E8551F, #5E2A12);"></div>
+          <h3>Media</h3>
+          <p>Cioccolato e nocciola, corpo rotondo. La nostra miscela di casa.</p>
+          <span class="price">€ 11 / 250g</span>
+        </div>
+        <div class="card">
+          <div class="disc" style="background:radial-gradient(circle at 35% 30%, #7A4327, #1A0E07);"></div>
+          <h3>Scura</h3>
+          <p>Intensa e avvolgente, perfetta in moka. Per gli espressi decisi.</p>
+          <span class="price">€ 11 / 250g</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="storia" class="story">
+    <div class="wrap">
+      <p class="eyebrow">Dal 2014</p>
+      <p class="lead">Crediamo che un buon caffe' nasca dalla <em>lentezza</em> e dalle mani di chi lo tosta.</p>
+      <div class="dots"><span></span><span></span><span></span></div>
+      <a class="btn solid" href="#dove">Vieni a trovarci →</a>
+    </div>
+  </section>
+
+  <footer id="dove">
+    <div class="wrap">
+      <div class="fbrand">Terr<span>a</span></div>
+      <p class="fsub">Via dei Mille 8, Bologna · aperti 7–19</p>
+      <div class="fnav">
+        <a href="#menu">Caffe'</a>
+        <a href="#storia">Storia</a>
+        <a href="#">Abbonamento</a>
+        <a href="#">Instagram</a>
+        <a href="#">Contatti</a>
+      </div>
+      <div class="fbar">
+        <span>© 2026 Terra Torrefazione</span>
+        <span>·</span>
+        <span class="chip">Generato con AI'm · Stile 12 Organico</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

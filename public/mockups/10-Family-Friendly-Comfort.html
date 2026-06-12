@@ -1,0 +1,223 @@
+<!-- @dsCard group="Mockup 17" viewport="1440x900" name="10 — Family-Friendly Comfort" subtitle="Libro illustrato per bambini cresciuto. Blocchi patchwork irregolari, forme organiche, icone arrotondate, testo grande. Demo: casa vacanze famiglie." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Casa Girasole — Stile 10 Family-Friendly Comfort</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #FFF9F2;
+    --ink: #3D3D3D;
+    --peach: #F7C59F;
+    --coral: #FF7F50;
+    --mint: #A8D8A8;
+    --sans: "DM Sans", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-weight: 400; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+
+  /* nav */
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 26px 28px; max-width: 1180px; margin: 0 auto; }
+  .nav .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; }
+  .nav .logo .mark { width: 38px; height: 38px; background: var(--coral); border-radius: 50% 50% 50% 12px; display: grid; place-items: center; }
+  .nav .links { display: flex; gap: 8px; }
+  .nav .links a { padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; }
+  .nav .links a:hover { background: var(--peach); }
+  .nav .cta { background: var(--ink); color: var(--cream); padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px; }
+
+  /* hero patchwork */
+  .hero { padding: 18px 0 30px; }
+  .patch { display: grid; grid-template-columns: 1.5fr 1fr; grid-template-rows: auto auto; gap: 18px; }
+  .tile { padding: 40px; position: relative; overflow: hidden; }
+  .t-main { grid-row: 1 / 3; background: var(--peach); border-radius: 60px 60px 60px 18px; display: flex; flex-direction: column; justify-content: center; min-height: 480px; }
+  .t-main .kick { font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; color: var(--coral); }
+  .t-main h1 { font-weight: 700; font-size: clamp(40px, 5.4vw, 78px); line-height: 0.98; margin: 18px 0; letter-spacing: -0.02em; }
+  .t-main h1 .u { color: var(--coral); }
+  .t-main p { font-size: 17px; line-height: 1.7; max-width: 36ch; font-weight: 500; }
+  .t-main .blob { position: absolute; right: -60px; bottom: -60px; width: 200px; height: 200px; background: var(--coral); border-radius: 50%; opacity: 0.35; }
+
+  .t-num { background: var(--coral); color: var(--cream); border-radius: 30px 60px 30px 60px; display: flex; align-items: center; justify-content: center; min-height: 230px; }
+  .t-num .n { font-weight: 700; font-size: 170px; line-height: 0.8; letter-spacing: -0.04em; }
+  .t-mint { background: var(--mint); border-radius: 60px 24px 60px 24px; min-height: 230px; display: flex; flex-direction: column; justify-content: center; }
+  .t-mint .ic { margin-bottom: 14px; }
+  .t-mint h3 { font-weight: 700; font-size: 24px; }
+  .t-mint p { font-size: 15px; font-weight: 500; margin-top: 6px; }
+
+  /* feature row of round icons */
+  .feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 50px; }
+  .feat { text-align: center; padding: 30px 20px; border-radius: 36px; background: #fff; border: 2px solid #f0e6d8; }
+  .feat .circle { width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 16px; }
+  .feat h4 { font-weight: 700; font-size: 17px; }
+  .feat p { font-size: 14px; font-weight: 500; color: #7a756d; margin-top: 6px; }
+
+  /* room / service card */
+  .stay { margin-top: 64px; background: #fff; border: 2px solid #f0e6d8; border-radius: 48px; overflow: hidden; display: grid; grid-template-columns: 1.1fr 1fr; }
+  .stay .pic { background: linear-gradient(150deg, var(--mint), #7cc47c); position: relative; min-height: 360px; }
+  .stay .pic .sun { position: absolute; top: 40px; left: 40px; width: 80px; height: 80px; border-radius: 50%; background: var(--peach); box-shadow: 0 0 0 14px rgba(247,197,159,0.4); }
+  .stay .pic .house { position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); }
+  .stay .pic .badge { position: absolute; top: 28px; right: 28px; background: var(--cream); border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 14px; }
+  .stay .info { padding: 46px; display: flex; flex-direction: column; justify-content: center; }
+  .stay .info .kick { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 12px; color: var(--coral); }
+  .stay .info h3 { font-weight: 700; font-size: 36px; margin: 12px 0; letter-spacing: -0.01em; }
+  .stay .info p { font-size: 16px; line-height: 1.6; font-weight: 500; color: #6c675f; }
+  .stay .info .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+  .stay .info .chips span { background: var(--cream); border: 2px solid #f0e6d8; padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 13px; }
+  .stay .info .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 8px; }
+  .stay .info .price { font-weight: 700; font-size: 32px; } .stay .info .price small { font-size: 14px; color: #948e85; font-weight: 500; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--coral); color: #fff; padding: 16px 30px; border-radius: 999px; font-weight: 700; font-size: 16px; transition: transform .2s, background .2s; }
+  .btn:hover { background: var(--ink); transform: translateY(-2px); }
+
+  /* palette */
+  .palette { margin-top: 64px; }
+  .palette h3 { font-weight: 700; font-size: 26px; margin-bottom: 22px; }
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .sw { text-align: center; }
+  .sw .chip { height: 110px; border-radius: 30px; }
+  .sw span { display: block; font-weight: 600; font-size: 13px; margin-top: 10px; }
+
+  footer { margin-top: 70px; padding: 36px 0; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-weight: 600; font-size: 14px; color: #8a847b; }
+  footer .chip { color: var(--coral); }
+
+  @media (max-width: 880px) {
+    .nav .links { display: none; }
+    .patch { grid-template-columns: 1fr; }
+    .t-main { grid-row: auto; min-height: 360px; }
+    .feats { grid-template-columns: repeat(2,1fr); }
+    .stay { grid-template-columns: 1fr; }
+    .swatches { grid-template-columns: repeat(2,1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .nav { padding: 16px 14px; }
+    .nav .links { display: none; }
+    .nav .cta { padding: 9px 16px; font-size: 13px; }
+    .patch { grid-template-columns: 1fr; }
+    .t-num { min-height: 140px; }
+    .t-num .n { font-size: 100px; }
+    .feats { grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 30px; }
+    .stay { grid-template-columns: 1fr; border-radius: 28px; }
+    .stay .img { min-height: 220px; border-radius: 28px 28px 0 0; }
+    .stay .info { padding: 24px 20px; }
+    .stay .info h2 { font-size: 22px; }
+    .pad { padding: 40px 16px; }
+    .hero h1 { font-size: clamp(26px, 8vw, 44px); }
+    footer { padding: 20px 14px; flex-direction: column; gap: 6px; font-size: 11px; }
+  }
+</style>>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#FFF9F2">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#FFF9F2"/>
+      <rect x="80" y="120" width="640" height="560" rx="90" fill="#F7C59F"/>
+      <rect x="760" y="120" width="360" height="260" rx="70" fill="#FF7F50"/>
+      <text x="940" y="320" font-family="'DM Sans',sans-serif" font-weight="700" font-size="220" fill="#FFF9F2" text-anchor="middle">10</text>
+      <rect x="760" y="420" width="360" height="260" rx="70" fill="#A8D8A8"/>
+      <text x="130" y="430" font-family="'DM Sans',sans-serif" font-weight="700" font-size="90" fill="#3D3D3D">Casa</text>
+      <text x="130" y="520" font-family="'DM Sans',sans-serif" font-weight="700" font-size="90" fill="#FF7F50">Girasole</text>
+    </svg>
+  </template>
+
+  <header class="nav">
+    <div class="logo"><span class="mark"><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="5" fill="#FFF9F2"/></svg></span> Casa Girasole</div>
+    <nav class="links">
+      <a href="#">La casa</a>
+      <a href="#">Per i piccoli</a>
+      <a href="#">Dintorni</a>
+    </nav>
+    <a href="#" class="cta">Prenota →</a>
+  </header>
+
+  <!-- HERO PATCHWORK -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="patch">
+        <div class="tile t-main">
+          <span class="kick">Casa vacanze per famiglie</span>
+          <h1>Una casa dove<br /><span class="u">i bambini</span><br />possono correre.</h1>
+          <p>Giardino recintato, cucina attrezzata, giochi ovunque e tanto spazio per stare insieme senza dire mai "attento!".</p>
+          <div class="blob"></div>
+        </div>
+        <div class="tile t-num"><span class="n">10</span></div>
+        <div class="tile t-mint">
+          <span class="ic"><svg width="46" height="46" viewBox="0 0 46 46"><circle cx="23" cy="23" r="20" fill="none" stroke="#3D3D3D" stroke-width="3"/><path d="M14 24c3 5 15 5 18 0" fill="none" stroke="#3D3D3D" stroke-width="3" stroke-linecap="round"/><circle cx="17" cy="18" r="2.4" fill="#3D3D3D"/><circle cx="29" cy="18" r="2.4" fill="#3D3D3D"/></svg></span>
+          <h3>Sempre a misura</h3>
+          <p>Seggioloni, culle, fasciatoio e cancelletti già pronti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="wrap">
+    <div class="feats">
+      <div class="feat">
+        <div class="circle" style="background:var(--peach)"><svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="8" fill="#FF7F50"/><g stroke="#FF7F50" stroke-width="3" stroke-linecap="round"><line x1="17" y1="2" x2="17" y2="7"/><line x1="17" y1="27" x2="17" y2="32"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="27" y1="17" x2="32" y2="17"/></g></svg></div>
+        <h4>Giardino al sole</h4><p>500 mq recintati</p>
+      </div>
+      <div class="feat">
+        <div class="circle" style="background:var(--mint)"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M6 16L17 6l11 10v12H6z" fill="none" stroke="#3D3D3D" stroke-width="3" stroke-linejoin="round"/></svg></div>
+        <h4>Tre camere</h4><p>fino a 6 ospiti</p>
+      </div>
+      <div class="feat">
+        <div class="circle" style="background:var(--coral)"><svg width="34" height="34" viewBox="0 0 34 34"><rect x="7" y="9" width="20" height="16" rx="4" fill="none" stroke="#FFF9F2" stroke-width="3"/><line x1="7" y1="15" x2="27" y2="15" stroke="#FFF9F2" stroke-width="3"/></svg></div>
+        <h4>Cucina pronta</h4><p>tutto incluso</p>
+      </div>
+      <div class="feat">
+        <div class="circle" style="background:var(--peach)"><svg width="34" height="34" viewBox="0 0 34 34"><path d="M17 28S5 21 5 13a6 6 0 0112-1 6 6 0 0112 1c0 8-12 15-12 15z" fill="none" stroke="#FF7F50" stroke-width="3" stroke-linejoin="round"/></svg></div>
+        <h4>Pet friendly</h4><p>amici a 4 zampe ok</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOM / SERVICE CARD -->
+  <section class="wrap">
+    <article class="stay">
+      <div class="pic">
+        <div class="sun"></div>
+        <span class="badge">★ 4,9 · 120 famiglie</span>
+        <span class="house"><svg width="120" height="100" viewBox="0 0 120 100"><path d="M14 50L60 14l46 36v44H14z" fill="#FFF9F2" stroke="#3D3D3D" stroke-width="4" stroke-linejoin="round"/><rect x="48" y="60" width="24" height="34" rx="4" fill="#FF7F50"/></svg></span>
+      </div>
+      <div class="info">
+        <span class="kick">Tutta la casa per te</span>
+        <h3>Il Nido del Girasole</h3>
+        <p>Villetta indipendente su due piani con giardino, a dieci minuti dal mare e dal parco giochi del paese.</p>
+        <div class="chips"><span>🌿 Giardino</span><span>🍳 Cucina</span><span>🧸 Giochi</span><span>🅿️ Parcheggio</span></div>
+        <div class="row">
+          <div class="price">160 € <small>/ notte</small></div>
+          <a href="#" class="btn">Controlla le date →</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- PALETTE -->
+  <section class="wrap">
+    <div class="palette">
+      <h3>I nostri colori</h3>
+      <div class="swatches">
+        <div class="sw"><div class="chip" style="background:#FFF9F2;border:2px solid #f0e6d8"></div><span>#FFF9F2</span></div>
+        <div class="sw"><div class="chip" style="background:#3D3D3D"></div><span>#3D3D3D</span></div>
+        <div class="sw"><div class="chip" style="background:#F7C59F"></div><span>#F7C59F</span></div>
+        <div class="sw"><div class="chip" style="background:#FF7F50"></div><span>#FF7F50</span></div>
+        <div class="sw"><div class="chip" style="background:#A8D8A8"></div><span>#A8D8A8</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>Casa Girasole · vacanze per famiglie</span>
+      <span class="chip">Generato con AI'm · Stile 10 Family-Friendly Comfort</span>
+    </div>
+  </footer>
+</body>
+</html>

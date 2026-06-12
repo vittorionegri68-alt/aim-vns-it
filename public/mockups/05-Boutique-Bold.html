@@ -1,0 +1,209 @@
+<!-- @dsCard group="Mockup 17" viewport="1440x900" name="05 — Boutique Bold" subtitle="Sito che ti aggredisce. Titolo che entra da fuori schermo, sfondi a contrasto di scatto, una parola per riga, kerning estremo. Demo: beauty studio." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RIOT — Stile 05 Boutique Bold</title>
+<script>document.documentElement.className += " js";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --white: #FFFFFF;
+    --black: #111111;
+    --pink: #FF3C78;
+    --yellow: #FFC300;
+    --sans: "DM Sans", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: var(--black); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+
+  /* nav */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; padding: 18px 30px; mix-blend-mode: difference; color: #fff; }
+  .nav .mk { font-weight: 900; font-size: 24px; letter-spacing: -0.04em; }
+  .nav .links { display: flex; gap: 22px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* marquee strip */
+  .marquee { background: var(--yellow); color: var(--black); overflow: hidden; white-space: nowrap; border-top: 3px solid var(--black); border-bottom: 3px solid var(--black); }
+  .marquee .track { display: inline-block; padding: 10px 0; font-weight: 800; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; animation: scroll 18s linear infinite; }
+  .marquee .track span { padding: 0 22px; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* hero — white section, title enters from off-screen */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px clamp(24px, 5vw, 60px) 40px; position: relative; overflow: hidden; }
+  .hero .small { font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; font-size: 13px; color: var(--pink); margin-bottom: 18px; }
+  .hero h1 { font-weight: 900; line-height: 0.82; letter-spacing: -0.05em; text-transform: uppercase; }
+  .hero h1 .w { display: block; font-size: clamp(56px, 14vw, 220px); }
+  .hero h1 .w1 { transform: translateX(0); }
+  .hero h1 .w2 { color: var(--pink); margin-left: clamp(8px, 4%, 60px); }
+  .hero h1 .w3 { -webkit-text-stroke: 3px var(--black); color: transparent; margin-left: clamp(4px, 2%, 30px); }
+  .js .hero h1 .w { opacity: 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .hero h1 .w1 { animation: slideIn .8s .1s cubic-bezier(.2,.8,.2,1) forwards; }
+    .js .hero h1 .w2 { animation: slideIn .8s .24s cubic-bezier(.2,.8,.2,1) forwards; }
+    .js .hero h1 .w3 { animation: slideIn .8s .38s cubic-bezier(.2,.8,.2,1) forwards; }
+  }
+  @keyframes slideIn { from { opacity: 0; transform: translateX(-18%); } to { opacity: 1; transform: translateX(0); } }
+  @media (prefers-reduced-motion: reduce) { .js .hero h1 .w { opacity: 1 !important; } }
+  .reveal-done .hero h1 .w { opacity: 1 !important; }
+  .hero .row { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 50px; flex-wrap: wrap; gap: 24px; }
+  .hero .lede { max-width: 38ch; font-weight: 500; font-size: 18px; line-height: 1.5; }
+  .hero .num { font-weight: 900; font-size: clamp(80px, 15vw, 200px); line-height: 0.7; color: var(--yellow); -webkit-text-stroke: 3px var(--black); letter-spacing: -0.05em; }
+
+  /* CTA button */
+  .btn { display: inline-flex; align-items: center; gap: 12px; background: var(--pink); color: #fff; padding: 20px 36px; font-weight: 800; font-size: 18px; text-transform: uppercase; letter-spacing: 0.02em; border: 3px solid var(--black); box-shadow: 7px 7px 0 var(--black); transition: transform .12s, box-shadow .12s, background .12s; }
+  .btn:hover { transform: translate(-2px,-2px); box-shadow: 10px 10px 0 var(--black); background: var(--yellow); color: var(--black); }
+  .btn:active { transform: translate(4px,4px); box-shadow: 2px 2px 0 var(--black); }
+
+  /* section flip — BLACK */
+  .flip { background: var(--black); color: var(--white); padding: 110px 30px; }
+  .flip .label { font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; font-size: 13px; color: var(--yellow); }
+  .flip h2 { font-weight: 900; text-transform: uppercase; line-height: 0.84; letter-spacing: -0.04em; margin: 16px 0 0; }
+  .flip h2 .w { display: block; font-size: clamp(46px, 11vw, 150px); }
+  .flip h2 .pink { color: var(--pink); }
+  .flip h2 .out { -webkit-text-stroke: 2px var(--white); color: transparent; }
+
+  /* service card */
+  .menu { padding: 90px 30px; }
+  .menu .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; align-items: stretch; }
+  .card { border: 3px solid var(--black); background: var(--white); padding: 36px; box-shadow: 9px 9px 0 var(--black); display: flex; flex-direction: column; }
+  .card .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .card .tag { background: var(--yellow); border: 2px solid var(--black); padding: 5px 12px; font-weight: 800; font-size: 12px; text-transform: uppercase; }
+  .card h3 { font-weight: 900; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.03em; margin: 14px 0; }
+  .card p { font-weight: 500; font-size: 16px; line-height: 1.5; color: #333; max-width: 40ch; }
+  .card .price-row { margin-top: auto; padding-top: 26px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .card .price { font-weight: 900; font-size: 46px; letter-spacing: -0.03em; }
+  .card .price small { font-size: 16px; font-weight: 700; }
+  .card.dark { background: var(--pink); color: #fff; border-color: var(--black); }
+  .card.dark h3 .out { -webkit-text-stroke: 2px #fff; color: transparent; }
+  .card.dark p { color: rgba(255,255,255,0.9); }
+  .card.dark .list { list-style: none; margin-top: 4px; }
+  .card.dark .list li { padding: 11px 0; border-top: 2px solid rgba(255,255,255,0.4); font-weight: 700; text-transform: uppercase; font-size: 15px; display: flex; justify-content: space-between; }
+
+  /* palette */
+  .palette { padding: 80px 30px; }
+  .palette .h { font-weight: 900; font-size: 32px; text-transform: uppercase; letter-spacing: -0.02em; margin-bottom: 22px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 3px solid var(--black); max-width: 1200px; margin: 0 auto; }
+  .sw { height: 150px; border-right: 3px solid var(--black); display: flex; align-items: flex-end; padding: 16px; font-weight: 800; font-size: 14px; }
+  .sw:last-child { border-right: none; }
+
+  footer { background: var(--black); color: #fff; padding: 30px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 0.04em; }
+  footer .chip { color: var(--yellow); }
+
+  @media (max-width: 820px) {
+    .nav .links { display: none; }
+    .menu .grid { grid-template-columns: 1fr; }
+    .swatches { grid-template-columns: repeat(2,1fr); }
+    .sw:nth-child(2) { border-right: none; }
+  }
+  @media (max-width: 480px) {
+    .hero { padding: 90px 16px 30px; }
+    .hero h1 .w { font-size: clamp(48px, 14vw, 80px); }
+    .hero .lede { font-size: 15px; max-width: 100%; }
+    .hero .row { margin-top: 30px; gap: 16px; }
+    .hero .num { font-size: clamp(60px, 18vw, 100px); }
+    .btn { padding: 14px 22px; font-size: 15px; }
+    .flip { padding: 60px 16px; }
+    .flip h2 .w { font-size: clamp(36px, 11vw, 60px); }
+    .menu { padding: 50px 16px; }
+    .card { padding: 22px; }
+    .card h3 { font-size: clamp(28px, 8vw, 48px); }
+    .palette { padding: 40px 16px; }
+    .sw { height: 90px; font-size: 11px; }
+    footer { padding: 20px 16px; flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#FFFFFF"/>
+      <text x="40" y="380" font-family="'DM Sans',sans-serif" font-weight="900" font-size="280" fill="#111111" letter-spacing="-12">RIOT</text>
+      <text x="700" y="760" font-family="'DM Sans',sans-serif" font-weight="900" font-size="520" fill="#FFC300" stroke="#111111" stroke-width="10" letter-spacing="-20">05</text>
+    </svg>
+  </template>
+
+  <nav class="nav">
+    <div class="mk">RIOT</div>
+    <div class="links"><a href="#">Servizi</a><a href="#">Team</a><a href="#">Prenota</a></div>
+  </nav>
+
+  <!-- HERO (WHITE) -->
+  <section class="hero">
+    <div class="small">Beauty studio · taglio · colore · attitude</div>
+    <h1>
+      <span class="w w1">Cambia</span>
+      <span class="w w2">testa.</span>
+      <span class="w w3">Adesso.</span>
+    </h1>
+    <div class="row">
+      <p class="lede">Non un parrucchiere. Uno studio dove il tuo look diventa una dichiarazione. Niente mezze misure.</p>
+      <span class="num">05</span>
+    </div>
+    <div style="margin-top:40px"><a href="#" class="btn">Prenota il tuo posto →</a></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="track"><span>★ COLORE</span><span>★ DEGRADÉ</span><span>★ TAGLIO PUNK</span><span>★ BIONDO POLARE</span><span>★ STILE</span><span>★ COLORE</span><span>★ DEGRADÉ</span><span>★ TAGLIO PUNK</span><span>★ BIONDO POLARE</span><span>★ STILE</span></div>
+  </div>
+
+  <!-- FLIP (BLACK) -->
+  <section class="flip">
+    <div class="label">Capitolo 02 · cambio di scena</div>
+    <h2>
+      <span class="w pink">Osa</span>
+      <span class="w">di</span>
+      <span class="w out">più.</span>
+    </h2>
+  </section>
+
+  <!-- SERVICE CARDS -->
+  <section class="menu">
+    <div class="grid">
+      <article class="card">
+        <div class="top">
+          <span class="tag">Più richiesto</span>
+        </div>
+        <h3>Total<br />Restyle</h3>
+        <p>Consulenza d'immagine, taglio su misura e colore completo. Esci una persona diversa, garantito.</p>
+        <div class="price-row">
+          <div class="price">120 €<small> / seduta</small></div>
+          <a href="#" class="btn">Lo voglio →</a>
+        </div>
+      </article>
+      <article class="card dark">
+        <span class="tag" style="background:#FFC300">Listino</span>
+        <h3>Il <span class="out">menu</span></h3>
+        <ul class="list">
+          <li><span>Taglio &amp; piega</span><span>45 €</span></li>
+          <li><span>Colore</span><span>65 €</span></li>
+          <li><span>Degradé</span><span>90 €</span></li>
+          <li><span>Biondo polare</span><span>130 €</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- PALETTE -->
+  <section class="palette">
+    <div class="h">La palette</div>
+    <div class="swatches">
+      <div class="sw" style="background:#FFFFFF;color:#111">#FFFFFF</div>
+      <div class="sw" style="background:#111111;color:#fff">#111111</div>
+      <div class="sw" style="background:#FF3C78;color:#fff">#FF3C78</div>
+      <div class="sw" style="background:#FFC300;color:#111">#FFC300</div>
+    </div>
+  </section>
+
+  <footer>
+    <span>RIOT beauty studio · via dei Mille 5</span>
+    <span class="chip">Generato con AI'm · Stile 05 Boutique Bold</span>
+  </footer>
+  <script>setTimeout(function(){document.documentElement.classList.add("reveal-done");},1000);</script>
+</body>
+</html>

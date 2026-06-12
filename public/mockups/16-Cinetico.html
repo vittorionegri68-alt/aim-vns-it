@@ -1,0 +1,252 @@
+<!-- @dsCard group="Stili" viewport="1440x900" name="16 — Cinetico" subtitle="Dinamismo, movimento, energia visiva cinetica. Jersey number diagonale, italico condensato. Ideale per: studi fotografici, fotografi professionisti, palestre, agenzie eventi, brand sportivi, personal trainer." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scatto — Stile 16 Cinetico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --coal: #121316;
+    --coal-2: #1B1D22;
+    --white: #F4F5F7;
+    --volt: #2E5BFF;     /* blu elettrico */
+    --volt-2: #4D74FF;
+    --red: #FF3B2E;
+    --grey: #8A8F99;
+    --cond: "Saira Condensed", system-ui, sans-serif;
+    --sans: "Saira", system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--coal); color: var(--white); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+
+  /* ---------- Nav ---------- */
+  nav.bar { display: flex; align-items: center; gap: 28px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  nav.bar .brand { font-family: var(--cond); font-weight: 800; font-style: italic; font-size: 30px; letter-spacing: -0.01em; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
+  nav.bar .brand .sl { color: var(--volt); }
+  nav.bar .links { display: flex; gap: 30px; margin-left: 18px; font-family: var(--cond); font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+  nav.bar .links a { color: var(--grey); text-decoration: none; }
+  nav.bar .links a:hover { color: var(--white); }
+  nav.bar .pill { margin-left: auto; font-family: var(--cond); font-weight: 700; font-style: italic; font-size: 17px; text-transform: uppercase; text-decoration: none; color: #fff; background: var(--volt); padding: 11px 26px; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); transition: background .18s; }
+  nav.bar .pill:hover { background: var(--volt-2); }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; padding: 70px 0 80px; overflow: hidden; }
+  /* motion streaks */
+  .streaks { position: absolute; inset: 0; z-index: 0; opacity: 0.5; }
+  .streaks span { position: absolute; height: 2px; background: linear-gradient(90deg, transparent, var(--volt)); transform: rotate(-12deg); }
+  .streaks span:nth-child(1) { width: 60%; top: 22%; left: -10%; }
+  .streaks span:nth-child(2) { width: 40%; top: 38%; left: 20%; background: linear-gradient(90deg, transparent, var(--red)); }
+  .streaks span:nth-child(3) { width: 70%; top: 64%; left: -6%; }
+  .streaks span:nth-child(4) { width: 30%; top: 80%; left: 30%; }
+  /* jersey number, diagonally cut */
+  .jersey {
+    position: absolute; top: 50%; right: -2%; transform: translateY(-50%) rotate(-8deg); z-index: 0;
+    font-family: var(--cond); font-weight: 800; font-style: italic; font-size: 620px; line-height: 0.7;
+    color: transparent; -webkit-text-stroke: 2px rgba(46,91,255,0.5);
+    clip-path: polygon(0 0, 100% 0, 100% 64%, 0 100%);
+    user-select: none; pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 880px; }
+  .tagline { font-family: var(--cond); font-weight: 700; font-style: italic; font-size: 18px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--volt); margin-bottom: 14px; }
+  .hero h1 {
+    font-family: var(--cond); font-weight: 800; font-style: italic; text-transform: uppercase;
+    font-size: clamp(64px, 11vw, 168px); line-height: 0.84; letter-spacing: -0.02em;
+  }
+  .hero h1 .line2 { color: transparent; -webkit-text-stroke: 2px var(--white); }
+  .hero h1 .hl { color: var(--volt); }
+  .hero-sub { margin-top: 26px; max-width: 46ch; font-size: 18px; line-height: 1.55; color: #C2C6CE; }
+  .hero-cta { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+  .btn { font-family: var(--cond); font-weight: 700; font-style: italic; font-size: 18px; text-transform: uppercase; letter-spacing: 0.03em; text-decoration: none; padding: 15px 32px; transition: transform .14s; }
+  .btn.fill { background: var(--volt); color: #fff; clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%); }
+  .btn.fill:hover { transform: translateX(3px); }
+  .btn.line { border: 2px solid rgba(255,255,255,0.3); color: var(--white); }
+  .btn.line:hover { border-color: var(--white); }
+
+  /* ---------- Ticker ---------- */
+  .ticker { background: var(--volt); overflow: hidden; white-space: nowrap; border-top: 2px solid var(--white); border-bottom: 2px solid var(--white); }
+  .ticker .t { display: inline-block; padding: 11px 0; font-family: var(--cond); font-weight: 800; font-style: italic; font-size: 20px; text-transform: uppercase; letter-spacing: 0.03em; color: #fff; animation: slide 18s linear infinite; }
+  .ticker .t span { padding: 0 26px; }
+  .ticker .t span::before { content: "/ "; color: var(--coal); }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* ---------- Programs ---------- */
+  .prog { padding: 72px 0; }
+  .sec-h { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 36px; }
+  .sec-h h2 { font-family: var(--cond); font-weight: 800; font-style: italic; font-size: clamp(36px,5vw,68px); text-transform: uppercase; line-height: 0.9; letter-spacing: -0.01em; }
+  .sec-h h2 b { color: var(--volt); }
+  .sec-h .r { font-family: var(--cond); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey); font-size: 16px; }
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .pcard { position: relative; background: var(--coal-2); border: 1px solid rgba(255,255,255,0.08); padding: 28px 26px 30px; overflow: hidden; transition: transform .16s, border-color .16s; }
+  .pcard:hover { transform: translateY(-6px); border-color: var(--volt); }
+  .pcard .pno { font-family: var(--cond); font-weight: 800; font-style: italic; font-size: 64px; line-height: 0.8; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.18); }
+  .pcard h3 { font-family: var(--cond); font-weight: 700; font-style: italic; font-size: 30px; text-transform: uppercase; margin: 12px 0 8px; }
+  .pcard p { font-size: 14px; line-height: 1.55; color: #AEB3BC; }
+  .pcard .tag { display: inline-block; margin-top: 16px; font-family: var(--cond); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px; color: var(--volt); }
+  .pcard:hover .tag { color: var(--volt-2); }
+
+  /* ---------- Stats band ---------- */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .stat { padding: 34px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.12); }
+  .stat:last-child { border-right: none; }
+  .stat .n { font-family: var(--cond); font-weight: 800; font-style: italic; font-size: 58px; line-height: 1; color: var(--volt); }
+  .stat .l { font-family: var(--cond); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 14px; color: var(--grey); margin-top: 6px; }
+
+  /* ---------- CTA / Footer ---------- */
+  .cta-band { padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+  .cta-band h2 { font-family: var(--cond); font-weight: 800; font-style: italic; font-size: clamp(40px,6.4vw,96px); text-transform: uppercase; line-height: 0.86; }
+  .cta-band h2 .hl { color: var(--volt); }
+  .cta-band .sub { margin: 20px auto 30px; color: #C2C6CE; max-width: 40ch; font-size: 17px; }
+  footer { border-top: 1px solid rgba(255,255,255,0.1); padding: 40px 0 30px; }
+  .foot-grid { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .foot-grid .fbrand { font-family: var(--cond); font-weight: 800; font-style: italic; font-size: 40px; text-transform: uppercase; }
+  .foot-grid .fbrand .sl { color: var(--volt); }
+  .fnav { display: flex; gap: 24px; font-family: var(--cond); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; font-size: 16px; flex-wrap: wrap; }
+  .fnav a { color: var(--grey); text-decoration: none; }
+  .fnav a:hover { color: var(--white); }
+  .foot-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.1); font-family: var(--cond); text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px; color: var(--grey); }
+  .foot-bar .chip { color: var(--volt); }
+
+  @media (max-width: 900px) {
+    nav.bar .links { display: none; }
+    .pgrid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .jersey { font-size: 380px; }
+  }
+
+  @media (max-width: 480px) {
+    nav.bar { padding: 12px 14px; }
+    nav.bar .links { display: none; }
+    .hero { padding: 70px 14px 40px; min-height: 80vh; }
+    .hero h1 { font-size: clamp(32px, 11vw, 60px); }
+    .jersey { font-size: 200px !important; }
+    .hero-sub { font-size: 15px; max-width: 100%; }
+    .tagline { font-size: 14px; }
+    .ticker { padding: 10px 0; font-size: 13px; }
+    .pgrid { padding: 30px 14px 40px; gap: 14px; }
+    .pcard { padding: 20px 18px; }
+    .stats { grid-template-columns: repeat(2,1fr); }
+    .stat { padding: 20px 14px; }
+    .stat .n { font-size: 32px; }
+    .cta-section { padding: 50px 14px; }
+    .cta-section h2 { font-size: clamp(26px, 8vw, 44px); }
+    footer { padding: 20px 14px; flex-direction: column; gap: 6px; font-size: 11px; }
+  }
+</style>>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#121316">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#121316"/>
+      <text x="760" y="640" font-family="Arial, sans-serif" font-weight="800" font-style="italic" font-size="700" fill="none" stroke="#2E5BFF" stroke-width="6" text-anchor="middle">16</text>
+      <text x="120" y="380" font-family="Arial, sans-serif" font-weight="800" font-style="italic" font-size="150" fill="#F4F5F7">SCATTO</text>
+      <rect x="120" y="430" width="360" height="14" fill="#2E5BFF"/>
+    </svg>
+  </template>
+
+  <div class="wrap">
+    <nav class="bar">
+      <span class="brand">SCATT<span class="sl">O</span></span>
+      <div class="links">
+        <a href="#programmi">Programmi</a>
+        <a href="#orari">Orari</a>
+        <a href="#prezzi">Prezzi</a>
+      </div>
+      <a class="pill" href="#prezzi">Prova gratis</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="streaks"><span></span><span></span><span></span><span></span></div>
+    <div class="jersey">16</div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="tagline">Functional · Cross training · Reggio Calabria</p>
+        <h1><span class="hl">Spingi</span><br /><span class="line2">oltre</span> il limite</h1>
+        <p class="hero-sub">Una palestra vera, senza specchi inutili. Allenamenti a circuito, coach veri e una community che non ti molla a meta' serie.</p>
+        <div class="hero-cta">
+          <a class="btn fill" href="#prezzi">Inizia oggi</a>
+          <a class="btn line" href="#programmi">Vedi i programmi</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ticker">
+    <div class="t">
+      <span>WOD DEL GIORNO</span><span>OPEN GYM 6—23</span><span>NO JUDGEMENT</span><span>COACH CERTIFICATI</span>
+      <span>WOD DEL GIORNO</span><span>OPEN GYM 6—23</span><span>NO JUDGEMENT</span><span>COACH CERTIFICATI</span>
+    </div>
+  </div>
+
+  <section class="prog" id="programmi">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2>Tre <b>programmi</b>,<br />zero scuse</h2>
+        <span class="r">Tutti i livelli</span>
+      </div>
+      <div class="pgrid">
+        <div class="pcard">
+          <div class="pno">01</div>
+          <h3>Functional</h3>
+          <p>Circuiti a corpo libero e attrezzi. Forza, mobilita' e fiato in 50 minuti.</p>
+          <span class="tag">3 sedute / sett →</span>
+        </div>
+        <div class="pcard">
+          <div class="pno">02</div>
+          <h3>Forza</h3>
+          <p>Bilanciere e progressioni guidate. Tecnica prima del carico, sempre.</p>
+          <span class="tag">2 sedute / sett →</span>
+        </div>
+        <div class="pcard">
+          <div class="pno">03</div>
+          <h3>Conditioning</h3>
+          <p>Alta intensita' a intervalli. Per bruciare e tenere alto il ritmo.</p>
+          <span class="tag">4 sedute / sett →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><div class="n">600+</div><div class="l">Atleti attivi</div></div>
+    <div class="stat"><div class="n">40</div><div class="l">Classi a settimana</div></div>
+    <div class="stat"><div class="n">8</div><div class="l">Coach certificati</div></div>
+    <div class="stat"><div class="n">6—23</div><div class="l">Sempre aperti</div></div>
+  </div>
+
+  <section class="cta-band" id="prezzi">
+    <div class="streaks"><span></span><span></span><span></span><span></span></div>
+    <div class="wrap">
+      <h2>Prima seduta<br /><span class="hl">in regalo</span></h2>
+      <p class="sub">Vieni a provare un allenamento completo. Senza impegno, senza abbonamenti nascosti.</p>
+      <a class="btn fill" href="#">Prenota la prova</a>
+    </div>
+  </section>
+
+  <footer id="orari">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="fbrand">SCATT<span class="sl">O</span></div>
+        <div class="fnav">
+          <a href="#programmi">Programmi</a>
+          <a href="#prezzi">Prezzi</a>
+          <a href="#">Coach</a>
+          <a href="#">Instagram</a>
+          <a href="#">Contatti</a>
+        </div>
+      </div>
+      <div class="foot-bar">
+        <span>© 2026 Scatto Functional Gym · Via dello Stadio 3, Reggio Calabria</span>
+        <span class="chip">Generato con AI'm · Stile 16 Cinetico</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

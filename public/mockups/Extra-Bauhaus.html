@@ -1,0 +1,241 @@
+<!-- @dsCard group="Stili" viewport="1440x900" name="Extra — Bauhaus" subtitle="Stile avanzato per identita visive molto forti. Geometria pura Bauhaus. Ideale per: studi di architettura, gallerie arte, designer, tipografi, brand con pubblico esperto. Avvertenza: leggibilita limitata per contenuto testuale esteso." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Forma — Stile Extra Bauhaus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #EFEBE3;
+    --black: #161513;
+    --red: #D8402F;
+    --blue: #1E50C4;
+    --yellow: #F2B41E;
+    --disp: "League Spartan", system-ui, sans-serif;
+    --sans: "Manrope", system-ui, sans-serif;
+    --bw: 3px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--black); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  .frame { max-width: 1280px; margin: 0 auto; border-left: var(--bw) solid var(--black); border-right: var(--bw) solid var(--black); }
+
+  /* ---------- Nav ---------- */
+  nav.bar { display: flex; align-items: center; border-bottom: var(--bw) solid var(--black); }
+  nav.bar .brand { display: flex; align-items: center; gap: 12px; padding: 18px 26px; font-family: var(--disp); font-weight: 800; font-size: 24px; letter-spacing: -0.01em; text-transform: lowercase; border-right: var(--bw) solid var(--black); }
+  nav.bar .brand .mk { display: flex; gap: 3px; }
+  nav.bar .brand .mk i { width: 13px; height: 13px; display: block; }
+  nav.bar .brand .mk .c { border-radius: 50%; background: var(--red); }
+  nav.bar .brand .mk .s { background: var(--blue); }
+  nav.bar .brand .mk .t { width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 13px solid var(--yellow); }
+  nav.bar .links { display: flex; margin-left: auto; height: 100%; }
+  nav.bar .links a { display: flex; align-items: center; padding: 0 24px; text-decoration: none; color: var(--black); font-weight: 700; font-size: 14px; border-left: var(--bw) solid var(--black); }
+  nav.bar .links a:hover { background: var(--yellow); }
+  nav.bar .links a.cta { background: var(--black); color: var(--bg); }
+  nav.bar .links a.cta:hover { background: var(--red); color: #fff; }
+
+  /* ---------- Hero ---------- */
+  .hero { display: grid; grid-template-columns: 1.05fr 1fr; border-bottom: var(--bw) solid var(--black); }
+  .hero-l { padding: 48px 44px; display: flex; flex-direction: column; border-right: var(--bw) solid var(--black); }
+  .hero-l .kick { font-family: var(--disp); font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+  .hero-l h1 { font-family: var(--disp); font-weight: 800; font-size: clamp(38px, 4.2vw, 62px); line-height: 0.96; letter-spacing: -0.02em; text-transform: lowercase; }
+  .hero-l h1 .u { color: var(--blue); }
+  .hero-l p { margin-top: 26px; max-width: 34ch; font-size: 16px; line-height: 1.6; color: #45433d; }
+  .hero-l .cta { display: flex; gap: 14px; margin-top: auto; padding-top: 32px; }
+  .btn { font-family: var(--disp); font-weight: 700; font-size: 15px; text-decoration: none; padding: 14px 26px; border: var(--bw) solid var(--black); transition: transform .14s, box-shadow .14s; text-transform: uppercase; white-space: nowrap; }
+  .btn.fill { background: var(--red); color: #fff; box-shadow: 5px 5px 0 var(--black); }
+  .btn.fill:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 var(--black); }
+  .btn.ghost { background: var(--bg); color: var(--black); }
+  .btn.ghost:hover { background: var(--yellow); }
+
+  /* composition with number built from shapes */
+  .hero-r { position: relative; background: #E6E0D4; overflow: hidden; min-height: 480px; }
+  .grid-lines { position: absolute; inset: 0; background-image: linear-gradient(rgba(22,21,19,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(22,21,19,0.07) 1px, transparent 1px); background-size: 56px 56px; }
+  .shape { position: absolute; }
+  .s-circle { width: 200px; height: 200px; border-radius: 50%; background: var(--yellow); top: 56px; left: 56px; }
+  .s-quarter { width: 168px; height: 168px; background: var(--red); border-radius: 0 100% 0 0; bottom: 56px; left: 90px; }
+  .s-square { width: 150px; height: 150px; background: var(--blue); top: 110px; right: 70px; }
+  .s-halfcircle { width: 170px; height: 85px; border-radius: 170px 170px 0 0; background: var(--black); bottom: 56px; right: 84px; }
+  .s-bar { width: 56px; height: 280px; background: var(--black); top: 100px; left: 280px; }
+  .bignum { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--disp); font-weight: 800; font-size: 300px; line-height: 1; color: var(--bg); mix-blend-mode: difference; }
+  .hero-r .cap { position: absolute; bottom: 16px; left: 18px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: var(--black); background: var(--bg); padding: 5px 10px; border: 2px solid var(--black); }
+
+  /* ---------- Work ---------- */
+  .work-head { display: flex; align-items: baseline; gap: 16px; padding: 22px 44px; border-bottom: var(--bw) solid var(--black); }
+  .work-head .n { font-family: var(--disp); font-weight: 800; color: var(--red); font-size: 20px; }
+  .work-head h2 { font-family: var(--disp); font-weight: 800; font-size: 26px; text-transform: lowercase; letter-spacing: -0.01em; white-space: nowrap; }
+  .work-head .r { margin-left: auto; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: #6a675e; }
+  .work { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: var(--bw) solid var(--black); }
+  .wcard { padding: 0; border-right: var(--bw) solid var(--black); }
+  .work .wcard:last-child { border-right: none; }
+  .wcard .vis { height: 180px; border-bottom: var(--bw) solid var(--black); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .wcard .vis.v1 { background: var(--blue); }
+  .wcard .vis.v2 { background: var(--yellow); }
+  .wcard .vis.v3 { background: var(--red); }
+  .wcard .vis .g { width: 84px; height: 84px; }
+  .wcard .vis .g.circle { border-radius: 50%; background: var(--bg); }
+  .wcard .vis .g.tri { width: 0; height: 0; border-left: 46px solid transparent; border-right: 46px solid transparent; border-bottom: 80px solid var(--bg); }
+  .wcard .vis .g.sq { background: var(--bg); }
+  .wcard .info { padding: 20px 22px 24px; }
+  .wcard .info .t { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: #6a675e; }
+  .wcard .info h3 { font-family: var(--disp); font-weight: 700; font-size: 24px; text-transform: lowercase; margin-top: 6px; }
+  .wcard .info p { margin-top: 8px; font-size: 14px; line-height: 1.5; color: #45433d; }
+
+  /* ---------- Manifesto ---------- */
+  .manifesto { display: grid; grid-template-columns: 220px 1fr; border-bottom: var(--bw) solid var(--black); }
+  .manifesto .lbl { background: var(--black); color: var(--bg); padding: 40px 26px; font-family: var(--disp); font-weight: 800; font-size: 22px; text-transform: uppercase; letter-spacing: 0.02em; display: flex; align-items: flex-end; }
+  .manifesto .txt { padding: 44px 44px; }
+  .manifesto .txt p { font-family: var(--disp); font-weight: 600; font-size: clamp(24px,2.8vw,38px); line-height: 1.22; letter-spacing: -0.01em; text-transform: lowercase; max-width: 24ch; }
+  .manifesto .txt p b { color: var(--red); font-weight: 800; }
+
+  /* ---------- Footer ---------- */
+  .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; }
+  .foot .fc { padding: 34px 26px; border-right: var(--bw) solid var(--black); }
+  .foot .fc:last-child { border-right: none; }
+  .foot .fc h3 { font-family: var(--disp); font-weight: 800; font-size: 34px; text-transform: lowercase; letter-spacing: -0.01em; }
+  .foot .fc .em { margin-top: 12px; font-weight: 700; }
+  .foot .fc h4 { font-family: var(--disp); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: #6a675e; margin-bottom: 12px; }
+  .foot .fc a, .foot .fc p { display: block; color: var(--black); text-decoration: none; font-size: 15px; line-height: 1.9; }
+  .foot .fc a:hover { color: var(--red); }
+  .botbar { display: flex; justify-content: space-between; align-items: center; padding: 14px 26px; border-top: var(--bw) solid var(--black); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: #6a675e; }
+  .botbar .chip { color: var(--blue); }
+
+  @media (max-width: 920px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-l { border-right: none; border-bottom: var(--bw) solid var(--black); }
+    .work { grid-template-columns: 1fr; }
+    .wcard { border-right: none; border-bottom: var(--bw) solid var(--black); }
+    .manifesto { grid-template-columns: 1fr; }
+    .foot { grid-template-columns: 1fr; }
+    .foot .fc { border-right: none; border-bottom: var(--bw) solid var(--black); }
+  }
+
+  @media (max-width: 480px) {
+    nav.bar .brand { font-size: 18px; padding: 14px 14px; }
+    nav.bar .links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-l { padding: 28px 14px; border-right: none; border-bottom: var(--bw) solid var(--black); }
+    .hero-r { min-height: 220px; }
+    .bignum { font-size: 160px !important; }
+    .hero-l h1 { font-size: clamp(28px, 9vw, 48px); }
+    .work { grid-template-columns: 1fr; }
+    .work-item { border-right: none; border-bottom: var(--bw) solid var(--black); }
+    .manifesto { grid-template-columns: 1fr; }
+    .manifesto .num-col { border-right: none; border-bottom: var(--bw) solid var(--black); padding: 20px 14px; }
+    .manifesto .text-col { padding: 20px 14px; }
+    .cta-row { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 14px; }
+    footer { padding: 20px 14px; flex-direction: column; gap: 6px; font-size: 11px; }
+  }
+</style>>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#EFEBE3">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#EFEBE3"/>
+      <circle cx="380" cy="300" r="150" fill="#F2B41E"/>
+      <rect x="640" y="200" width="220" height="220" fill="#1E50C4"/>
+      <path d="M300 640 H520 V420 Z" fill="#D8402F"/>
+      <rect x="560" y="440" width="80" height="240" fill="#161513"/>
+      <text x="600" y="540" font-family="Arial, sans-serif" font-weight="800" font-size="300" fill="#161513" text-anchor="middle" opacity="0.12">★</text>
+    </svg>
+  </template>
+
+  <div class="frame">
+    <nav class="bar">
+      <div class="brand"><span class="mk"><i class="c"></i><i class="s"></i><i class="t"></i></span>forma</div>
+      <div class="links">
+        <a href="#lavori">lavori</a>
+        <a href="#studio">studio</a>
+        <a href="#contatti" class="cta">parliamone</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-l">
+        <p class="kick">Studio di design e arredo · Torino</p>
+        <h1>diamo <span class="u">forma</span> alle idee dei piccoli</h1>
+        <p>Progettiamo mobili, allestimenti e identita' per botteghe e laboratori. Forme essenziali, materiali onesti, una funzione chiara.</p>
+        <div class="cta">
+          <a class="btn fill" href="#lavori">vedi i lavori</a>
+          <a class="btn ghost" href="#studio">lo studio</a>
+        </div>
+      </div>
+      <div class="hero-r">
+        <div class="grid-lines"></div>
+        <span class="shape s-circle"></span>
+        <span class="shape s-bar"></span>
+        <span class="shape s-quarter"></span>
+        <span class="shape s-square"></span>
+        <span class="shape s-halfcircle"></span>
+        <div class="bignum">★</div>
+        <span class="cap">Composizione n.07</span>
+      </div>
+    </section>
+
+    <div class="work-head" id="lavori">
+      <span class="n">→</span>
+      <h2>lavori scelti</h2>
+      <span class="r">2021 — 2026</span>
+    </div>
+    <section class="work">
+      <div class="wcard">
+        <div class="vis v1"><span class="g circle"></span></div>
+        <div class="info">
+          <div class="t">Arredo · negozio</div>
+          <h3>bottega lina</h3>
+          <p>Bancone e scaffali modulari in frassino per una sartoria.</p>
+        </div>
+      </div>
+      <div class="wcard">
+        <div class="vis v2"><span class="g tri"></span></div>
+        <div class="info">
+          <div class="t">Identita' · segnaletica</div>
+          <h3>mercato sud</h3>
+          <p>Sistema di insegne e colori per un mercato coperto di quartiere.</p>
+        </div>
+      </div>
+      <div class="wcard">
+        <div class="vis v3"><span class="g sq"></span></div>
+        <div class="info">
+          <div class="t">Prodotto · seduta</div>
+          <h3>sgabello otto</h3>
+          <p>Una seduta impilabile in multistrato curvato, montata senza viti.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto" id="studio">
+      <div class="lbl">il metodo</div>
+      <div class="txt">
+        <p>partiamo sempre dalla <b>funzione</b>, poi togliamo tutto il resto.</p>
+      </div>
+    </section>
+
+    <footer class="foot" id="contatti">
+      <div class="fc">
+        <h3>costruiamo<br />qualcosa</h3>
+        <p class="em">ciao@forma.studio</p>
+      </div>
+      <div class="fc">
+        <h4>studio</h4>
+        <p>Via Baretti 9</p>
+        <p>Torino, IT</p>
+      </div>
+      <div class="fc">
+        <h4>canali</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Behance</a>
+      </div>
+    </footer>
+    <div class="botbar">
+      <span>© 2026 Forma Studio</span>
+      <span class="chip">Generato con AI'm · Stile Extra Bauhaus</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!-- @dsCard group="Stili" viewport="1440x900" name="07 — Nature Escape" subtitle="Metafora: Documentario BBC in pausa. Frame fotografico full-screen, titolo come sottotitolo su barra semitrasparente. Ideale per: glamping, retreat benessere, yoga retreat, affitti brevi natura, eco-lodge." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Escape — Stile 07</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      *,*::before,*::after{box-sizing:border-box}
+      html,body{margin:0;padding:0}
+      body{font-family:'DM Sans',system-ui,sans-serif;color:#111;background:#0a0f0c}
+      .stage{max-width:1280px;margin:0 auto;background:#0a0f0c;overflow:hidden}
+      .stage-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#fff;padding:14px 24px;background:#111}
+      .palette{display:flex;gap:0;border-top:1px solid #1a1a1a}
+      .palette .sw{flex:1;height:64px;display:flex;align-items:flex-end;padding:8px 10px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em}
+     STYLE 07 , NATURE ESCAPE , documentario BBC in pausa
+     Frame fotografico orizzontale full-bleed, sottotitolo in basso su barra
+     semitrasparente sottile. Timecode "07/12" come marker.
+     ============================================================ */
+  .s07{font-family:'DM Sans',sans-serif;font-weight:300;color:#fff;background:#0a0f0c}
+  .s07 .frame{position:relative;height:760px;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 18% 30%, rgba(255,240,200,.35), transparent 45%),
+      linear-gradient(to bottom, #5d7a5e 0%, #3E7159 38%, #2a4538 70%, #14241c 100%);
+  }
+  /* simulated forest layers using svg */
+  .s07 .layer{position:absolute;left:0;right:0;bottom:0;height:100%}
+  .s07 .mist{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(208,224,210,.35), transparent 30%, transparent 60%, rgba(20,36,28,.6) 100%)}
+  .s07 .grain{position:absolute;inset:0;opacity:.15;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.5'/></svg>")}
+
+  .s07 .topbar{position:absolute;top:24px;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:0 36px;z-index:3;font-size:11px;letter-spacing:.28em;text-transform:uppercase}
+  .s07 .topbar .brand{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:22px;letter-spacing:.02em;text-transform:none}
+  .s07 .topbar nav{display:flex;gap:24px;opacity:.85}
+
+  /* Timecode marker, dominant 07 in cinematic style, top right */
+  .s07 .timecode{position:absolute;top:80px;right:36px;text-align:right;z-index:3;font-family:'JetBrains Mono',monospace}
+  .s07 .timecode .n{font-size:140px;font-weight:300;line-height:.85;letter-spacing:-.04em;font-family:'Cormorant Garamond',serif;font-style:italic;color:#fff;opacity:.95;text-shadow:0 6px 30px rgba(0,0,0,.4)}
+  .s07 .timecode .sub{font-size:10px;letter-spacing:.32em;opacity:.7;margin-top:6px}
+  .s07 .timecode .rec{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-size:10px;letter-spacing:.3em;opacity:.8}
+  .s07 .timecode .rec::before{content:"";width:8px;height:8px;background:#c33;border-radius:50%;box-shadow:0 0 0 4px rgba(204,51,51,.25)}
+
+  /* Subtle frame guides like a viewfinder */
+  .s07 .guides{position:absolute;inset:36px;border:1px solid rgba(255,255,255,.18);z-index:2;pointer-events:none}
+  .s07 .guides::before,.s07 .guides::after{content:"";position:absolute;background:rgba(255,255,255,.6)}
+  .s07 .guides::before{left:-1px;top:50%;width:14px;height:1px}
+  .s07 .guides::after{right:-1px;top:50%;width:14px;height:1px}
+
+  /* Thin semitransparent subtitle bar, BBC style */
+  .s07 .subtitlebar{position:absolute;left:0;right:0;bottom:80px;background:rgba(20,32,26,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);padding:18px 36px;z-index:3;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+  .s07 .subtitlebar .row{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;max-width:1100px;margin:0 auto}
+  .s07 .subtitlebar .who{font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.75}
+  .s07 .subtitlebar h1{margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:30px;line-height:1.2;letter-spacing:-.005em;color:#F0F5F1}
+  .s07 .subtitlebar .meta{font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.75;text-align:right}
+
+  /* progress bar like a video player */
+  .s07 .player{position:absolute;left:0;right:0;bottom:0;padding:18px 36px 18px;z-index:3;display:flex;align-items:center;gap:18px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+  .s07 .player .play{width:36px;height:36px;border:1px solid rgba(255,255,255,.7);border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+  .s07 .player .play::after{content:"";border-style:solid;border-width:7px 0 7px 10px;border-color:transparent transparent transparent #fff;margin-left:2px}
+  .s07 .player .track{flex:1;height:2px;background:rgba(255,255,255,.2);position:relative}
+  .s07 .player .track::after{content:"";position:absolute;left:0;top:0;bottom:0;width:42%;background:#fff}
+  .s07 .player .time{font-family:'JetBrains Mono',monospace;font-size:10px;opacity:.8;letter-spacing:.1em;text-transform:none}
+
+  /* Service / room block below the frame */
+  .s07 .below{background:#F0F5F1;color:#2a4538;padding:50px 60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch;font-weight:300}
+  .s07 .below .cabin{}
+  .s07 .below .cabin .lbl{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#7C5C3A}
+  .s07 .below .cabin h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:42px;margin:12px 0 14px;color:#3E7159;letter-spacing:-.01em}
+  .s07 .below .cabin p{font-size:15px;line-height:1.7;color:#3a4a3f;margin:0;max-width:420px}
+  .s07 .below .cabin .specs{margin-top:24px;display:flex;gap:30px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#3E7159}
+  .s07 .below .cabin .specs div b{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:#3E7159;font-weight:400;letter-spacing:0;margin-top:4px;text-transform:none}
+  .s07 .actions{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;gap:30px}
+  .s07 .actions .price{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:36px;color:#3E7159}
+  .s07 .actions .price small{display:block;font-family:'DM Sans';font-style:normal;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#7C5C3A;margin-top:4px}
+  .s07 .actions .cta{background:transparent;border:1px solid #3E7159;color:#3E7159;padding:18px 36px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;cursor:pointer;font-weight:400}
+  .s07 .actions .cta:hover{background:#3E7159;color:#F0F5F1}
+      @media (max-width: 480px) {
+    .s07 .timecode .n { font-size: 60px; }
+    .s07 .timecode { top: 50px; right: 16px; }
+    .s07 .subtitlebar { padding: 12px 16px; bottom: 60px; }
+    .s07 .subtitlebar .row { grid-template-columns: 1fr; gap: 8px; }
+    .s07 .subtitlebar .who { display: none; }
+    .s07 .subtitlebar h1 { font-size: 14px; line-height: 1.4; }
+    .s07 .subtitlebar .meta { display: none; }
+    .s07 .player { padding: 10px 16px; gap: 10px; flex-wrap: wrap; }
+    .s07 .topbar { padding: 0 16px; }
+    .s07 .topbar nav { display: none; }
+    .s07 .below { grid-template-columns: 1fr; padding: 30px 16px; gap: 30px; }
+    .s07 .below .cabin h3 { font-size: 20px; }
+    .s07 .book { padding: 24px 16px; }
+    .stage-label { padding: 10px 16px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="stage-label">Stile 07 . Nature Escape . Documentario BBC in pausa</div>
+  <section class="s07">
+    <div class="frame">
+      <div class="layer">
+        <!-- distant mountains -->
+        <svg viewBox="0 0 1280 760" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%">
+          <defs>
+            <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#7c9b85"/>
+              <stop offset="1" stop-color="#3e6052"/>
+            </linearGradient>
+            <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4a6e5a"/>
+              <stop offset="1" stop-color="#243d31"/>
+            </linearGradient>
+            <linearGradient id="m3" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#243d31"/>
+              <stop offset="1" stop-color="#0d1b14"/>
+            </linearGradient>
+          </defs>
+          <!-- back mountains -->
+          <path fill="url(#m1)" opacity=".85" d="M0,380 L120,300 L240,360 L380,260 L520,340 L660,250 L820,330 L960,280 L1110,340 L1280,290 L1280,760 L0,760 Z"/>
+          <!-- middle mountains -->
+          <path fill="url(#m2)" opacity=".92" d="M0,470 L150,400 L280,460 L420,360 L560,440 L700,380 L860,460 L1010,400 L1160,470 L1280,420 L1280,760 L0,760 Z"/>
+          <!-- foreground tree silhouettes -->
+          <path fill="url(#m3)" d="M0,600 L80,540 L160,600 L240,520 L320,600 L400,510 L500,600 L590,520 L680,600 L780,500 L880,600 L980,530 L1080,600 L1180,520 L1280,580 L1280,760 L0,760 Z"/>
+          <!-- pines -->
+          <g fill="#0d1b14">
+            <polygon points="120,640 100,560 140,560"/>
+            <polygon points="120,610 105,540 135,540"/>
+            <polygon points="260,650 235,560 285,560"/>
+            <polygon points="260,615 240,540 280,540"/>
+            <polygon points="450,660 425,560 475,560"/>
+            <polygon points="450,620 430,535 470,535"/>
+            <polygon points="650,650 625,555 675,555"/>
+            <polygon points="650,610 630,530 670,530"/>
+            <polygon points="860,660 835,565 885,565"/>
+            <polygon points="1050,650 1025,555 1075,555"/>
+            <polygon points="1200,665 1175,565 1225,565"/>
+          </g>
+          <!-- sun light beams -->
+          <g opacity=".25" fill="#fff8d8">
+            <polygon points="180,0 320,0 220,420"/>
+            <polygon points="80,0 200,0 150,440"/>
+          </g>
+          <!-- birds -->
+          <g stroke="#0d1b14" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M520,180 q10,-10 20,0 q10,-10 20,0"/>
+            <path d="M580,210 q8,-8 16,0 q8,-8 16,0"/>
+            <path d="M460,240 q6,-6 12,0 q6,-6 12,0"/>
+          </g>
+        </svg>
+      </div>
+      <div class="mist"></div>
+      <div class="grain"></div>
+
+      <div class="topbar">
+        <div class="brand">Falco Glamping</div>
+        <nav><span>Cabins</span><span>The forest</span><span>Wellness</span><span>Journal</span><span>Book</span></nav>
+      </div>
+
+      <div class="timecode">
+        <div class="n">07</div>
+        <div class="sub">Episode . of twelve</div>
+        <div class="rec">REC . 41° 12' N</div>
+      </div>
+
+      <div class="guides"></div>
+
+      <div class="subtitlebar">
+        <div class="row">
+          <div class="who">Voice over</div>
+          <h1>"All'alba, le cabine respirano insieme alla foresta. Non si parla, si ascolta, e per un istante il tempo si dimentica di esistere."</h1>
+          <div class="meta">Frame 07 . Pollino</div>
+        </div>
+      </div>
+
+      <div class="player">
+        <span class="play"></span>
+        <span style="font-family:'Cormorant Garamond';font-style:italic;font-size:18px;letter-spacing:0;text-transform:none;color:#fff">Capitolo VII . Il bosco che dorme</span>
+        <span class="track"></span>
+        <span class="time">04:12 / 09:48</span>
+      </div>
+    </div>
+
+    <div class="below">
+      <div class="cabin">
+        <div class="lbl">La cabina</div>
+        <h3>Falco . cabina sospesa sul faggeto</h3>
+        <p>Diciotto metri quadrati di legno di castagno, vetrata panoramica a tutta altezza, stufa a legna, vasca esterna riscaldata. Una sola cabina per radura, nessun vicino visibile.</p>
+        <div class="specs">
+          <div>Capienza<b>2 ospiti</b></div>
+          <div>Altitudine<b>1.240 m</b></div>
+          <div>Stagione<b>Apr , ott</b></div>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="price">320 EUR<small>a notte, colazione contadina inclusa</small></div>
+        <button class="cta">Riserva la cabina</button>
+      </div>
+    </div>
+  </section>
+  <h2 class="zone">Palette 07</h2>
+  <div class="palette">
+    <div class="sw" style="background:#F0F5F1;color:#444">#F0F5F1</div>
+    <div class="sw" style="background:#3E7159;color:#fff">#3E7159</div>
+    <div class="sw" style="background:#A3B18A;color:#fff">#A3B18A</div>
+    <div class="sw" style="background:#D9E4DD;color:#444">#D9E4DD</div>
+    <div class="sw" style="background:#7C5C3A;color:#fff">#7C5C3A</div>
+  </div>
+</div>
+<div style="font-family:monospace;font-size:11px;color:#A3B18A;padding:12px 24px;background:#0a0f0c;border-top:1px solid #1a1a1a;">Generato con AI'm · Stile 07 Nature Escape</div>
+</body>
+</html>

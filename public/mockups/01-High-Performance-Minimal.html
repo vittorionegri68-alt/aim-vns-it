@@ -1,0 +1,282 @@
+<!-- @dsCard group="Mockup 17" viewport="1440x900" name="01 — High Performance Minimal" subtitle="Dashboard product. L'hero è una griglia di KPI in tempo reale, numeri grandi, barre di progresso. Sembra un SaaS, non un sito. Demo: agenzia digitale." -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Veloce — Stile 01 High Performance Minimal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --white: #FFFFFF;
+    --blue: #1A73E8;
+    --amber: #F5A623;
+    --orange: #FF5722;
+    --bg: #F8F9FA;
+    --ink: #1b1f24;
+    --muted: #6b7280;
+    --line: #e9ecef;
+    --sans: "DM Sans", system-ui, sans-serif;
+    --mono: "DM Mono", ui-monospace, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-weight: 400; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .micro { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+
+  /* app header */
+  .topnav { background: var(--white); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 18px; padding: 12px 22px; position: sticky; top: 0; z-index: 30; }
+  .topnav .logo { font-weight: 700; font-size: 19px; display: flex; align-items: center; gap: 9px; letter-spacing: -0.01em; }
+  .topnav .logo .b { width: 24px; height: 24px; background: var(--blue); border-radius: 6px; position: relative; }
+  .topnav .logo .b::after { content: ""; position: absolute; left: 6px; top: 6px; width: 12px; height: 12px; border: 2px solid #fff; border-right-color: transparent; border-radius: 50%; }
+  .topnav nav { display: flex; gap: 4px; margin-left: 14px; }
+  .topnav nav a { padding: 7px 12px; border-radius: 7px; font-size: 14px; font-weight: 500; color: var(--muted); }
+  .topnav nav a.active { background: var(--bg); color: var(--ink); }
+  .topnav .right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .topnav .live { display: inline-flex; align-items: center; gap: 7px; font-family: var(--mono); font-size: 12px; color: var(--ink); }
+  .topnav .live .d { width: 8px; height: 8px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,0.15); }
+  .topnav .cta { background: var(--ink); color: #fff; padding: 9px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 26px 22px 60px; }
+
+  /* hero header row */
+  .hrow { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
+  .hrow .l .tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(26,115,232,0.1); color: var(--blue); font-weight: 600; font-size: 12px; padding: 6px 12px; border-radius: 999px; }
+  .hrow .l h1 { font-weight: 700; font-size: clamp(28px, 3.4vw, 44px); letter-spacing: -0.025em; margin: 14px 0 6px; max-width: 18ch; line-height: 1.05; }
+  .hrow .l p { color: var(--muted); font-size: 15px; max-width: 46ch; }
+  .hrow .idnum { font-weight: 700; font-size: clamp(72px, 9vw, 130px); line-height: 0.8; letter-spacing: -0.05em; color: var(--ink); position: relative; }
+  .hrow .idnum .dot { color: var(--orange); }
+  .hrow .idnum .lbl { position: absolute; right: 2px; bottom: -18px; }
+
+  /* KPI grid — the hero */
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .kpi { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .kpi .top { display: flex; justify-content: space-between; align-items: center; }
+  .kpi .delta { font-family: var(--mono); font-size: 12px; font-weight: 500; padding: 2px 7px; border-radius: 6px; }
+  .kpi .delta.up { color: #16a34a; background: rgba(22,163,74,0.1); }
+  .kpi .delta.down { color: var(--orange); background: rgba(255,87,34,0.1); }
+  .kpi .num { font-weight: 700; font-size: 38px; letter-spacing: -0.03em; margin: 10px 0 4px; }
+  .kpi .num .u { font-size: 16px; color: var(--muted); font-weight: 500; }
+  .bar { height: 6px; background: var(--bg); border-radius: 999px; overflow: hidden; margin-top: 12px; }
+  .bar i { display: block; height: 100%; border-radius: 999px; }
+  .kpi .foot { display: flex; justify-content: space-between; margin-top: 8px; }
+
+  /* spreadsheet-style services table */
+  .panel { background: var(--white); border: 1px solid var(--line); border-radius: 16px; margin-top: 16px; overflow: hidden; }
+  .panel .ph { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+  .panel .ph h2 { font-size: 16px; font-weight: 700; }
+  .panel .ph .micro { font-family: var(--mono); }
+  .ssheet { width: 100%; border-collapse: collapse; }
+  .ssheet th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 12px 20px; border-bottom: 1px solid var(--line); background: var(--bg); }
+  .ssheet th.r, .ssheet td.r { text-align: right; }
+  .ssheet td { padding: 16px 20px; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .ssheet tr:last-child td { border-bottom: none; }
+  .ssheet td .svc { font-weight: 600; }
+  .ssheet td .desc { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .ssheet .mini { width: 90px; height: 6px; background: var(--bg); border-radius: 999px; overflow: hidden; display: inline-block; vertical-align: middle; }
+  .ssheet .mini i { display: block; height: 100%; }
+  .ssheet td .price { font-weight: 700; font-family: var(--mono); }
+  .pill { font-family: var(--mono); font-size: 11px; padding: 3px 8px; border-radius: 6px; background: rgba(26,115,232,0.1); color: var(--blue); }
+
+  /* service card highlight + CTA */
+  .split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; margin-top: 16px; }
+  .feature { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+  .feature .micro { color: var(--blue); }
+  .feature h3 { font-weight: 700; font-size: 24px; letter-spacing: -0.02em; margin: 10px 0; }
+  .feature p { color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 44ch; }
+  .feature .metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 22px; }
+  .feature .metrics .m .n { font-weight: 700; font-size: 28px; letter-spacing: -0.02em; }
+  .feature .metrics .m .n.b { color: var(--blue); } .feature .metrics .m .n.a { color: var(--amber); } .feature .metrics .m .n.o { color: var(--orange); }
+  .feature .metrics .m .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .cta { background: var(--ink); color: #fff; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; justify-content: center; }
+  .cta .micro { color: rgba(255,255,255,0.6); }
+  .cta h3 { font-weight: 700; font-size: 22px; margin: 8px 0 14px; letter-spacing: -0.01em; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--blue); color: #fff; padding: 14px 22px; border-radius: 10px; font-weight: 600; font-size: 15px; transition: background .2s, transform .2s; }
+  .btn:hover { background: #1666cf; transform: translateY(-1px); }
+  .cta .sub { margin-top: 12px; font-family: var(--mono); font-size: 12px; color: rgba(255,255,255,0.55); }
+
+  /* palette as a config row */
+  .palette { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 22px; margin-top: 16px; }
+  .palette .micro { margin-bottom: 16px; display: block; }
+  .swatches { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+  .sw { display: flex; align-items: center; gap: 10px; }
+  .sw .chip { width: 38px; height: 38px; border-radius: 9px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
+  .sw .hex { font-family: var(--mono); font-size: 12px; }
+
+  footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding-top: 18px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  footer .chip { color: var(--blue); }
+
+  @media (max-width: 900px) {
+    .topnav nav { display: none; }
+    .kpis { grid-template-columns: repeat(2,1fr); }
+    .split { grid-template-columns: 1fr; }
+    .swatches { grid-template-columns: repeat(2,1fr); }
+    .ssheet .hideable { display: none; }
+  }
+  @media (max-width: 480px) {
+    .topnav .live { display: none; }
+    .topnav .cta { padding: 7px 12px; font-size: 13px; }
+    .wrap { padding: 16px 14px 40px; }
+    .hrow { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hrow .idnum { font-size: 56px; align-self: flex-end; }
+    .kpis { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .kpi .num { font-size: 28px; }
+    .panel .ph { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .feature .metrics { grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .feature .metrics .m .n { font-size: 20px; }
+    .swatches { grid-template-columns: repeat(3,1fr); }
+    .ssheet td, .ssheet th { padding: 12px 10px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#F8F9FA">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#F8F9FA"/>
+      <rect x="60" y="80" width="240" height="180" rx="20" fill="#fff" stroke="#e9ecef" stroke-width="3"/>
+      <rect x="320" y="80" width="240" height="180" rx="20" fill="#fff" stroke="#e9ecef" stroke-width="3"/>
+      <rect x="80" y="200" width="160" height="14" rx="7" fill="#1A73E8"/>
+      <rect x="340" y="200" width="120" height="14" rx="7" fill="#F5A623"/>
+      <text x="600" y="640" font-family="'DM Sans',sans-serif" font-weight="700" font-size="420" fill="#1b1f24" text-anchor="middle">01</text>
+      <circle cx="845" cy="520" r="28" fill="#FF5722"/>
+    </svg>
+  </template>
+
+  <header class="topnav">
+    <div class="logo"><span class="b"></span> Veloce</div>
+    <nav><a href="#" class="active">Overview</a><a href="#">Servizi</a><a href="#">Casi studio</a><a href="#">Prezzi</a></nav>
+    <div class="right">
+      <span class="live"><span class="d"></span> dati live</span>
+      <a href="#" class="cta">Richiedi audit</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- HERO HEADER -->
+    <div class="hrow">
+      <div class="l">
+        <span class="tag"><span style="width:7px;height:7px;background:var(--blue);border-radius:50%;display:inline-block"></span> Agenzia performance</span>
+        <h1>La tua crescita, misurata in tempo reale.</h1>
+        <p>Non vendiamo campagne: gestiamo numeri. Acquisizione, conversione e ricavi su un'unica dashboard, aggiornata ogni minuto.</p>
+      </div>
+      <div class="idnum">0<span class="dot">1</span><span class="lbl micro">style id</span></div>
+    </div>
+
+    <!-- KPI GRID (the hero) -->
+    <div class="kpis">
+      <div class="kpi">
+        <div class="top"><span class="micro">ROAS medio</span><span class="delta up">▲ 18%</span></div>
+        <div class="num">4,8<span class="u">×</span></div>
+        <div class="bar"><i style="width:82%;background:var(--blue)"></i></div>
+        <div class="foot"><span class="micro">obiettivo 4,0×</span><span class="micro">120% target</span></div>
+      </div>
+      <div class="kpi">
+        <div class="top"><span class="micro">Lead / mese</span><span class="delta up">▲ 9%</span></div>
+        <div class="num">2.340</div>
+        <div class="bar"><i style="width:67%;background:var(--amber)"></i></div>
+        <div class="foot"><span class="micro">costo €11,20</span><span class="micro">↓ 14%</span></div>
+      </div>
+      <div class="kpi">
+        <div class="top"><span class="micro">Conversione</span><span class="delta up">▲ 2,1pt</span></div>
+        <div class="num">6,4<span class="u">%</span></div>
+        <div class="bar"><i style="width:64%;background:var(--orange)"></i></div>
+        <div class="foot"><span class="micro">benchmark 3,1%</span><span class="micro">top 10%</span></div>
+      </div>
+      <div class="kpi">
+        <div class="top"><span class="micro">Ricavi attribuiti</span><span class="delta down">▼ 3%</span></div>
+        <div class="num">€ 318<span class="u">k</span></div>
+        <div class="bar"><i style="width:71%;background:var(--blue)"></i></div>
+        <div class="foot"><span class="micro">ultimi 30 giorni</span><span class="micro" id="tick">live</span></div>
+      </div>
+    </div>
+
+    <!-- SERVICES SPREADSHEET -->
+    <div class="panel">
+      <div class="ph"><h2>Servizi attivi</h2><span class="micro">4 di 6 in esecuzione</span></div>
+      <table class="ssheet">
+        <thead>
+          <tr><th>Servizio</th><th class="hideable">Stato</th><th class="hideable">Performance</th><th class="r">Da</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="svc">Paid Acquisition</div><div class="desc">Google · Meta · TikTok</div></td>
+            <td class="hideable"><span class="pill">attivo</span></td>
+            <td class="hideable"><span class="mini"><i style="width:88%;background:var(--blue)"></i></span></td>
+            <td class="r"><span class="price">1.500 €/m</span></td>
+          </tr>
+          <tr>
+            <td><div class="svc">SEO &amp; contenuti</div><div class="desc">tecnico + editoriale</div></td>
+            <td class="hideable"><span class="pill">attivo</span></td>
+            <td class="hideable"><span class="mini"><i style="width:74%;background:var(--amber)"></i></span></td>
+            <td class="r"><span class="price">1.200 €/m</span></td>
+          </tr>
+          <tr>
+            <td><div class="svc">CRO · ottimizzazione</div><div class="desc">test A/B continui</div></td>
+            <td class="hideable"><span class="pill">attivo</span></td>
+            <td class="hideable"><span class="mini"><i style="width:63%;background:var(--orange)"></i></span></td>
+            <td class="r"><span class="price">900 €/m</span></td>
+          </tr>
+          <tr>
+            <td><div class="svc">Marketing automation</div><div class="desc">email · CRM · flussi</div></td>
+            <td class="hideable"><span class="pill">attivo</span></td>
+            <td class="hideable"><span class="mini"><i style="width:81%;background:var(--blue)"></i></span></td>
+            <td class="r"><span class="price">800 €/m</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FEATURE CARD + CTA -->
+    <div class="split">
+      <div class="feature">
+        <span class="micro">Pacchetto consigliato</span>
+        <h3>Growth System completo</h3>
+        <p>Strategia, esecuzione e reportistica in un unico abbonamento. Un team dedicato, una dashboard, un solo numero da guardare: il ritorno.</p>
+        <div class="metrics">
+          <div class="m"><div class="n b">90 gg</div><div class="l">al primo risultato</div></div>
+          <div class="m"><div class="n a">1</div><div class="l">referente dedicato</div></div>
+          <div class="m"><div class="n o">∞</div><div class="l">report in tempo reale</div></div>
+        </div>
+      </div>
+      <div class="cta">
+        <span class="micro">Inizia da qui</span>
+        <h3>Audit gratuito dei tuoi numeri</h3>
+        <a href="#" class="btn">Prenota la call →</a>
+        <span class="sub">// 30 min · zero impegno · report incluso</span>
+      </div>
+    </div>
+
+    <!-- PALETTE -->
+    <div class="palette">
+      <span class="micro">// palette · stile 01</span>
+      <div class="swatches">
+        <div class="sw"><span class="chip" style="background:#FFFFFF"></span><span class="hex">#FFFFFF</span></div>
+        <div class="sw"><span class="chip" style="background:#1A73E8"></span><span class="hex">#1A73E8</span></div>
+        <div class="sw"><span class="chip" style="background:#F5A623"></span><span class="hex">#F5A623</span></div>
+        <div class="sw"><span class="chip" style="background:#FF5722"></span><span class="hex">#FF5722</span></div>
+        <div class="sw"><span class="chip" style="background:#F8F9FA"></span><span class="hex">#F8F9FA</span></div>
+      </div>
+    </div>
+
+    <footer>
+      <span>Veloce · agenzia performance · dashboard v1.0</span>
+      <span class="chip">Generato con AI'm · Stile 01 High Performance Minimal</span>
+    </footer>
+  </div>
+
+  <script>
+  (function(){
+    var t = document.getElementById("tick");
+    var base = 318;
+    setInterval(function(){
+      if (!t) return;
+      var v = (base + Math.random()*4).toFixed(1);
+      t.textContent = "€" + v + "k";
+    }, 2000);
+  })();
+  </script>
+</body>
+</html>
