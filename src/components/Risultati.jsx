@@ -87,14 +87,11 @@ export default function Risultati() {
             fontSize: 'clamp(36px,4vw,64px)', textTransform: 'uppercase',
             letterSpacing: '0.02em', color: '#ffffff', lineHeight: 0.95 }}>
             UN PUNTEGGIO BASSO<br />
-            <span style={{ color: '#A0782A' }}>» UNA MAPPA.</span>
+            <span style={{ color: '#A0782A' }}>{"√à"} UNA MAPPA.</span>
           </h2>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(13px,1vw,15px)',
             color: '#444', lineHeight: 1.7, marginTop: '1.5rem', maxWidth: '560px' }}>
-            Molte attivit‡ che analizziamo partono da un punteggio basso.
-            Non Ë una brutta notizia: significa che sappiamo esattamente dove intervenire.
-            La cosa peggiore non Ë avere un punteggio basso.
-            » non sapere che ce l\'hai.
+            {"Molte attivit√† che analizziamo partono da un punteggio basso. Non √® una brutta notizia: significa che sappiamo esattamente dove intervenire. La cosa peggiore non √® avere un punteggio basso. √à non sapere che ce l'hai."}
           </p>
         </div>
 
