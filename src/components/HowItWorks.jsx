@@ -6,17 +6,17 @@ const steps = [
   {
     num: '01',
     title: 'Analizziamo',
-    desc: 'Controlliamo se ChatGPT, Perplexity e Gemini sanno che esisti. Ti diciamo com\'è la situazione adesso, con un punteggio chiaro. Nessun termine tecnico: solo cosa funziona e cosa no.',
+    desc: "Controlliamo se ChatGPT, Perplexity e Gemini sanno che esisti. Ti diciamo com'Ã¨ la situazione adesso, con un punteggio chiaro. Nessun termine tecnico: solo cosa funziona e cosa no.",
   },
   {
     num: '02',
     title: 'Interveniamo',
-    desc: 'Facciamo le modifiche necessarie al tuo sito perchè i motori AI capiscano chi sei, cosa fai e dove operi. Il blog automatico lavora in continuo per tenerti visibile nel tempo.',
+    desc: "Facciamo le modifiche necessarie al tuo sito perchÃ© i motori AI capiscano chi sei, cosa fai e dove operi. Il blog automatico lavora in continuo per tenerti visibile nel tempo.",
   },
   {
     num: '03',
     title: 'Misuriamo',
-    desc: 'Ti mostriamo i risultati con numeri reali, confrontabili nel tempo. Ogni tre mesi un report chiaro. Se qualcosa non cresce come dovrebbe, interveniamo di nuovo.',
+    desc: "Ti mostriamo i risultati con numeri reali, confrontabili nel tempo. Ogni tre mesi un report chiaro. Se qualcosa non cresce come dovrebbe, interveniamo di nuovo.",
   },
 ]
 
