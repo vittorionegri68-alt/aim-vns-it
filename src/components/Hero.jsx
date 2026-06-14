@@ -1,4 +1,4 @@
-// Hero.jsx — AI'm by VNS IT
+﻿// Hero.jsx — AI'm by VNS IT
 import { config } from '../config.js'
 
 export default function Hero() {

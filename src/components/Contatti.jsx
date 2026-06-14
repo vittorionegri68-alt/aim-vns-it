@@ -1,4 +1,4 @@
-// Contatti.jsx — AI'm by VNS IT
+﻿// Contatti.jsx — AI'm by VNS IT
 // v2.0 — copy riscritta senza tecnicismi — giugno 2026
 import { useState } from 'react'
 import { config } from '../config.js'
