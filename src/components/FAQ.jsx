@@ -1,16 +1,15 @@
 // FAQ.jsx — AI'm by VNS IT
+// v2.0 — copy riscritta senza tecnicismi — giugno 2026
 import { useState } from 'react'
 import { qanda } from '../data/qanda.jsx'
 
 export default function FAQ() {
   const [open, setOpen] = useState(null)
-
   return (
     <section id="faq"
       style={{ background: '#080808', padding: 'clamp(64px,8vw,120px) 0',
         borderTop: '1px solid #141414' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px,4vw,64px)' }}>
-
         {/* Header */}
         <div style={{ marginBottom: 'clamp(40px,5vw,64px)' }}>
           <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: '10px',
@@ -19,11 +18,10 @@ export default function FAQ() {
           <h2 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700,
             fontSize: 'clamp(36px,4vw,64px)', textTransform: 'uppercase',
             letterSpacing: '0.02em', color: '#ffffff', lineHeight: 0.95 }}>
-            LE RISPOSTE<br />
-            <span style={{ color: '#1f1f1f' }}>CHE CERCHI.</span>
+            HAI DOMANDE?<br />
+            <span style={{ color: '#1f1f1f' }}>RISPOSTE SEMPLICI.</span>
           </h2>
         </div>
-
         {/* Accordion */}
         <div style={{ maxWidth: '800px' }}>
           {qanda.map((item, i) => (

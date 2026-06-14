@@ -1,46 +1,46 @@
 // AI'm by VNS — qanda.jsx
-// 10 domande GEO/AEO validate — versione IT
+// v2.0 — domande e risposte riscritte senza tecnicismi — giugno 2026
 // Coerenti con: FAQPage schema in index.html, blog, workflow N8N
 
 export const qanda = [
   {
-    q: "Cos'è la visibilità AI per le piccole imprese?",
-    a: "La visibilità AI è la capacità di un'impresa di apparire nelle risposte generate da ChatGPT, Perplexity e Gemini. I motori AI leggono contenuto web strutturato e pubblico, non portali di categoria o pagine social.",
+    q: "Perche' la mia attivita' non appare quando qualcuno cerca su ChatGPT?",
+    a: "ChatGPT non legge le pagine Facebook, i profili Instagram o le schede su Booking e Airbnb. Legge solo i siti web con le informazioni giuste al posto giusto. Se il tuo sito non e' strutturato nel modo corretto, ChatGPT semplicemente non sa che esisti.",
   },
   {
-    q: "Come fa AI'm by VNS ad aumentare la visibilità su ChatGPT?",
-    a: "Costruiamo insieme a te un set di 10 domande specifiche per il tuo settore e la tua zona. Le usiamo per misurare la visibilità baseline e per ottimizzare il sito. Man mano che i risultati si consolidano, le domande vengono aggiornate per allargare progressivamente il raggio di visibilità: prima il locale stretto, poi la zona più ampia, poi la regione. Le fondamenta locali vengono sempre monitorate in parallelo per garantire che rimangano solide.",
+    q: "Come fate a far apparire la mia attivita' su ChatGPT?",
+    a: "Prima controlliamo come sei visibile adesso, con un punteggio da 0 a 10. Poi facciamo le modifiche tecniche necessarie al tuo sito perche' i motori AI capiscano chi sei, cosa fai e dove sei. Costruiamo anche contenuti che rispondono alle domande reali dei tuoi clienti. Nel tempo allarghiamo progressivamente il raggio: prima il tuo comune, poi la zona, poi la regione.",
   },
   {
-    q: "Quanto costa migliorare la visibilità AI della mia attività?",
-    a: "Offriamo tre pacchetti: Starter per l'ottimizzazione tecnica base, Growth con blog automatizzato e report trimestrale, Pro con automazione Instagram e analisi competitor AI. Contattaci per un preventivo personalizzato.",
+    q: "Quanto costa il servizio?",
+    a: "Abbiamo tre pacchetti: Starter per chi vuole capire la situazione e sistemare le basi, Growth per chi vuole un sito nuovo e risultati nel tempo, Pro per chi vuole la massima visibilita' con aggiornamenti mensili e presenza su Instagram. Contattaci per un preventivo su misura.",
   },
   {
-    q: "In quanto tempo si vedono i risultati sui motori AI?",
-    a: "I primi miglioramenti misurabili si verificano tipicamente in 4-8 settimane dall'ottimizzazione tecnica completa. Il sistema è validato su Casa Cavour (Bertinoro) e RAB — Romagna Affitti Brevi.",
+    q: "Quanto tempo ci vuole per vedere i risultati?",
+    a: "I primi miglioramenti misurabili arrivano di solito in 4-8 settimane. Il sistema e' stato testato su Casa Cavour a Bertinoro e su RAB Romagna Affitti Brevi prima di essere proposto ai clienti.",
   },
   {
-    q: "I motori AI leggono la mia pagina Facebook o il mio profilo Airbnb?",
-    a: "No. ChatGPT, Perplexity e Gemini non leggono pagine Facebook, profili Instagram, listing Airbnb, Booking.com o schede Google Business. Leggono siti con schema.org, file llms.txt e blog con testo semantico.",
+    q: "Basta avere una pagina Facebook o un profilo Airbnb?",
+    a: "No. ChatGPT, Perplexity e Gemini non leggono Facebook, Instagram, Airbnb, Booking o Google Maps. Leggono i siti web. Se non hai un sito con le informazioni giuste, per questi motori non esisti.",
   },
   {
-    q: "Devo avere già un sito web per usare AI'm by VNS?",
-    a: "No. AI'm by VNS può sia ottimizzare un sito esistente che costruirne uno nuovo ottimizzato per i motori AI, con schema.org completo, file llms.txt e ai.txt, e blog GEO/AEO automatizzato.",
+    q: "Devo avere gia' un sito web?",
+    a: "No. Possiamo sia migliorare il tuo sito esistente che costruirne uno nuovo pensato fin dall'inizio per essere trovato da ChatGPT. In entrambi i casi partiamo sempre da un'analisi della situazione attuale.",
   },
   {
-    q: "AI'm by VNS lavora solo in Italia o anche in Olanda?",
-    a: "Siamo attivi in entrambi i mercati: Italia e Olanda (Paesi Bassi). Il servizio è disponibile in italiano, inglese e olandese. La sede operativa è a Nijkerk, NL.",
+    q: "Lavorate solo in Italia o anche in Olanda?",
+    a: "Siamo attivi in entrambi i paesi: Italia e Olanda. Il servizio e' disponibile in italiano, inglese e olandese. La sede operativa e' a Nijkerk, nei Paesi Bassi.",
   },
   {
-    q: "Cos'è lo schema.org e perché è importante per la visibilità AI?",
-    a: "Schema.org è un linguaggio di markup che permette ai motori AI di capire chi sei, cosa fai e dove sei. Senza schema.org il tuo sito è testo anonimo. AI'm by VNS implementa sempre Organization, Person, FAQPage e BreadcrumbList per ogni cliente.",
+    q: "Devo capire qualcosa di tecnologia per lavorare con voi?",
+    a: "No. Il nostro lavoro e' fare in modo che tu non debba occupartene. Ti spieghiamo tutto in modo semplice, ti mostriamo i risultati con numeri chiari e ci occupiamo noi di tutte le parti tecniche. Tu continui a fare il tuo lavoro.",
   },
   {
-    q: "Cos'è il file llms.txt e perché il mio sito ne ha bisogno?",
-    a: "Il file llms.txt indica ai crawler dei modelli linguistici come leggere e interpretare il tuo sito. Aumenta la probabilità di essere citato nelle risposte generate da ChatGPT e Perplexity.",
+    q: "Cosa succede se il mio punteggio e' basso?",
+    a: "Un punteggio basso non e' una brutta notizia. Significa che sappiamo esattamente dove intervenire. E' molto meglio sapere che la situazione e' migliorabile che non saperlo affatto. La cosa peggiore non e' avere un punteggio basso: e' non sapere che ce l'hai.",
   },
   {
-    q: "Come viene misurata la visibilità AI della mia impresa?",
-    a: "Con uno score da 0 a 10 per ogni motore (Perplexity, Gemini, ChatGPT) usando 10 domande costruite insieme a te. L'analisi baseline stabilisce il punto di partenza. Quando i risultati su un set di domande si consolidano, aggiorniamo le domande per allargare il raggio di visibilità: da una query locale stretta a una più ampia, poi regionale. Le analisi trimestrali confrontano sempre anche le domande originali per controllare che le fondamenta rimangano solide.",
+    q: "Come misurate i risultati nel tempo?",
+    a: "Usiamo sempre le stesse domande e lo stesso metodo, cosi' i numeri sono confrontabili nel tempo. Ogni tre mesi un report chiaro con i punteggi aggiornati. Quando i risultati su una zona si consolidano, allarghiamo le domande per coprire un'area piu' grande, controllando sempre che le basi rimangano solide.",
   },
 ]

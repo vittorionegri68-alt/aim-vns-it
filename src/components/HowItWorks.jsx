@@ -1,21 +1,22 @@
 // HowItWorks.jsx — AI'm by VNS IT
+// v2.0 — copy riscritta senza tecnicismi — giugno 2026
 import { useEffect, useRef } from 'react'
 
 const steps = [
   {
     num: '01',
-    title: 'Analisi',
-    desc: 'Misuriamo la tua visibilità attuale su ChatGPT, Perplexity e Gemini con 10 domande validate insieme a te. Man mano che i risultati si consolidano, le domande vengono aggiornate per allargare progressivamente il raggio di visibilità AI.',
+    title: 'Analizziamo',
+    desc: 'Controlliamo se ChatGPT, Perplexity e Gemini sanno che esisti. Ti diciamo com\'e\' la situazione adesso, con un punteggio chiaro. Nessun termine tecnico: solo cosa funziona e cosa no.',
   },
   {
     num: '02',
-    title: 'Intervento',
-    desc: 'Costruiamo o ottimizziamo il tuo sito con schema.org completo, llms.txt, ai.txt e contenuto GEO-ready. Il blog automatizzato lavora in continuo.',
+    title: 'Interveniamo',
+    desc: 'Facciamo le modifiche necessarie al tuo sito perche\' i motori AI capiscano chi sei, cosa fai e dove operi. Il blog automatico lavora in continuo per tenerti visibile nel tempo.',
   },
   {
     num: '03',
-    title: 'Misurazione',
-    desc: 'Report trimestrale con score GEO per ogni motore AI. Stessi dati, stesso metodo, confrontabili nel tempo. Progressi concreti e verificabili.',
+    title: 'Misuriamo',
+    desc: 'Ti mostriamo i risultati con numeri reali, confrontabili nel tempo. Ogni tre mesi un report chiaro. Se qualcosa non cresce come dovrebbe, interveniamo di nuovo.',
   },
 ]
 

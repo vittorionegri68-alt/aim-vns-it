@@ -1,18 +1,19 @@
 // Risultati.jsx — AI'm by VNS IT
+// v2.0 — copy riscritta senza tecnicismi — giugno 2026
 import { useEffect, useRef, useState } from 'react'
 
 const cases = [
   {
     nome: 'Casa Cavour',
     luogo: 'Bertinoro, FC',
-    settore: 'Affitti brevi',
+    settore: 'Bed & Breakfast',
     url: 'casa-cavour.com',
     siteUrl: 'https://www.casa-cavour.com',
     metriche: [
       { motore: 'Perplexity', before: 0, after: 4.3 },
       { motore: 'Gemini',     before: 0, after: 3.2 },
     ],
-    nota: 'Score GEO baseline 27/04/2026 — post ottimizzazione tecnica completa',
+    nota: 'Analisi aprile 2026 — prossimo aggiornamento luglio 2026',
   },
   {
     nome: 'RAB Romagna',
@@ -25,7 +26,7 @@ const cases = [
       { motore: 'SEO',  before: 0, after: 7.2 },
       { motore: 'GEO',  before: 0, after: 7.8 },
     ],
-    nota: 'Audit completo 30/04/2026 — sistema validato prima della commercializzazione',
+    nota: 'Analisi aprile 2026 — sistema validato prima della commercializzazione',
   },
 ]
 
@@ -81,13 +82,20 @@ export default function Risultati() {
         <div style={{ marginBottom: 'clamp(40px,5vw,64px)' }}>
           <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: '10px',
             letterSpacing: '0.3em', textTransform: 'uppercase', color: '#A0782A',
-            marginBottom: '1rem' }}>Risultati misurati</div>
+            marginBottom: '1rem' }}>Esempi reali</div>
           <h2 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700,
             fontSize: 'clamp(36px,4vw,64px)', textTransform: 'uppercase',
             letterSpacing: '0.02em', color: '#ffffff', lineHeight: 0.95 }}>
-            SISTEMA VALIDATO<br />
-            <span style={{ color: '#1f1f1f' }}>SU CASI REALI.</span>
+            UN PUNTEGGIO BASSO<br />
+            <span style={{ color: '#A0782A' }}>E\' UNA MAPPA.</span>
           </h2>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(13px,1vw,15px)',
+            color: '#444', lineHeight: 1.7, marginTop: '1.5rem', maxWidth: '560px' }}>
+            Molte attivita\' che analizziamo partono da un punteggio basso.
+            Non e\' una brutta notizia: significa che sappiamo esattamente dove intervenire.
+            La cosa peggiore non e\' avere un punteggio basso.
+            E\' non sapere che ce l\'hai.
+          </p>
         </div>
 
         {/* Case cards */}

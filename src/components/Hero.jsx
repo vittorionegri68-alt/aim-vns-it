@@ -31,17 +31,17 @@ export default function Hero() {
           <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#A0782A' }} />
           <span style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
             fontSize: '10px', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#555' }}>
-            Sistema validato · Casa Cavour · RAB Romagna
+            Per piccole imprese e artigiani · senza team marketing
           </span>
         </div>
 
         {/* Headline 3 righe */}
         <h1 style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700,
-          fontSize: 'clamp(56px, 10vw, 148px)', letterSpacing: '0.02em',
+          fontSize: 'clamp(48px, 9vw, 132px)', letterSpacing: '0.02em',
           textTransform: 'uppercase', lineHeight: 0.92, marginBottom: '2.5rem' }}>
-          <span style={{ display: 'block', color: '#A0782A' }}>CHATGPT</span>
-          <span style={{ display: 'block', color: '#ffffff' }}>TI TROVA.</span>
-          <span style={{ display: 'block', color: '#1f1f1f' }}>O NO.</span>
+          <span style={{ display: 'block', color: '#ffffff' }}>RICEVI MENO</span>
+          <span style={{ display: 'block', color: '#A0782A' }}>RICHIESTE</span>
+          <span style={{ display: 'block', color: '#1f1f1f' }}>DI PRIMA?</span>
         </h1>
 
         {/* Subline + CTA */}
@@ -52,9 +52,10 @@ export default function Hero() {
             <div style={{ width: '40px', height: '2px', background: '#A0782A', marginBottom: '1rem' }} />
             <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400,
               fontSize: 'clamp(15px,1.2vw,17px)', color: '#555', lineHeight: 1.7,
-              maxWidth: '420px' }}>
-              Analizziamo la tua visibilità sui motori AI e interveniamo per aumentarla.
-              Per piccole imprese senza team marketing, in Italia e Olanda.
+              maxWidth: '460px' }}>
+              Le persone non cercano piu solo su Google.
+              Adesso chiedono a ChatGPT. Se la tua attivita non appare li,
+              quei clienti vanno da qualcun altro.
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-end' }}>
@@ -67,10 +68,10 @@ export default function Hero() {
             }}
             onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-            >Analizza la tua visibilità</a>
+            >Scopri se ti trovano - e gratis</a>
             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '10px',
               color: '#333', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              Gratis · nessun impegno
+              Risposta entro 48 ore · nessun impegno
             </span>
           </div>
         </div>
@@ -80,8 +81,8 @@ export default function Hero() {
           gap: '1px', background: '#141414', borderTop: '1px solid #141414' }}
           className="data-strip">
           {[
-            { num: '4.3', label: 'Perplexity score', sub: 'Casa Cavour' },
-            { num: '3.2', label: 'Gemini score', sub: 'Casa Cavour' },
+            { num: '4.3', label: 'Perplexity score', sub: 'Casa Cavour · apr 2026' },
+            { num: '3.2', label: 'Gemini score', sub: 'Casa Cavour · apr 2026' },
             { num: '8.2', label: 'AEO score', sub: 'RAB Romagna' },
             { num: 'IT+NL', label: 'Mercati attivi', sub: '2026' },
           ].map((d, i) => (

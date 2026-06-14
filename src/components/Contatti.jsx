@@ -1,4 +1,5 @@
 // Contatti.jsx — AI'm by VNS IT
+// v2.0 — copy riscritta senza tecnicismi — giugno 2026
 import { useState } from 'react'
 import { config } from '../config.js'
 
@@ -42,14 +43,15 @@ export default function Contatti() {
               fontSize: 'clamp(36px,4vw,64px)', textTransform: 'uppercase',
               letterSpacing: '0.02em', color: '#ffffff', lineHeight: 0.95,
               marginBottom: '2rem' }}>
-              INIZIA DA<br />
-              <span style={{ color: '#A0782A' }}>QUI.</span>
+              SCOPRI COM'E'<br />
+              <span style={{ color: '#A0782A' }}>LA TUA SITUAZIONE.</span>
             </h2>
 
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px',
               color: '#555', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '360px' }}>
-              Prima analisi gratuita. Nessun impegno. Scopri dove sei oggi sui motori AI
-              e cosa si può fare per migliorare la tua visibilità.
+              La prima analisi e' gratuita e senza impegno.
+              Ti diciamo come sei visibile su ChatGPT adesso,
+              in modo semplice e senza termini tecnici.
             </p>
 
             {/* Canali di contatto */}
@@ -136,9 +138,9 @@ export default function Contatti() {
                 borderTop: '2px solid #A0782A', textAlign: 'center' }}>
                 <div style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700,
                   fontSize: '32px', color: '#A0782A', textTransform: 'uppercase',
-                  letterSpacing: '0.02em', marginBottom: '1rem' }}>Messaggio inviato</div>
+                  letterSpacing: '0.02em', marginBottom: '1rem' }}>Messaggio ricevuto</div>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px',
-                  color: '#555' }}>Ti risponderemo entro 24 ore su email o WhatsApp.</p>
+                  color: '#555' }}>Ti rispondo entro 48 ore. Nessun tecnicismo, solo una conversazione semplice.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}
@@ -177,7 +179,7 @@ export default function Contatti() {
                     Messaggio
                   </label>
                   <textarea name="messaggio" value={form.messaggio} onChange={handleChange}
-                    required placeholder="Descrivici la tua attività e cosa vorresti migliorare..."
+                    required placeholder="Raccontaci la tua attivita' e cosa vorresti migliorare. Non servono termini tecnici."
                     rows={5}
                     style={{ ...inputStyle, resize: 'vertical', minHeight: '120px' }}
                     onFocus={e => e.target.style.borderColor = '#A0782A'}
@@ -198,7 +200,7 @@ export default function Contatti() {
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '10px',
                     color: '#333', letterSpacing: '0.1em', textTransform: 'uppercase',
                     marginTop: '12px', textAlign: 'center' }}>
-                    Risposta entro 24h · Nessun impegno
+                    Risposta entro 48h · Nessun impegno
                   </p>
                 </div>
               </form>
