@@ -1,4 +1,4 @@
-// Risultati.jsx — AI'm by VNS IT
+﻿// Risultati.jsx — AI'm by VNS IT
 // v2.0 — copy riscritta senza tecnicismi — giugno 2026
 import { useEffect, useRef, useState } from 'react'
 
