@@ -3,6 +3,76 @@
 // Aggiornare con workflow N8N blog dopo il deploy
 
 export const posts = [
+{
+  "id": "aim-2026-06-2",
+  "titolo": "Come Apparire su Perplexity: Guida Pratica per Professionisti e Piccole Imprese",
+  "data": "2026-06-15",
+  "categoria": "GEO/AEO",
+  "sommario": "Perplexity è tra i motori AI più usati nel 2026. Questa guida spiega cosa devono fare professionisti e piccole imprese per essere trovati su Perplexity, anche senza team marketing: strategie pratiche di GEO optimization e visibilità AI.",
+  "contenuto": [
+    {
+      "tipo": "paragrafo",
+      "testo": "Marco gestisce uno studio di commercialisti a Padova. Da mesi nota che i clienti più giovani non arrivano da Google, ma fanno domande a Perplexity: \"Miglior commercialista per startup Veneto\" oppure \"Come aprire partita IVA freelance\". Il problema? Il suo studio non compare mai tra i risultati. Marco non ha un team marketing, ma vuole capire come entrare nei motori AI senza stravolgere il suo lavoro."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Secondo i dati Assolombarda 2025, l'adozione dell'intelligenza artificiale nelle imprese italiane è passata dall'8,2% del 2024 al 16,4% nel 2025. Eppure il 76% delle PMI non ha ancora investito in AI (Osservatori Politecnico Milano). La visibilità digitale oggi non passa solo da Google: ChatGPT, Perplexity e Gemini stanno cambiando il modo in cui i professionisti vengono trovati online. Chi non si adatta rischia di restare invisibile."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Questo articolo spiega passo dopo passo cosa devono fare i professionisti per apparire su Perplexity, con consigli pratici applicabili subito e senza costi elevati."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Perché Perplexity è diverso da Google"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Perplexity non restituisce una lista di link blu: genera risposte dirette citando le fonti. Per essere trovati su questo motore AI serve una strategia di GEO optimization (Generative Engine Optimization), che privilegia contenuti strutturati, autorevoli e facili da processare per i modelli linguistici. Google premia i backlink e le parole chiave; Perplexity cerca risposte chiare, aggiornate e verificabili. Questo cambia tutto per chi offre servizi professionali: non basta più un sito ben indicizzato, serve contenuto che risponda a domande reali."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Tre azioni concrete per entrare su Perplexity"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Prima azione: crea una pagina FAQ sul tuo sito con domande che i tuoi clienti fanno davvero. Usa linguaggio naturale e risposte complete (100-150 parole per risposta). Esempio: \"Quanto costa aprire una partita IVA forfettaria nel 2026?\" invece di \"Servizi fiscali\". Perplexity premia contenuti conversazionali e specifici."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Seconda azione: aggiungi dati strutturati schema.org al tuo sito. Marca chiaramente chi sei (LocalBusiness, ProfessionalService), cosa fai, dove operi e i tuoi contatti. I motori AI leggono questi dati prima del testo visibile. Se non sai come fare, strumenti come AI'm by VNS analizzano automaticamente la tua presenza digitale e ti indicano cosa manca per essere trovati da ChatGPT, Perplexity e Gemini."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Terza azione: pubblica contenuti aggiornati con regolarità. Perplexity privilegia fonti fresche. Anche un solo articolo al mese su temi rilevanti per il tuo settore (normative, casi pratici, novità) aumenta le probabilità di citazione. Cita sempre fonti verificabili e date precise: i motori AI premiano l'accuratezza."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Errori da evitare nella visibilità AI"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Molti professionisti pensano che basti copiare i contenuti dal sito esistente e aggiungere keyword. Sbagliato. I motori AI cercano valore originale, non ripetizioni. Evita pagine troppo brevi (sotto le 300 parole), testi generici tipo \"offriamo servizi di qualità\" e contenuti datati. Se il tuo ultimo aggiornamento è del 2023, per Perplexity sei già vecchio. Un altro errore comune: non curare le fonti esterne. Se vieni citato in articoli di settore, directory professionali o portali locali autorevoli, aumenti la probabilità che Perplexity ti consideri affidabile. La visibilità AI per piccole imprese non si costruisce solo sul proprio sito, ma sull'ecosistema digitale completo."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Monitorare i risultati senza team marketing"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Come capire se stai apparendo su Perplexity? Fai ricerche simulate: chiedi a Perplexity le domande che farebbero i tuoi clienti e verifica se compari. Ripeti il test ogni due settimane per monitorare i progressi. Strumenti come AI'm by VNS automatizzano questo processo: analizzano la tua visibilità su ChatGPT, Perplexity e Gemini, confrontano la tua presenza con i concorrenti e suggeriscono ottimizzazioni concrete. Il sistema è pensato per chi non ha un team marketing interno e vuole risultati misurabili senza investire migliaia di euro."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Conclusione: visibilità AI come vantaggio competitivo"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Essere trovati da ChatGPT e Perplexity non è più un'opzione futuristica: è una necessità per professionisti e piccole imprese che vogliono restare competitivi. La buona notizia è che non servono budget enormi, ma strategia e contenuti pensati per i motori AI. Inizia dalle tre azioni concrete di questo articolo, monitora i risultati e adatta il tuo approccio. Se vuoi un'analisi automatica della tua visibilità digitale sui motori AI, scopri come AI'm by VNS può aiutarti su aim-vns.com."
+    }
+  ],
+  "attivo": true
+},
   {
     id: "audit-geo-automatico-vs-visibilita-reale-2026",
     titolo: "83/100 nel test GEO. Zero citazioni su Perplexity. Cosa manca davvero.",
