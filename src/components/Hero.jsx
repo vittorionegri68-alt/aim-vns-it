@@ -6,32 +6,32 @@ export default function Hero() {
     <section style={{ background: '#080808', paddingTop: '64px', minHeight: '100vh',
       display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
 
-      jsx{/* Wordmark decorativo background */}
-<div aria-hidden="true" style={{
-  position: 'absolute',
-  inset: 0,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  overflow: 'hidden',
-  pointerEvents: 'none',
-  userSelect: 'none',
-  zIndex: 0,
-}}>
-  <span style={{
-    fontFamily: "'Oswald', sans-serif",
-    fontWeight: 700,
-    fontSize: 'clamp(120px, 22vw, 340px)',
-    letterSpacing: '0.02em',
-    textTransform: 'uppercase',
-    lineHeight: 1,
-    whiteSpace: 'nowrap',
-    color: '#111111',
-  }}>
-    <span style={{ color: '#111111' }}>AI</span>
-    <span style={{ color: '#0d0d0d' }}>'M</span>
-  </span>
-</div>
+      {/* Wordmark decorativo background */}
+      <div aria-hidden="true" style={{
+        position: 'absolute',
+        inset: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        pointerEvents: 'none',
+        userSelect: 'none',
+        zIndex: 0,
+      }}>
+        <span style={{
+          fontFamily: "'Oswald', sans-serif",
+          fontWeight: 700,
+          fontSize: 'clamp(120px, 22vw, 340px)',
+          letterSpacing: '0.02em',
+          textTransform: 'uppercase',
+          lineHeight: 1,
+          whiteSpace: 'nowrap',
+          color: '#111111',
+        }}>
+          <span style={{ color: '#111111' }}>AI</span>
+          <span style={{ color: '#0d0d0d' }}>'M</span>
+        </span>
+      </div>
 
       {/* Contenuto */}
       <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px,4vw,64px)',
