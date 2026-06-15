@@ -105,6 +105,14 @@
     .topbar nav { display: none; }
     .sea .bignum { font-size: 24vh; }
   }
+  /* === MOBILE SAFETY NET === */
+  @media (max-width: 480px) {
+    * { max-width: 100% !important; box-sizing: border-box !important; }
+    body, html { overflow-x: hidden !important; }
+    [class*="wrap"], [class*="frame"], [class*="container"], [class*="stage"] {
+      width: 100% !important; max-width: 100vw !important; padding-left: 14px !important; padding-right: 14px !important;
+    }
+  }
 </style>
 </head>
 <body>

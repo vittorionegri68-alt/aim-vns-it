@@ -135,7 +135,15 @@
         }
         .sw { flex: 1; height: 64px; display: flex; align-items: flex-end; padding: 8px 10px; font-family: monospace; font-size: 10px; letter-spacing: .05em; }
         .chip { font-size: 11px; color: #C19A6B; padding: 16px 24px; font-family: monospace; border-top: 1px solid #222; }
-    </style>
+      /* === MOBILE SAFETY NET === */
+  @media (max-width: 480px) {
+    * { max-width: 100% !important; box-sizing: border-box !important; }
+    body, html { overflow-x: hidden !important; }
+    [class*="wrap"], [class*="frame"], [class*="container"], [class*="stage"] {
+      width: 100% !important; max-width: 100vw !important; padding-left: 14px !important; padding-right: 14px !important;
+    }
+  }
+</style>
 </head>
 <body>
     <section class="style-02">
