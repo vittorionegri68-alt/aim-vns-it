@@ -19,8 +19,8 @@
     --sans: "DM Sans", system-ui, sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--paper); color: var(--bark); font-family: var(--sans); font-weight: 400; -webkit-font-smoothing: antialiased;
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { overflow-x: hidden; background: var(--paper); color: var(--bark); font-family: var(--sans); font-weight: 400; -webkit-font-smoothing: antialiased;
     background-image: radial-gradient(rgba(61,43,31,0.025) 1px, transparent 1px); background-size: 4px 4px; }
   a { color: inherit; text-decoration: none; }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
@@ -118,7 +118,7 @@
     .swatches { grid-template-columns: repeat(3,1fr); }
     footer { flex-direction: column; gap: 6px; padding: 16px 14px; font-size: 11px; }
   }
-</style>
+</style>>
 </head>
 <body>
   <template id="__bundler_thumbnail" data-bg-color="#FAF8F4">
