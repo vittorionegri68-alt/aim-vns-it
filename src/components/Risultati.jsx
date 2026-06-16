@@ -36,7 +36,7 @@ function Bar({ before, after, animate }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
         <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#AAAAAA',
           letterSpacing: '0.1em', textTransform: 'uppercase' }}>Prima</span>
-        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#333' }}>
+        <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#AAAAAA' }}>
           {before}/10
         </span>
       </div>
@@ -103,7 +103,7 @@ export default function Risultati() {
             <div key={i} style={{ background: '#0a0a0a',
               padding: 'clamp(28px,3vw,48px) clamp(20px,2.5vw,36px)' }}>
               <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                fontSize: '9px', letterSpacing: '0.25em', color: '#333',
+                fontSize: '9px', letterSpacing: '0.25em', color: '#AAAAAA',
                 textTransform: 'uppercase', marginBottom: '0.5rem' }}>
                 {c.settore}
               </div>
@@ -114,7 +114,7 @@ export default function Risultati() {
               </div>
               <a href={c.siteUrl} target="_blank" rel="noopener noreferrer"
                 style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px',
-                  color: '#333', letterSpacing: '0.1em', textTransform: 'uppercase',
+                  color: '#AAAAAA', letterSpacing: '0.1em', textTransform: 'uppercase',
                   marginBottom: '2rem', display: 'block', textDecoration: 'none',
                   transition: 'color 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#A0782A'}

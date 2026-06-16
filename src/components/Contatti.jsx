@@ -148,7 +148,7 @@ export default function Contatti() {
                   background: '#141414' }}>
                 <div style={{ background: '#0a0a0a', padding: '28px 28px 20px' }}>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                    fontSize: '10px', color: '#333', letterSpacing: '0.2em',
+                    fontSize: '10px', color: '#AAAAAA', letterSpacing: '0.2em',
                     textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
                     Nome
                   </label>
@@ -161,7 +161,7 @@ export default function Contatti() {
                 </div>
                 <div style={{ background: '#0a0a0a', padding: '20px 28px' }}>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                    fontSize: '10px', color: '#333', letterSpacing: '0.2em',
+                    fontSize: '10px', color: '#AAAAAA', letterSpacing: '0.2em',
                     textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
                     Email
                   </label>
@@ -174,7 +174,7 @@ export default function Contatti() {
                 </div>
                 <div style={{ background: '#0a0a0a', padding: '20px 28px' }}>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                    fontSize: '10px', color: '#333', letterSpacing: '0.2em',
+                    fontSize: '10px', color: '#AAAAAA', letterSpacing: '0.2em',
                     textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
                     Messaggio
                   </label>
@@ -198,7 +198,7 @@ export default function Contatti() {
                   onMouseLeave={e => e.currentTarget.style.opacity = '1'}
                   >Invia messaggio →</button>
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '10px',
-                    color: '#333', letterSpacing: '0.1em', textTransform: 'uppercase',
+                    color: '#AAAAAA', letterSpacing: '0.1em', textTransform: 'uppercase',
                     marginTop: '12px', textAlign: 'center' }}>
                     Risposta entro 48h · Nessun impegno
                   </p>

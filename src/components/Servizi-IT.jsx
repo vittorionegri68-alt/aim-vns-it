@@ -165,7 +165,7 @@ export default function Servizi() {
           ))}
         </div>
 
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#333',
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#AAAAAA',
           letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '1.5rem',
           textAlign: 'center' }}>
           Tutti i prezzi sono IVA esclusa · Lingua aggiuntiva 100 € · Durata minima 12 mesi per Growth e Pro

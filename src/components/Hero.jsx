@@ -83,7 +83,7 @@ export default function Hero() {
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
             >Scopri se ti trovano - e gratis</a>
             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '10px',
-              color: '#333', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              color: '#AAAAAA', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               Risposta entro 48 ore · nessun impegno
             </span>
           </div>
