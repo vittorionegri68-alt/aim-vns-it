@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vittorio Negri — Visual Portfolio</title>
+  <title>Vittorio Negri â€” Visual Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=DM+Mono:wght@300;400&family=Dancing+Script:wght@400&display=swap" rel="stylesheet" />
@@ -120,7 +120,7 @@
       </div>
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow" id="hero-eyebrow">Vittorio Negri — Visual Portfolio</p>
+      <p class="hero-eyebrow" id="hero-eyebrow">Vittorio Negri â€” Visual Portfolio</p>
       <h1 class="hero-title" id="hero-title">THE<br/><span class="gold">EYE</span>NEVER<br/><span class="red">LIES</span></h1>
     </div>
     <div class="hero-scroll-hint" id="scroll-hint">
@@ -157,7 +157,7 @@
     document.addEventListener('mousemove', e => { gsap.to(cursor, { x:e.clientX, y:e.clientY, duration:0.1, ease:'power2.out' }); });
     document.querySelectorAll('a,button').forEach(el => { el.addEventListener('mouseenter',()=>cursor.classList.add('expand-rect')); el.addEventListener('mouseleave',()=>cursor.classList.remove('expand-rect')); });
     gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{scrub:0.3,start:'top top',end:'bottom bottom'}});
-    const heroImages = ['/gallery/img/hero-01.jpg','/gallery/img/hero-02.jpg','/gallery/img/hero-03.jpg','/gallery/img/hero-04.jpg','/gallery/img/hero-05.jpg'];
+    const heroImages = ['/gallery/img/hero-01.jpeg','/gallery/img/hero-02.jpg','/gallery/img/hero-03.jpeg','/gallery/img/hero-04.jpeg','/gallery/img/hero-05.jpeg'];
     document.getElementById('hero-img').src = heroImages[Math.floor(Math.random()*heroImages.length)];
     function drawPath(el,duration,delay){
       const len=el.getTotalLength?el.getTotalLength():800;
@@ -181,7 +181,7 @@
     const sections=[document.getElementById('hero'),document.getElementById('gallery-index')];
     let current=0,busy=false;
     function goTo(idx){if(idx<0||idx>=sections.length)return;busy=true;current=idx;sections[idx].scrollIntoView({behavior:'smooth'});setTimeout(()=>{busy=false;},1000);}
-    window.addEventListener('wheel',e=>{if(busy){e.preventDefault();return;}const dir=e.deltaY>0?1:-1;const next=current+dir;if(next>=0&&next<sections.length){e.preventDefault();goTo(a�t);}2},{passive:false});
+    window.addEventListener('wheel',e=>{if(busy){e.preventDefault();return;}const dir=e.deltaY>0?1:-1;const next=current+dir;if(next>=0&&next<sections.length){e.preventDefault();goTo(aÔt);}2},{passive:false});
     window.addEventListener('scroll',()=>{const mid=window.scrollY+window.innerHeight/2;sections.forEach((s,i)=>{if(s.offsetTop<=mid&&s.offsetTop+s.offsetHeight>mid)current=i;});});
     gsap.to('#gi-label',{opacity:1,duration:1.0,scrollTrigger:{trigger:'#gallery-index',start:'top 75%'}});
     gsap.to('#gi-divider',{scaleY:1,duration:1.6,ease:'power3.out',scrollTrigger:{trigger:'#gallery-index',start:'top 70%'}});
