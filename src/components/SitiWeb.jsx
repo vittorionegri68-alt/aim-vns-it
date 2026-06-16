@@ -7,8 +7,8 @@ const sitiLive = [
     label: 'Casa vacanze . 3 lingue',
     title: 'Casa Cavour',
     desc: 'Casa vacanze storica a Bertinoro, FC. Sito in italiano, inglese e olandese con ottimizzazione AI completa.',
-    url: 'https://www.casa-cavour.com',
-    domain: 'casa-cavour.com',
+    url:'https://www.casa-cavour.com',
+    domain:'casa-cavour.com',
   },
   {
     label: 'Appartamento vacanze . 2 lingue',
