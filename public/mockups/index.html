@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Master Website Generator Ã¢ÂÂ AI'm by VNS</title>
+<title>Master Website Generator ÃÂ¢ÃÂÃÂ AI'm by VNS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -449,7 +449,7 @@
 
     <div class="sidebar-section">
       <div class="sidebar-section-label">Stile avanzato</div>
-      <button class="style-btn extra" data-id="Ã¢ÂÂ" onclick="loadStyle(this)"
+      <button class="style-btn extra" data-id="ÃÂ¢ÃÂÃÂ" onclick="loadStyle(this)"
         data-file="Extra-Bauhaus.html"
         data-name="Bauhaus - Stile Extra"
         data-palette="#F5F2EC,#161513,#E8C84A,#C8491E,#4A7EC8">
@@ -543,7 +543,7 @@ function loadStyle(btn) {
 
   document.getElementById('tb-num').textContent    = num;
   document.getElementById('tb-name').textContent   = name;
-  document.getElementById('tb-target').textContent = target;
+  if (document.getElementById('tb-target')) document.getElementById('tb-target').textContent = target || '';
 
   const bar = document.getElementById('palette-bar');
   bar.innerHTML = palette.map(c => `<div class="swatch" style="background:${c.trim()}"></div>`).join('');
