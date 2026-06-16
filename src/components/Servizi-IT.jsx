@@ -90,7 +90,7 @@ export default function Servizi() {
             <span style={{ color: '#A0782A' }}>PUNTO DI PARTENZA.</span>
           </h2>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(13px,1vw,15px)',
-            color: '#444', lineHeight: 1.7, marginTop: '1.5rem', maxWidth: '600px' }}>
+            color: '#AAAAAA', lineHeight: 1.7, marginTop: '1.5rem', maxWidth: '600px' }}>
             Lavori con Vittorio direttamente, senza intermediari.
             Ogni intervento viene costruito insieme a te, spiegato in modo semplice
             e verificato prima di andare online. Niente tecnicismi, niente sorprese.
@@ -120,7 +120,7 @@ export default function Servizi() {
                 marginBottom: '1rem', lineHeight: 1 }}>{p.nome}</div>
               <div style={{ width: '24px', height: '1px', background: '#1A1A1A', marginBottom: '1rem' }} />
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(13px,1vw,14px)',
-                color: '#444', lineHeight: 1.7, marginBottom: '1.5rem' }}>{p.desc}</p>
+                color: '#AAAAAA', lineHeight: 1.7, marginBottom: '1.5rem' }}>{p.desc}</p>
 
               <ul style={{ listStyle: 'none', marginBottom: '2rem', flex: 1 }}>
                 {p.incluso.map((item, j) => (
@@ -139,7 +139,7 @@ export default function Servizi() {
                   fontSize: 'clamp(24px,2vw,32px)', color: p.highlight ? '#A0782A' : '#ffffff',
                   letterSpacing: '0.02em', lineHeight: 1 }}>{p.prezzo}</div>
                 <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px',
-                  color: '#444', marginTop: '4px', letterSpacing: '0.05em' }}>{p.prezzoSub}</div>
+                  color: '#AAAAAA', marginTop: '4px', letterSpacing: '0.05em' }}>{p.prezzoSub}</div>
               </div>
 
               <a href="https://calendly.com/aim-vns-info/30min" target="_blank" rel="noopener" style={{

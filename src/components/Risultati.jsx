@@ -90,7 +90,7 @@ export default function Risultati() {
             <span style={{ color: '#A0782A' }}>{"È"} UNA MAPPA.</span>
           </h2>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(13px,1vw,15px)',
-            color: '#444', lineHeight: 1.7, marginTop: '1.5rem', maxWidth: '560px' }}>
+            color: '#AAAAAA', lineHeight: 1.7, marginTop: '1.5rem', maxWidth: '560px' }}>
             {"Molte attività che analizziamo partono da un punteggio basso. Non è una brutta notizia: significa che sappiamo esattamente dove intervenire. La cosa peggiore non è avere un punteggio basso. È non sapere che ce l'hai."}
           </p>
         </div>
