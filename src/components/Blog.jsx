@@ -1,4 +1,4 @@
-// Blog.jsx — AI'm by VNS IT
+﻿// Blog.jsx — AI'm by VNS IT
 import { useState, useRef } from 'react'
 import { posts } from '../data/posts.jsx'
 
@@ -24,7 +24,7 @@ function ArticoloEsteso({ post, onClose }) {
         </div>
         <button onClick={onClose} style={{
           background: 'none', border: '1px solid #1A1A1A', cursor: 'pointer',
-          color: '#555', fontFamily: "'Inter', sans-serif", fontWeight: 700,
+          color: '#AAAAAA', fontFamily: "'Inter', sans-serif", fontWeight: 700,
           fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase',
           padding: '8px 14px', borderRadius: 0, flexShrink: 0,
           transition: 'all 0.2s',
@@ -40,7 +40,7 @@ function ArticoloEsteso({ post, onClose }) {
         {post.contenuto.map((blocco, i) => {
           if (blocco.tipo === 'paragrafo') return (
             <p key={i} style={{ fontFamily: "'Inter', sans-serif", fontSize: 'clamp(14px,1vw,16px)',
-              color: '#555', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+              color: '#AAAAAA', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               {blocco.testo}
             </p>
           )

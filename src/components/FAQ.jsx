@@ -1,4 +1,4 @@
-// FAQ.jsx — AI'm by VNS IT
+﻿// FAQ.jsx — AI'm by VNS IT
 // v2.0 — copy riscritta senza tecnicismi — giugno 2026
 import { useState } from 'react'
 import { qanda } from '../data/qanda.jsx'
@@ -47,7 +47,7 @@ export default function FAQ() {
               {open === i && (
                 <div style={{ paddingBottom: 'clamp(16px,2vw,24px)' }}>
                   <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400,
-                    fontSize: 'clamp(13px,1vw,15px)', color: '#555', lineHeight: 1.7 }}>
+                    fontSize: 'clamp(13px,1vw,15px)', color: '#AAAAAA', lineHeight: 1.7 }}>
                     {item.a}
                   </p>
                 </div>

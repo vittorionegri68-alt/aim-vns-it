@@ -48,7 +48,7 @@ export default function Contatti() {
             </h2>
 
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px',
-              color: '#555', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '360px' }}>
+              color: '#AAAAAA', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: '360px' }}>
               La prima analisi e' gratuita e senza impegno.
               Ti diciamo come sei visibile su ChatGPT adesso,
               in modo semplice e senza termini tecnici.
@@ -99,7 +99,7 @@ export default function Contatti() {
                 </div>
                 <div>
                   <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                    fontSize: '11px', color: '#555', letterSpacing: '0.15em',
+                    fontSize: '11px', color: '#AAAAAA', letterSpacing: '0.15em',
                     textTransform: 'uppercase', marginBottom: '2px' }}>Email</div>
                   <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px',
                     color: '#888' }}>{config.brand.email}</div>
@@ -121,7 +121,7 @@ export default function Contatti() {
                 </svg>
                 <div>
                   <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
-                    fontSize: '11px', color: '#555', letterSpacing: '0.15em',
+                    fontSize: '11px', color: '#AAAAAA', letterSpacing: '0.15em',
                     textTransform: 'uppercase', marginBottom: '2px' }}>LinkedIn</div>
                   <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px',
                     color: '#888' }}>AI'm by VNS</div>
@@ -140,7 +140,7 @@ export default function Contatti() {
                   fontSize: '32px', color: '#A0782A', textTransform: 'uppercase',
                   letterSpacing: '0.02em', marginBottom: '1rem' }}>Messaggio ricevuto</div>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '14px',
-                  color: '#555' }}>Ti rispondo entro 48 ore. Nessun tecnicismo, solo una conversazione semplice.</p>
+                  color: '#AAAAAA' }}>Ti rispondo entro 48 ore. Nessun tecnicismo, solo una conversazione semplice.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}
