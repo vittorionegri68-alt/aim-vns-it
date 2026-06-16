@@ -4,21 +4,21 @@ import { useEffect, useRef } from 'react'
 
 const sitiLive = [
   {
-    label: 'Casa vacanze · 3 lingue',
+    label: 'Casa vacanze Â· 3 lingue',
     title: 'Casa Cavour',
     desc: 'Casa vacanze storica a Bertinoro, FC. Sito in italiano, inglese e olandese con ottimizzazione AI completa.',
     url: 'https://www.casa-cavour.com',
     domain: 'casa-cavour.com',
   },
   {
-    label: 'Appartamento vacanze · 2 lingue',
+    label: 'Appartamento vacanze Â· 2 lingue',
     title: 'Garibaldina 75',
-    desc: 'Appartamento in Romagna. Sito in italiano e inglese, costruito per la visibilità sui motori AI.',
+    desc: 'Appartamento in Romagna. Sito in italiano e inglese, costruito per la visibilitÃ  sui motori AI.',
     url: 'https://garibaldina-75.romagna-affitti-brevi.it',
     domain: 'garibaldina-75.romagna-affitti-brevi.it',
   },
   {
-    label: 'Loft di lusso · 2 lingue',
+    label: 'Loft di lusso Â· 2 lingue',
     title: 'Samilla',
     desc: 'Loft di lusso in Romagna. Design raffinato, posizionamento premium, due lingue.',
     url: 'https://samilla.romagna-affitti-brevi.it',
@@ -74,21 +74,21 @@ export default function SitiWeb() {
               color: '#ffffff', marginBottom: '24px',
             }}>
               Nessun template.<br />
-              <span style={{ color: '#A0782A' }}>Ogni sito</span> è unico.
+              <span style={{ color: '#A0782A' }}>Ogni sito</span> Ã¨ unico.
             </h2>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: 'clamp(15px,1.4vw,17px)',
               color: '#AAAAAA', lineHeight: 1.75, marginBottom: '16px',
               maxWidth: '560px',
             }}>
-              Non lavoriamo con template preconfezionati. Ogni sito viene costruito da zero sul carattere della tua attività: palette, tipografia, struttura e contenuti vengono scelti per te, non copiati da uno schema esistente.
+              Non lavoriamo con template preconfezionati. Ogni sito viene costruito da zero sul carattere della tua attivitÃ : palette, tipografia, struttura e contenuti vengono scelti per te, non copiati da uno schema esistente.
             </p>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: 'clamp(14px,1.2vw,15px)',
               color: '#AAAAAA', lineHeight: 1.75, marginBottom: '36px',
               maxWidth: '560px',
             }}>
-              Abbiamo 18 stili di partenza, ognuno con un’identità visiva distinta. Sono punti di riferimento, non gabbie: colori, font e struttura vengono personalizzati in ogni dettaglio.
+              Abbiamo 18 stili di partenza, ognuno con unâidentitÃ  visiva distinta. Sono punti di riferimento, non gabbie: colori, font e struttura vengono personalizzati in ogni dettaglio.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
@@ -117,13 +117,13 @@ export default function SitiWeb() {
             fontFamily: "'Inter', sans-serif", fontWeight: 700,
             fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase',
             color: '#A0782A', marginBottom: '12px',
-          }}>Siti già online</div>
+          }}>Siti giÃ  online</div>
           <p style={{
             fontFamily: "'Inter', sans-serif", fontSize: 'clamp(14px,1.2vw,15px)',
             color: '#AAAAAA', lineHeight: 1.7, maxWidth: '560px',
             marginBottom: 'clamp(28px,3vw,40px)',
           }}>
-            Non mockup: siti reali, costruiti con lo stesso sistema. Ogni sito è stato progettato su misura per l’attività che rappresenta.
+            Non mockup: siti reali, costruiti con lo stesso sistema. Ogni sito Ã¨ stato progettato su misura per lâattivitÃ  che rappresenta.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export default function SitiWeb() {
               <div style={{
                 fontFamily: "'Inter', sans-serif", fontWeight: 700,
                 fontSize: '11px', color: '#A0782A', letterSpacing: '0.05em',
-              }}>{s.domain} ↗</div>
+              }}>{s.domain} â</div>
             </a>
           ))}
         </div>
@@ -197,7 +197,7 @@ export default function SitiWeb() {
 
       </div>
 
-      <style>{\`
+      <style>{`
         .sitiweb-grid { grid-template-columns: repeat(3,1fr); }
         @media (max-width: 900px) {
           .sitiweb-grid { grid-template-columns: 1fr !important; }
@@ -205,7 +205,7 @@ export default function SitiWeb() {
         @media (max-width: 600px) {
           .sitiweb-main a { width: 100%; text-align: center; }
         }
-      \`}</style>
+      `}</style>
     </section>
   )
 }
