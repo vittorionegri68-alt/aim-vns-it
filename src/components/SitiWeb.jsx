@@ -1,0 +1,225 @@
+// SitiWeb.jsx — AI'm by VNS IT
+// Sezione: design su misura + link /stili + portfolio siti live
+import { useEffect, useRef } from 'react'
+
+const sitiLive = [
+  {
+    label: 'Casa vacanze · 3 lingue',
+    title: 'Casa Cavour',
+    desc: 'Casa vacanze storica a Bertinoro, FC. Sito in italiano, inglese e olandese con ottimizzazione AI completa.',
+    url: 'https://www.casa-cavour.com',
+    domain: 'casa-cavour.com',
+  },
+  {
+    label: 'Appartamento vacanze · 2 lingue',
+    title: 'Garibaldina 75',
+    desc: 'Appartamento in Romagna. Sito in italiano e inglese, costruito per la visibilità sui motori AI.',
+    url: 'https://garibaldina-75.romagna-affitti-brevi.it',
+    domain: 'garibaldina-75.romagna-affitti-brevi.it',
+  },
+  {
+    label: 'Loft di lusso · 2 lingue',
+    title: 'Samilla',
+    desc: 'Loft di lusso in Romagna. Design raffinato, posizionamento premium, due lingue.',
+    url: 'https://samilla.romagna-affitti-brevi.it',
+    domain: 'samilla.romagna-affitti-brevi.it',
+  },
+]
+
+export default function SitiWeb() {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible')
+      }),
+      { threshold: 0.12 }
+    )
+    ref.current?.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <section
+      id="siti-web"
+      ref={ref}
+      style={{
+        background: '#080808',
+        padding: 'clamp(64px,8vw,120px) 0',
+        borderTop: '1px solid #141414',
+      }}
+    >
+      <div style={{ maxWidth: '1440px', margin: '0 auto', padding: '0 clamp(24px,4vw,64px)' }}>
+
+        {/* Header sezione */}
+        <div style={{
+          display: 'flex', justifyContent: 'space-between',
+          alignItems: 'center', marginBottom: 'clamp(48px,6vw,80px)',
+        }}>
+          <div style={{
+            fontFamily: "'Inter', sans-serif", fontWeight: 700,
+            fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase',
+            color: '#A0782A',
+          }}>Design su misura</div>
+          <div style={{ height: '1px', flex: 1, background: '#141414', margin: '0 1.5rem' }} />
+          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '10px', color: '#222', letterSpacing: '0.15em' }}>Siti web</div>
+        </div>
+
+        {/* Blocco principale: testo + CTA */}
+        <div className="reveal sitiweb-main" style={{ marginBottom: 'clamp(48px,6vw,80px)' }}>
+          <div style={{ maxWidth: '720px' }}>
+            <h2 style={{
+              fontFamily: "'Oswald', sans-serif", fontWeight: 700,
+              fontSize: 'clamp(36px,5vw,64px)', textTransform: 'uppercase',
+              letterSpacing: '0.02em', lineHeight: 1.05,
+              color: '#ffffff', marginBottom: '24px',
+            }}>
+              Nessun template.<br />
+              <span style={{ color: '#A0782A' }}>Ogni sito</span> è unico.
+            </h2>
+            <p style={{
+              fontFamily: "'Inter', sans-serif", fontSize: 'clamp(15px,1.4vw,17px)',
+              color: '#AAAAAA', lineHeight: 1.75, marginBottom: '16px',
+              maxWidth: '560px',
+            }}>
+              Non lavoriamo con template preconfezionati. Ogni sito viene costruito da zero sul carattere della tua attività: palette, tipografia, struttura e contenuti vengono scelti per te, non copiati da uno schema esistente.
+            </p>
+            <p style={{
+              fontFamily: "'Inter', sans-serif", fontSize: 'clamp(14px,1.2vw,15px)',
+              color: '#AAAAAA', lineHeight: 1.75, marginBottom: '36px',
+              maxWidth: '560px',
+            }}>
+              Abbiamo 18 stili di partenza, ognuno con un'identità visiva distinta. Sono punti di riferimento, non gabbie: colori, font e struttura vengono personalizzati in ogni dettaglio.
+            </p>
+
+            {/* CTA block */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <a
+                href="/stili"
+                style={{
+                  fontFamily: "'Inter', sans-serif", fontWeight: 700,
+                  fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em',
+                  color: '#080808', background: '#A0782A',
+                  padding: '14px 28px', textDecoration: 'none', display: 'inline-block',
+                  transition: 'opacity 0.2s',
+                }}
+                onMouseOver={e => e.currentTarget.style.opacity = '0.85'}
+                onMouseOut={e => e.currentTarget.style.opacity = '1'}
+              >
+                Esplora i 18 stili
+              </a>
+              <span style={{
+                fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#555',
+              }}>
+                Visualizzazione ottimale su PC
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Separatore */}
+        <div style={{ height: '1px', background: '#141414', marginBottom: 'clamp(48px,6vw,72px)' }} />
+
+        {/* Siti live */}
+        <div className="reveal" style={{ marginBottom: '16px' }}>
+          <div style={{
+            fontFamily: "'Inter', sans-serif", fontWeight: 700,
+            fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase',
+            color: '#A0782A', marginBottom: '12px',
+          }}>Siti già online</div>
+          <p style={{
+            fontFamily: "'Inter', sans-serif", fontSize: 'clamp(14px,1.2vw,15px)',
+            color: '#AAAAAA', lineHeight: 1.7, maxWidth: '560px',
+            marginBottom: 'clamp(28px,3vw,40px)',
+          }}>
+            Non mockup: siti reali, costruiti con lo stesso sistema. Ogni sito è stato progettato su misura per l'attività che rappresenta.
+          </p>
+        </div>
+
+        {/* Grid siti live */}
+        <div className="sitiweb-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3,1fr)',
+          gap: '2px',
+          marginBottom: 'clamp(32px,4vw,48px)',
+        }}>
+          {sitiLive.map((s, i) => (
+            <a
+              key={i}
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="reveal live-card"
+              style={{
+                background: '#0d0d0d', border: '1px solid #141414',
+                padding: 'clamp(20px,2vw,28px) clamp(20px,2vw,28px) clamp(24px,2.5vw,32px)',
+                textDecoration: 'none', display: 'block',
+                transitionDelay: `${i * 0.08}s`,
+                transition: 'border-color 0.2s',
+              }}
+              onMouseOver={e => e.currentTarget.style.borderColor = '#A0782A'}
+              onMouseOut={e => e.currentTarget.style.borderColor = '#141414'}
+            >
+              <div style={{
+                fontFamily: "'Inter', sans-serif", fontWeight: 700,
+                fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase',
+                color: '#A0782A', marginBottom: '8px',
+              }}>{s.label}</div>
+              <div style={{
+                fontFamily: "'Oswald', sans-serif", fontWeight: 700,
+                fontSize: 'clamp(18px,1.6vw,22px)', textTransform: 'uppercase',
+                color: '#ffffff', marginBottom: '10px', letterSpacing: '0.03em',
+              }}>{s.title}</div>
+              <p style={{
+                fontFamily: "'Inter', sans-serif", fontSize: '13px',
+                color: '#AAAAAA', lineHeight: 1.65, marginBottom: '16px',
+              }}>{s.desc}</p>
+              <div style={{
+                fontFamily: "'Inter', sans-serif", fontWeight: 700,
+                fontSize: '11px', color: '#A0782A', letterSpacing: '0.05em',
+              }}>{s.domain} ↗</div>
+            </a>
+          ))}
+        </div>
+
+        {/* Nota Instagram */}
+        <div className="reveal" style={{
+          background: '#0d0d0d', borderLeft: '3px solid #A0782A',
+          border: '1px solid #141414', borderLeft: '3px solid #A0782A',
+          padding: '18px 22px', maxWidth: '520px',
+        }}>
+          <div style={{
+            fontFamily: "'Inter', sans-serif", fontWeight: 700,
+            fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase',
+            color: '#A0782A', marginBottom: '8px',
+          }}>Servizio aggiuntivo</div>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '13px', color: '#AAAAAA', lineHeight: 1.65 }}>
+            Realizziamo anche landing page per profili Instagram, ottimizzate per la conversione da social.{' '}
+            <a
+              href="https://links.casa-cavour.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#ffffff', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+            >
+              Guarda un esempio live
+            </a>.
+          </p>
+        </div>
+
+      </div>
+
+      <style>{`
+        .sitiweb-grid {
+          grid-template-columns: repeat(3,1fr);
+        }
+        @media (max-width: 900px) {
+          .sitiweb-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .sitiweb-main a { width: 100%; text-align: center; }
+        }
+      `}</style>
+    </section>
+  )
+}
