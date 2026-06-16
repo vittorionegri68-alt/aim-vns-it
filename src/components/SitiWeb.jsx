@@ -88,7 +88,7 @@ export default function SitiWeb() {
               color: '#AAAAAA', lineHeight: 1.75, marginBottom: '36px',
               maxWidth: '560px',
             }}>
-              Abbiamo 18 stili di partenza, ognuno con un↗identità  visiva distinta. Sono punti di riferimento, non gabbie: colori, font e struttura vengono personalizzati in ogni dettaglio.
+              Abbiamo 18 stili di partenza, ognuno con una identità visiva distinta. Sono punti di riferimento, non gabbie: colori, font e struttura vengono personalizzati in ogni dettaglio.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
@@ -123,7 +123,7 @@ export default function SitiWeb() {
             color: '#AAAAAA', lineHeight: 1.7, maxWidth: '560px',
             marginBottom: 'clamp(28px,3vw,40px)',
           }}>
-            Non mockup: siti reali, costruiti con lo stesso sistema. Ogni sito è stato progettato su misura per l↗attività  che rappresenta.
+            Non mockup: siti reali, costruiti con lo stesso sistema. Ogni sito è stato progettato su misura per l' attività  che rappresenta.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export default function SitiWeb() {
               <div style={{
                 fontFamily: "'Inter', sans-serif", fontWeight: 700,
                 fontSize: '11px', color: '#A0782A', letterSpacing: '0.05em',
-              }}>{s.domain} ↗</div>
+              }}>{s.domain}</div>
             </a>
           ))}
         </div>
