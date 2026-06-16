@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vittorio Negri — Visual Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=DM+Mono:wght@300;400&family=Dancing+Script:wght@400&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --black:#000;--white:#F0F0F0;--gold:#A0782A;--red:#FF3B00;
+      --mono:'DM Mono',monospace;--display:'Cinzel',serif;--script:'Caveat',cursive;
+    }
+    html{scroll-behavior:auto}
+    body{background:#000;color:var(--white);font-family:var(--mono);overflow-x:hidden;cursor:none}
+    .cursor{width:10px;height:10px;background:var(--white);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .25s,height .25s,border-radius .25s}
+    .cursor.expand-rect{width:90px;height:90px;border-radius:2px}
+    .progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:600;transform-origin:left;transform:scaleX(0)}
+    .hero{position:relative;width:100vw;height:100vh;overflow:hidden;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .hero-bg{position:absolute;inset:0;z-index:0}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.1);filter:brightness(0) grayscale(1);will-change:filter,transform}
+    .viewfinder{position:absolute;inset:0;z-index:2;pointer-events:none}
+    .viewfinder svg{width:100%;height:100%}
+    .vf-draw{fill:none;stroke:rgba(160,120,42,.55);stroke-width:.8;stroke-dasharray:800;stroke-dashoffset:800}
+    .vf-draw-dim{fill:none;stroke:rgba(240,240,240,.18);stroke-width:.6;stroke-dasharray:800;stroke-dashoffset:800}
+    .shutter-scale{position:absolute;right:clamp(40px,4vw,70px);top:50%;transform:translateY(-50%);z-index:3;pointer-events:none;opacity:0}
+    .shutter-scale-inner{display:flex;flex-direction:column;align-items:flex-end;gap:7px;position:relative}
+    .shutter-tick{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:16px;letter-spacing:.08em;color:rgba(240,240,240,.35);line-height:1}
+    .shutter-tick.extreme{color:var(--red);font-size:17px}
+    .shutter-tick.active{color:var(--white)}
+    .shutter-tick-line{width:20px;height:1px;background:currentColor}
+    .shutter-tick.long .shutter-tick-line{width:36px}
+    .shutter-needle{position:absolute;right:-10px;top:50%;transform:translateY(-50%);width:4px;height:28px;background:var(--gold);border-radius:2px;box-shadow:0 0 10px var(--gold);animation:np 2.5s ease-in-out infinite}
+    @keyframes np{0%,100%{opacity:1}50%{opacity:.5}}
+    .hero-content{position:relative;z-index:4;text-align:center;padding:0 24px}
+    .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;opacity:0}
+    .hero-title{font-family:var(--display);font-weight:400;font-size:clamp(60px,9vw,144px);line-height:.95;letter-spacing:.12em;color:var(--white);transform:scale(.42);filter:grayscale(1) brightness(.25);opacity:0;will-change:transform,filter,opacity;text-transform:uppercase}
+    .hero-title .gold{color:var(--gold);display:block}
+    .hero-title .red{color:var(--red);display:inline}
+    .hero-scroll-hint{position:absolute;bottom:6vh;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:12px;opacity:0}
+    .scroll-word{font-family:var(--mono);font-size:22px;letter-spacing:.35em;text-transform:uppercase;color:rgba(240,240,240,.35)}
+    .scroll-line{width:1px;height:67px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sl 2s ease-in-out infinite}
+    @keyframes sl{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+    .noise{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .gallery-index{position:relative;width:100vw;min-height:100vh;display:flex;align-items:stretch;overflow:hidden;background:#000}
+    .gi-left{flex:0 0 50%;display:flex;flex-direction:column;justify-content:center;padding:clamp(60px,8vw,120px) clamp(40px,6vw,100px);position:relative;z-index:2}
+    .gi-label{font-family:var(--mono);font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:clamp(40px,5vw,64px);opacity:0}
+    .gi-items{display:flex;flex-direction:column;gap:clamp(2px,1vw,10px)}
+    .gi-item{display:block;text-decoration:none;cursor:pointer}
+    .gi-item-inner{display:inline-block;transform:translateY(80px);opacity:0}
+    .gi-title{font-family:var(--display);font-weight:400;font-size:clamp(32px,4vw,64px);letter-spacing:.1em;color:var(--white);line-height:1.1;text-transform:uppercase;transition:color .5s,letter-spacing .5s;display:block}
+    .gi-item:hover .gi-title{color:var(--gold);letter-spacing:.16em}
+    .gi-divider{position:absolute;left:50%;top:8%;bottom:8%;width:1px;background:rgba(240,240,240,.1);transform:scaleY(0);transform-origin:top;z-index:3}
+    .gi-right{flex:0 0 50%;position:relative;overflow:hidden}
+    .gi-preview{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none}
+    .gi-preview.active{opacity:1}
+    .gi-preview img{width:100%;height:100%;object-fit:cover;filter:grayscale(15%) brightness(.7);transform:scale(1.06);transition:transform 7s ease}
+    .gi-preview.active img{transform:scale(1)}
+    .gi-preview::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.6) 0%transparent 55%),linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 50%)}
+    .gi-preview-meta{position:absolute;bottom:44px;left:44px;z-index:2}
+    .gi-preview-meta-num{font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px}
+    .gi-preview-meta-title{font-family:var(--display);font-weight:400;font-size:clamp(28px,3vw,48px);letter-spacing:.1em;text-transform:uppercase;color:var(--white)}
+    .gi-right-default{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity .5s}
+    .gi-right-default.hidden{opacity:0}
+    .gi-right-default-text{font-family:var(--display);font-weight:400;font-size:clamp(100px,16vw,220px);color:rgba(240,240,240,.025);letter-spacing:.15em;text-transform:uppercase;user-select:none}
+    @media(max-width:768px){.gallery-index{flex-direction:column}.gi-left{flex:none;min-height:100vh}.gi-right{display:none}.gi-divider{display:none}}
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="noise"></div>
+  <div class="progress-bar" id="progress"></div>
+  <section class="hero" id="hero">
+    <div class="hero-bg"><img id="hero-img" src="" alt=""/></div>
+    <div class="viewfinder">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <path class="vf-draw" id="vf-c1" d="M30,180 L30,30 L180,30"/>
+        <path class="vf-draw" id="vf-c2" d="M1260,30 L1410,30 L1410,180"/>
+        <path class="vf-draw" id="vf-c3" d="M30,720 L30,870 L1480,870"/>
+        <path class="vf-draw" id="vf-c4" d="M1260,870 L1410,870 L1410,720"/>
+        <line class="vf-draw-dim" id="vf-h1" x1="0" y1="450" x2="550" y2="450"/>
+        <line class="vf-draw-dim" id="vf-h2" x1="890" y1="450" x2="1440" y2="450"/>
+        <line class="vf-draw-dim" id="vf-v1" x1="720" y1="0" x2="720" y2="320"/>
+        <line class="vf-draw-dim" id="vf-v2" x1="720" y1="580" x2="720" y2="900"/>
+        <rect class="vf-draw" id="vf-rect" x="550" y="320" width="340" height="260" rx="1"/>
+        <line class="vf-draw" id="vf-split" x1="550" y1="450" x2="890" y2="450"/>
+        <line id="vf-ghost" style="fill:none;stroke:rgba(160,120,42,.18);stroke-width:.5;stroke-dasharray:5,4;opacity:0" x1="562" y1="444" x2="878" y2="444"/>
+        <path class="vf-draw" id="vf-diamond" d="M715,446 L720,441 L725,446 L720,451 Z"/>
+        <circle class="vf-draw-dim" id="vf-c5" cx="720" cy="450" r="90"/>
+        <circle class="vf-draw-dim" id="vf-c6" cx="720" cy="450" r="178"/>
+        <line class="vf-draw-dim" id="vf-t1" x1="720" y1="268" x2="720" y2="256"/>
+        <line class="vf-draw-dim" id="vf-t2" x1="720" y1="632" x2="720" y2="644"/>
+        <line class="vf-draw-dim" id="vf-t3" x1="538" y1="450" x2="526" y2="450"/>
+        <line class="vf-draw-dim" id="vf-t4" x1="902" y1="450" x2="914" y2="450"/>
+        <text id="vf-f"   x="80"  y="864" font-family="'DM Mono',monospace" font-size="11" fill="rgba(160,120,42,.65)" letter-spacing="3" opacity="0">f / 1.4</text>
+        <text id="vf-iso" x="155" y="864" font-family="'DM Mono',monospace" font-size="11" fill="rgba(240,240,240,.25)" letter-spacing="3" opacity="0">ISO 400</text>
+        <text id="vf-mm"  x="248" y="864" font-family="'DM Mono',monospace" font-size="11" fill="rgba(240,240,240,.25)" letter-spacing="3" opacity="0">35mm</text>
+      </svg>
+    </div>
+    <div class="shutter-scale" id="shutter-scale">
+      <div class="shutter-scale-inner">
+        <div class="shutter-tick extreme long"><span>B</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick"><span>1s</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick"><span>1/2</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick long"><span>1/4</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick"><span>1/8</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick"><span>1/15</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick long"><span>1/30</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick active"><span>1/60</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick long"><span>1/125</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick"><span>1/250</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick"><span>1/500</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick long"><span>1/1000</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-tick extreme long"><span>1/2000</span><span class="shutter-tick-line"></span></div>
+        <div class="shutter-needle"></div>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" id="hero-eyebrow">Vittorio Negri — Visual Portfolio</p>
+      <h1 class="hero-title" id="hero-title">THE<br/><span class="gold">EYE</span>NEVER<br/><span class="red">LIES</span></h1>
+    </div>
+    <div class="hero-scroll-hint" id="scroll-hint">
+      <span class="scroll-word">scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+  <section class="gallery-index" id="gallery-index">
+    <div class="gi-divider" id="gi-divider"></div>
+    <div class="gi-left">
+      <p class="gi-label" id="gi-label">Select a collection</p>
+      <div class="gi-items">
+        <a class="gi-item" href="/gallery/gallery-iceland.html" style="padding-left:0" data-preview="0"><div class="gi-item-inner"><span class="gi-title">Iceland</span></div></a>
+        <a class="gi-item" href="/gallery/gallery-alps.html" style="padding-left:clamp(24px,6%,64px)" data-preview="1"><div class="gi-item-inner"><span class="gi-title">Alps</span></div></a>
+        <a class="gi-item" href="/gallery/gallery-panorama.html" style="padding-left:clamp(12px,3%,32px)" data-preview="2"><div class="gi-item-inner"><span class="gi-title">Panorama</span></div></a>
+        <a class="gi-item" href="/gallery/gallery-cars.html" style="padding-left:clamp(40px,10%,100px)" data-preview="3"><div class="gi-item-inner"><span class="gi-title">Cars</span></div></a>
+        <a class="gi-item" href="/gallery/gallery-holland.html" style="padding-left:clamp(8px,2%,20px)" data-preview="4"><div class="gi-item-inner"><span class="gi-title">Holland</span></div></a>
+        <a class="gi-item" href="/gallery/gallery-italy.html" style="padding-left:clamp(32px,8%,80px)" data-preview="5"><div class="gi-item-inner"><span class="gi-title">Italy</span></div></a>
+      </div>
+    </div>
+    <div class="gi-right">
+      <div class="gi-right-default" id="gi-default"><span class="gi-right-default-text">VN</span></div>
+      <div class="gi-preview" id="prev-0"><img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1200&q=85" alt=""/><div class="gi-preview-meta"><div class="gi-preview-meta-num">Collection</div><div class="gi-preview-meta-title">Iceland</div></div></div>
+      <div class="gi-preview" id="prev-1"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=85" alt=""/><div class="gi-preview-meta"><div class="gi-preview-meta-num">Collection</div><div class="gi-preview-meta-title">Alps</div></div></div>
+      <div class="gi-preview" id="prev-2"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85" alt=""/><div class="gi-preview-meta"><div class="gi-preview-meta-num">Collection</div><div class="gi-preview-meta-title">Panorama</div></div></div>
+      <div class="gi-preview" id="prev-3"><img src="/gallery/img/hero-04.jpg" alt=""/><div class="gi-preview-meta"><div class="gi-preview-meta-num">Collection</div><div class="gi-preview-meta-title">Cars</div></div></div>
+      <div class="gi-preview" id="prev-4"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85" alt=""/><div class="gi-preview-meta"><div class="gi-preview-meta-num">Collection</div><div class="gi-preview-meta-title">Holland</div></div></div>
+      <div class="gi-preview" id="prev-5"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1200&q=85" alt=""/><div class="gi-preview-meta"><div class="gi-preview-meta-num">Collection</div><div class="gi-preview-meta-title">Italy</div></div></div>
+    </div>
+  </section>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => { gsap.to(cursor, { x:e.clientX, y:e.clientY, duration:0.1, ease:'power2.out' }); });
+    document.querySelectorAll('a,button').forEach(el => { el.addEventListener('mouseenter',()=>cursor.classList.add('expand-rect')); el.addEventListener('mouseleave',()=>cursor.classList.remove('expand-rect')); });
+    gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{scrub:0.3,start:'top top',end:'bottom bottom'}});
+    const heroImages = ['/gallery/img/hero-01.jpg','/gallery/img/hero-02.jpg','/gallery/img/hero-03.jpg','/gallery/img/hero-04.jpg','/gallery/img/hero-05.jpg'];
+    document.getElementById('hero-img').src = heroImages[Math.floor(Math.random()*heroImages.length)];
+    function drawPath(el,duration,delay){
+      const len=el.getTotalLength?el.getTotalLength():800;
+      el.style.strokeDasharray=len;el.style.strokeDashoffset=len;
+      gsap.to(el,{strokeDashoffset:0,duration,delay,ease:'power2.inOut'});
+    }
+    window.addEventListener('load',()=>{
+      ['#vf-c1','#vf-c2','#vf-c3','#vf-c4'].forEach((id,i)=>drawPath(document.querySelector(id),1,0.3+i*0.15));
+      ['#vf-h1','#vf-h2','#vf-v1','#vf-v2'].forEach((id,i)=>drawPath(document.querySelector(id),1.2,1.3+i*0.15));
+      ['#vf-rect','#vf-split','#vf-diamond','#vf-c5','#vf-c6','#vf-t1','#vf-t2','#vf-t3','#vf-t4'].forEach((id,i)=>{const el=document.querySelector(id);if(el)drawPath(el,1.1,2.1+i*0.1);});
+      gsap.to('#vf-ghost',{opacity:1,duration:0.8,delay:3.0});
+      ['#vf-f','#vf-iso','#vf-mm'].forEach((id,i)=>gsap.to(id,{opacity:1,duration:0.7,delay:3.0+i*0.12}));
+      gsap.to('#shutter-scale',{opacity:1,duration:1.2,delay:2.6});
+      gsap.to('#hero-title',{opacity:1,duration:0.5,delay:2.2});
+      gsap.to('#hero-title',{scale:1,filter:'grayscale(0) brightness(1)',duration:5.5,delay:2.2,ease:'power2.out'});
+      gsap.to('#hero-img',{filter:'brightness(0.48) grayscale(1)',duration:5.0,delay:2.4,ease:'power1.inOut'});
+      gsap.to('#hero-eyebrow',{opacity:1,duration:1.0,delay:6.2});
+      gsap.to('#scroll-hint',{opacity:1,duration:1.0,delay:7.0});
+    });
+    gsap.to('#hero-img',{yPercent:18,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+    const sections=[document.getElementById('hero'),document.getElementById('gallery-index')];
+    let current=0,busy=false;
+    function goTo(idx){if(idx<0||idx>=sections.length)return;busy=true;current=idx;sections[idx].scrollIntoView({behavior:'smooth'});setTimeout(()=>{busy=false;},1000);}
+    window.addEventListener('wheel',e=>{if(busy){e.preventDefault();return;}const dir=e.deltaY>0?1:-1;const next=current+dir;if(next>=0&&next<sections.length){e.preventDefault();goTo(a�t);}2},{passive:false});
+    window.addEventListener('scroll',()=>{const mid=window.scrollY+window.innerHeight/2;sections.forEach((s,i)=>{if(s.offsetTop<=mid&&s.offsetTop+s.offsetHeight>mid)current=i;});});
+    gsap.to('#gi-label',{opacity:1,duration:1.0,scrollTrigger:{trigger:'#gallery-index',start:'top 75%'}});
+    gsap.to('#gi-divider',{scaleY:1,duration:1.6,ease:'power3.out',scrollTrigger:{trigger:'#gallery-index',start:'top 70%'}});
+    document.querySelectorAll('.gi-item-inner').forEach((el,i)=>{gsap.to(el,{y:0,opacity:1,duration:1.1,delay:i*0.15,ease:'power3.out',scrollTrigger:{trigger:'#gallery-index',start:'top 68%'}});});
+    const previews=document.querySelectorAll('.gi-preview');
+    const defaultPanel=document.getElementById('gi-default');
+    document.querySelectorAll('.gi-item').forEach(item=>{const prev=document.getElementById('prev-'+ item.dataset.preview);item.addEventListener('mouseenter',()=>{defaultPanel.classList.add('hidden');previews.forEach(p=>p.classList.remove('active'));prev.classList.add('active');});item.addEventListener('mouseleave',()=>{prev.classList.remove('active');defaultPanel.classList.remove('hidden');});});
+  </script>
+</body>
+</html>
