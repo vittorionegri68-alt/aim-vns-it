@@ -1,5 +1,5 @@
 // SitiWeb.jsx — AI'm by VNS IT
-// Sezione: design su misura + link /stili + portfolio siti live
+// v2 — CTA verso /mockups, nota PC rimossa dalla homepage
 import { useEffect, useRef } from 'react'
 
 const sitiLive = [
@@ -94,7 +94,7 @@ export default function SitiWeb() {
             </p>
 
             {/* CTA block */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
               <a
                 href="/stili"
                 style={{
@@ -109,11 +109,21 @@ export default function SitiWeb() {
               >
                 Esplora i 18 stili
               </a>
-              <span style={{
-                fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#555',
-              }}>
-                Visualizzazione ottimale su PC
-              </span>
+              <a
+                href="/mockups"
+                style={{
+                  fontFamily: "'Inter', sans-serif", fontWeight: 700,
+                  fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.1em',
+                  color: '#A0782A', background: 'transparent',
+                  padding: '14px 0', textDecoration: 'none', display: 'inline-block',
+                  borderBottom: '1px solid #A0782A',
+                  transition: 'opacity 0.2s',
+                }}
+                onMouseOver={e => e.currentTarget.style.opacity = '0.7'}
+                onMouseOut={e => e.currentTarget.style.opacity = '1'}
+              >
+                Mockup interattivi
+              </a>
             </div>
           </div>
         </div>
@@ -185,7 +195,7 @@ export default function SitiWeb() {
 
         {/* Nota Instagram */}
         <div className="reveal" style={{
-          background: '#0d0d0d', borderLeft: '3px solid #A0782A',
+          background: '#0d0d0d',
           border: '1px solid #141414', borderLeft: '3px solid #A0782A',
           padding: '18px 22px', maxWidth: '520px',
         }}>
@@ -210,9 +220,7 @@ export default function SitiWeb() {
       </div>
 
       <style>{`
-        .sitiweb-grid {
-          grid-template-columns: repeat(3,1fr);
-        }
+        .sitiweb-grid { grid-template-columns: repeat(3,1fr); }
         @media (max-width: 900px) {
           .sitiweb-grid { grid-template-columns: 1fr !important; }
         }
