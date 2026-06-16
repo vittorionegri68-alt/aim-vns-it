@@ -2,6 +2,7 @@
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import HowItWorks from './components/HowItWorks.jsx'
+import SitiWeb from './components/SitiWeb.jsx'
 import Risultati from './components/Risultati.jsx'
 import Servizi from './components/Servizi-IT.jsx'
 import FAQ from './components/FAQ.jsx'
@@ -18,6 +19,7 @@ export default function App() {
       <main>
         <Hero />
         <HowItWorks />
+        <SitiWeb />
         <Risultati />
         <Servizi />
         <FAQ />
