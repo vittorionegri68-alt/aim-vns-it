@@ -28,6 +28,8 @@
       cursor: none;
     }
 
+    a, button { cursor: none !important; }
+
     /* CURSORE CUSTOM */
     .cursor {
       position: fixed;
@@ -400,7 +402,7 @@
 
     // --- INIT: tutte le foto partono grigie ---
     items.forEach(item => {
-      gsap.set(item.querySelector('img'), { filter: 'grayscale(1) brightness(0.35) blur(12px)', scale: 1.06 });
+      gsap.set(item.querySelector('img'), { filter: 'grayscale(1) brightness(0.35) blur(6px)', scale: 1.06 });
     });
 
     // --- INTRO ---
@@ -427,7 +429,7 @@
         gsap.killTweensOf(img);
         if (dist === 0) {
           // prima imposta stato grigio, poi anima a colore
-          gsap.set(img, { filter: 'grayscale(1) brightness(0.4) blur(12px)', scale: 1.06 });
+          gsap.set(img, { filter: 'grayscale(1) brightness(0.4) blur(6px)', scale: 1.06 });
           gsap.to(img, {
             filter: 'grayscale(0) brightness(1) blur(0px)',
             scale: 1,
@@ -437,7 +439,7 @@
           });
         } else if (dist === 1) {
           gsap.to(img, {
-            filter: 'grayscale(0.7) brightness(0.55) blur(4px)',
+            filter: 'grayscale(0.7) brightness(0.55) blur(2px)',
             scale: 1.03,
             duration: 0.6,
             ease: 'power2.out',
@@ -445,7 +447,7 @@
           });
         } else {
           gsap.to(img, {
-            filter: 'grayscale(1) brightness(0.35) blur(12px)',
+            filter: 'grayscale(1) brightness(0.35) blur(6px)',
             scale: 1.06,
             duration: 0.3,
             ease: 'power2.out',
