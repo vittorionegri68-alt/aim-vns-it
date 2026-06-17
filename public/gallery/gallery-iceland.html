@@ -172,19 +172,11 @@
       width: auto;
       display: block;
       object-fit: cover;
-      filter: grayscale(1) brightness(0.6);
+      filter: grayscale(1) brightness(0.5);
       transform: scale(1.04);
-      transition:
-        filter 1.5s ease,
-        transform 1.5s ease;
       will-change: filter, transform;
       user-select: none;
       -webkit-user-drag: none;
-    }
-
-    .photo-item.visible img {
-      filter: grayscale(0) brightness(1);
-      transform: scale(1);
     }
 
     /* primo e ultimo spacer */
@@ -426,11 +418,14 @@
 
     function updateVisible() {
       items.forEach((item, i) => {
+        const img = item.querySelector('img');
         const dist = Math.abs(i - current);
-        if (dist <= 1) {
-          item.classList.add('visible');
+        if (dist === 0) {
+          gsap.to(img, { filter: 'grayscale(0) brightness(1)', scale: 1, duration: 1.5, ease: 'power2.out' });
+        } else if (dist === 1) {
+          gsap.to(img, { filter: 'grayscale(0.6) brightness(0.65)', scale: 1.02, duration: 1.0, ease: 'power2.out' });
         } else {
-          item.classList.remove('visible');
+          gsap.to(img, { filter: 'grayscale(1) brightness(0.5)', scale: 1.04, duration: 0.4, ease: 'power2.out' });
         }
       });
     }
