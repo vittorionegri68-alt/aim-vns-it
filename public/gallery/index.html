@@ -154,67 +154,111 @@
   </section>
   <script>
     gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => { gsap.to(cursor, { x:e.clientX, y:e.clientY, duration:0.1, ease:'power2.out' }); });
-    document.querySelectorAll('a,button').forEach(el => { el.addEventListener('mouseenter',()=>cursor.classList.add('expand-rect')); el.addEventListener('mouseleave',()=>cursor.classList.remove('expand-rect')); });
-    gsap.to('#progress',{scaleX:1,ease:'none',scrollTrigger:{scrub:0.3,start:'top top',end:'bottom bottom'}});
-    const heroImages = ['/gallery/img/hero-01.jpeg','/gallery/img/hero-02.jpg','/gallery/img/hero-03.jpeg','/gallery/img/hero-04.jpeg','/gallery/img/hero-05.jpeg'];
-    document.getElementById('hero-img').src = heroImages[Math.floor(Math.random()*heroImages.length)];
-    function drawPath(el,duration,delay){
-      const len=el.getTotalLength?el.getTotalLength():800;
-      el.style.strokeDasharray=len;el.style.strokeDashoffset=len;
-      gsap.to(el,{strokeDashoffset:0,duration,delay,ease:'power2.inOut'});
-    }
-    window.addEventListener('load',()=>{
-      ['#vf-c1','#vf-c2','#vf-c3','#vf-c4'].forEach((id,i)=>drawPath(document.querySelector(id),1,0.3+i*0.15));
-      ['#vf-h1','#vf-h2','#vf-v1','#vf-v2'].forEach((id,i)=>drawPath(document.querySelector(id),1.2,1.3+i*0.15));
-      ['#vf-rect','#vf-split','#vf-diamond','#vf-c5','#vf-c6','#vf-t1','#vf-t2','#vf-t3','#vf-t4'].forEach((id,i)=>{const el=document.querySelector(id);if(el)drawPath(el,1.1,2.1+i*0.1);});
-      gsap.to('#vf-ghost',{opacity:1,duration:0.8,delay:3.0});
-      ['#vf-f','#vf-iso','#vf-mm'].forEach((id,i)=>gsap.to(id,{opacity:1,duration:0.7,delay:3.0+i*0.12}));
-      gsap.to('#shutter-scale',{opacity:1,duration:1.2,delay:2.6});
-      gsap.to('#hero-title',{opacity:1,duration:0.5,delay:2.2});
-      gsap.to('#hero-title',{scale:1,filter:'grayscale(0) brightness(1)',duration:5.5,delay:2.2,ease:'power2.out'});
-      gsap.to('#hero-img',{filter:'brightness(0.48) grayscale(1)',duration:5.0,delay:2.4,ease:'power1.inOut'});
-      gsap.to('#hero-eyebrow',{opacity:1,duration:1.0,delay:6.2});
-      gsap.to('#scroll-hint',{opacity:1,duration:1.0,delay:7.0});
-    });
-    gsap.to('#hero-img',{yPercent:18,ease:'none',scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
-    const sections=[document.getElementById('hero'),document.getElementById('gallery-index')];
-    let current=0,busy=false,snapEnabled=false;
-    setTimeout(()=>{ snapEnabled=true; },8500);
 
-    function goTo(idx){
-      if(idx<0||idx>=sections.length||busy)return;
-      busy=true;
-      current=idx;
-      const target=sections[idx].offsetTop;
-      gsap.to(window,{
-        scrollTo:{y:target,autoKill:false},
-        duration:0.8,
-        ease:'power2.inOut',
-        onComplete:()=>{ busy=false; }
+    // CURSOR
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      gsap.to(cursor, { x:e.clientX, y:e.clientY, duration:0.1, ease:'power2.out' });
+    });
+    document.querySelectorAll('a,button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('expand-rect'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('expand-rect'));
+    });
+
+    // PROGRESS
+    gsap.to('#progress', { scaleX:1, ease:'none', scrollTrigger:{ scrub:0.3, start:'top top', end:'bottom bottom' } });
+
+    // RANDOM HERO
+    const heroImages = [
+      '/gallery/img/hero-01.jpeg',
+      '/gallery/img/hero-02.jpg',
+      '/gallery/img/hero-03.jpeg',
+      '/gallery/img/hero-04.jpeg',
+      '/gallery/img/hero-05.jpeg'
+    ];
+    document.getElementById('hero-img').src = heroImages[Math.floor(Math.random() * heroImages.length)];
+
+    // VIEWFINDER DRAW
+    function drawPath(el, duration, delay) {
+      const len = el.getTotalLength ? el.getTotalLength() : 800;
+      el.style.strokeDasharray = len;
+      el.style.strokeDashoffset = len;
+      gsap.to(el, { strokeDashoffset:0, duration, delay, ease:'power2.inOut' });
+    }
+
+    window.addEventListener('load', () => {
+      ['#vf-c1','#vf-c2','#vf-c3','#vf-c4'].forEach((id,i) => drawPath(document.querySelector(id), 1.0, 0.3+i*0.15));
+      ['#vf-h1','#vf-h2','#vf-v1','#vf-v2'].forEach((id,i) => drawPath(document.querySelector(id), 1.2, 1.3+i*0.15));
+      ['#vf-rect','#vf-split','#vf-diamond','#vf-c5','#vf-c6','#vf-t1','#vf-t2','#vf-t3','#vf-t4'].forEach((id,i) => {
+        const el = document.querySelector(id);
+        if (el) drawPath(el, 1.1, 2.1+i*0.1);
+      });
+      gsap.to('#vf-ghost', { opacity:1, duration:0.8, delay:3.0 });
+      ['#vf-f','#vf-iso','#vf-mm'].forEach((id,i) => gsap.to(id, { opacity:1, duration:0.7, delay:3.0+i*0.12 }));
+      gsap.to('#shutter-scale', { opacity:1, duration:1.2, delay:2.6 });
+      gsap.to('#hero-title', { opacity:1, duration:0.5, delay:2.2 });
+      gsap.to('#hero-title', { scale:1, filter:'grayscale(0) brightness(1)', duration:5.5, delay:2.2, ease:'power2.out' });
+      gsap.to('#hero-img', { filter:'brightness(0.48) grayscale(1)', duration:5.0, delay:2.4, ease:'power1.inOut' });
+      gsap.to('#hero-eyebrow', { opacity:1, duration:1.0, delay:6.2 });
+      gsap.to('#scroll-hint', { opacity:1, duration:1.0, delay:7.0 });
+    });
+
+    // HERO PARALLAX
+    gsap.to('#hero-img', { yPercent:18, ease:'none', scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:true } });
+
+    // SCROLL SNAP — un click = una sezione, attivo dopo intro
+    const sections = [document.getElementById('hero'), document.getElementById('gallery-index')];
+    let current = 0, busy = false, snapEnabled = false;
+    setTimeout(() => { snapEnabled = true; }, 8500);
+
+    function goTo(idx) {
+      if (idx < 0 || idx >= sections.length || busy) return;
+      busy = true;
+      current = idx;
+      gsap.to(window, {
+        scrollTo: { y: sections[idx].offsetTop, autoKill: false },
+        duration: 0.9,
+        ease: 'power2.inOut',
+        onComplete: () => { busy = false; }
       });
     }
 
-    window.addEventListener('wheel',e=>{
-      if(!snapEnabled)return;
+    window.addEventListener('wheel', e => {
+      if (!snapEnabled) return;
       e.preventDefault();
-      if(busy)return;
-      const dir=e.deltaY>0?1:-1;
-      const next=current+dir;
-      if(next>=0&&next<sections.length) goTo(next);
-    },{passive:false});
+      if (busy) return;
+      const dir = e.deltaY > 0 ? 1 : -1;
+      const next = current + dir;
+      if (next >= 0 && next < sections.length) goTo(next);
+    }, { passive: false });
 
-    window.addEventListener('scroll',()=>{
-      const mid=window.scrollY+window.innerHeight/2;
-      sections.forEach((s,i)=>{if(s.offsetTop<=mid&&s.offsetTop+s.offsetHeight>mid)current=i;});
-    });});
-    gsap.to('#gi-label',{opacity:1,duration:1.0,scrollTrigger:{trigger:'#gallery-index',start:'top 75%'}});
-    gsap.to('#gi-divider',{scaleY:1,duration:1.6,ease:'power3.out',scrollTrigger:{trigger:'#gallery-index',start:'top 70%'}});
-    document.querySelectorAll('.gi-item-inner').forEach((el,i)=>{gsap.to(el,{y:0,opacity:1,duration:1.1,delay:i*0.15,ease:'power3.out',scrollTrigger:{trigger:'#gallery-index',start:'top 68%'}});});
-    const previews=document.querySelectorAll('.gi-preview');
-    const defaultPanel=document.getElementById('gi-default');
-    document.querySelectorAll('.gi-item').forEach(item=>{const prev=document.getElementById('prev-'+ item.dataset.preview);item.addEventListener('mouseenter',()=>{defaultPanel.classList.add('hidden');previews.forEach(p=>p.classList.remove('active'));prev.classList.add('active');});item.addEventListener('mouseleave',()=>{prev.classList.remove('active');defaultPanel.classList.remove('hidden');});});
+    window.addEventListener('scroll', () => {
+      const mid = window.scrollY + window.innerHeight / 2;
+      sections.forEach((s, i) => { if (s.offsetTop <= mid && s.offsetTop + s.offsetHeight > mid) current = i; });
+    });
+
+    // GALLERY INDEX REVEAL
+    gsap.to('#gi-label', { opacity:1, duration:1.0, scrollTrigger:{ trigger:'#gallery-index', start:'top 75%' } });
+    gsap.to('#gi-divider', { scaleY:1, duration:1.6, ease:'power3.out', scrollTrigger:{ trigger:'#gallery-index', start:'top 70%' } });
+    document.querySelectorAll('.gi-item-inner').forEach((el, i) => {
+      gsap.to(el, { y:0, opacity:1, duration:1.1, delay:i*0.15, ease:'power3.out', scrollTrigger:{ trigger:'#gallery-index', start:'top 68%' } });
+    });
+
+    // PREVIEW ON HOVER
+    const previews = document.querySelectorAll('.gi-preview');
+    const defaultPanel = document.getElementById('gi-default');
+    document.querySelectorAll('.gi-item').forEach(item => {
+      const prev = document.getElementById('prev-' + item.dataset.preview);
+      item.addEventListener('mouseenter', () => {
+        defaultPanel.classList.add('hidden');
+        previews.forEach(p => p.classList.remove('active'));
+        prev.classList.add('active');
+      });
+      item.addEventListener('mouseleave', () => {
+        prev.classList.remove('active');
+        defaultPanel.classList.remove('hidden');
+      });
+    });
   </script>
 </body>
 </html>
