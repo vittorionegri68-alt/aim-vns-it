@@ -172,8 +172,6 @@
       width: auto;
       display: block;
       object-fit: cover;
-      filter: grayscale(1) brightness(0.5);
-      transform: scale(1.04);
       will-change: filter, transform;
       user-select: none;
       -webkit-user-drag: none;
@@ -400,10 +398,16 @@
       cursor.style.top  = e.clientY + 'px';
     });
 
+    // --- INIT: tutte le foto partono grigie ---
+    items.forEach(item => {
+      gsap.set(item.querySelector('img'), { filter: 'grayscale(1) brightness(0.35)', scale: 1.06 });
+    });
+
     // --- INTRO ---
     setTimeout(() => {
       introOverlay.classList.add('hidden');
       setTimeout(() => introOverlay.style.display = 'none', 800);
+      isAnimating = false;
       goTo(0, false);
     }, 1800);
 
@@ -420,12 +424,33 @@
       items.forEach((item, i) => {
         const img = item.querySelector('img');
         const dist = Math.abs(i - current);
+        gsap.killTweensOf(img);
         if (dist === 0) {
-          gsap.to(img, { filter: 'grayscale(0) brightness(1)', scale: 1, duration: 1.5, ease: 'power2.out' });
+          // prima imposta stato grigio, poi anima a colore
+          gsap.set(img, { filter: 'grayscale(1) brightness(0.4)', scale: 1.06 });
+          gsap.to(img, {
+            filter: 'grayscale(0) brightness(1)',
+            scale: 1,
+            duration: 1.8,
+            ease: 'power1.inOut',
+            overwrite: true
+          });
         } else if (dist === 1) {
-          gsap.to(img, { filter: 'grayscale(0.6) brightness(0.65)', scale: 1.02, duration: 1.0, ease: 'power2.out' });
+          gsap.to(img, {
+            filter: 'grayscale(0.7) brightness(0.55)',
+            scale: 1.03,
+            duration: 0.6,
+            ease: 'power2.out',
+            overwrite: true
+          });
         } else {
-          gsap.to(img, { filter: 'grayscale(1) brightness(0.5)', scale: 1.04, duration: 0.4, ease: 'power2.out' });
+          gsap.to(img, {
+            filter: 'grayscale(1) brightness(0.35)',
+            scale: 1.06,
+            duration: 0.3,
+            ease: 'power2.out',
+            overwrite: true
+          });
         }
       });
     }
