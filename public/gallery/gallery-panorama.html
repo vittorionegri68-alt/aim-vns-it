@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panorama — Gallery | Vittorio Negri</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:    #000000;
+      --white: #F0F0F0;
+      --gold:  #A0782A;
+      --dim:   rgba(0,0,0,0.55);
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'DM Mono', monospace;
+      cursor: none;
+    }
+    a, button { cursor: none !important; }
+    .cursor {
+      position: fixed;
+      width: 12px;
+      height: 12px;
+      border: 1px solid var(--white);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, border-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor.drag { width: 40px; height: 40px; border-color: var(--gold); }
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .back-btn {
+      pointer-events: all;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      transition: opacity 0.3s ease, color 0.3s ease;
+    }
+    .back-btn:hover { opacity: 1; color: var(--gold); }
+    .back-btn svg { width: 16px; height: 16px; }
+    .gallery-title {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0.5;
+    }
+    .counter {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      opacity: 0.4;
+    }
+    .counter span { color: var(--gold); opacity: 1; }
+    .bottombar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 20px 32px;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    }
+    .nav-btn {
+      background: none;
+      border: 1px solid rgba(240,240,240,0.2);
+      color: var(--white);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: none;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+    .nav-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .nav-btn:disabled { opacity: 0.2; pointer-events: none; }
+    .nav-btn svg { width: 18px; height: 18px; }
+    .progress-track {
+      flex: 1;
+      max-width: 320px;
+      height: 1px;
+      background: rgba(240,240,240,0.15);
+      position: relative;
+    }
+    .progress-fill {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+    .strip-wrapper {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .strip {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      will-change: transform;
+    }
+    .photo-item {
+      flex-shrink: 0;
+      height: 95vh;
+      margin: 0 6px;
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-item img {
+      height: 100%;
+      width: auto;
+      display: block;
+      object-fit: cover;
+      will-change: filter, transform;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .spacer { flex-shrink: 0; width: calc(50vw - 20px); }
+    .drag-hint {
+      position: fixed;
+      bottom: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0;
+      animation: fadeHint 3s ease 1.2s forwards;
+      pointer-events: none;
+      z-index: 101;
+    }
+    @keyframes fadeHint {
+      0%   { opacity: 0; }
+      20%  { opacity: 0.4; }
+      80%  { opacity: 0.4; }
+      100% { opacity: 0; }
+    }
+    .intro-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.8s ease;
+    }
+    .intro-overlay.hidden { opacity: 0; }
+    .intro-text {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 6vw, 5rem);
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--white);
+      opacity: 0;
+      animation: introAnim 1.8s ease forwards;
+    }
+    @keyframes introAnim {
+      0%   { opacity: 0; letter-spacing: 0.6em; }
+      40%  { opacity: 1; }
+      80%  { opacity: 1; letter-spacing: 0.3em; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="intro-overlay" id="introOverlay">
+    <div class="intro-text">Panorama</div>
+  </div>
+  <div class="topbar">
+    <a href="/gallery/" class="back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+      </svg>
+      Gallery
+    </a>
+    <div class="gallery-title">Panorama</div>
+    <div class="counter"><span id="currentNum">01</span> / 9</div>
+  </div>
+  <div class="strip-wrapper" id="stripWrapper">
+    <div class="strip" id="strip">
+      <div class="spacer"></div>
+      <div class="photo-item" data-index="0">
+        <img src="panorama/img/panorama-001.jpg" alt="" draggable="false" loading="eager">
+      </div>
+      <div class="photo-item" data-index="1">
+        <img src="panorama/img/panorama-002.jpg" alt="" draggable="false" loading="lazy">
+      </div>
+      <div class="photo-item" data-index="2">
+        <img src="panorama/img/panorama-003.jpg" alt="" draggable="false" loading="lazy">
+      </div>
+      <div class="photo-item" data-index="3">
+        <img src="panorama/img/panorama-004.jpg" alt="" draggable="false" loading="lazy">
+      </div>
+      <div class="photo-item" data-index="4">
+        <img src="panorama/img/panorama-005.jpg" alt="" draggable="false" loading="lazy">
+      </div>
+      <div class="photo-item" data-index="5">
+        <img src="panorama/img/panorama-006.jpg" alt="" draggable="false" loading="lazy">
+      </div>
+      <div class="photo-item" data-index="6">
+        <img src="panorama/img/panorama-007.jpg" alt="" draggable="false" loading="lazy">
+      </div>
+      <div class="photo-item" data-index="7">
+        <img src="panorama/img/panorama-008.jpg" alt="" draggable="false" loading="lazy">
+      </div>
+      <div class="photo-item" data-index="8">
+        <img src="panorama/img/panorama-009.jpg" alt="" draggable="false" loading="lazy">
+      </div>
+
+      <div class="spacer"></div>
+    </div>
+  </div>
+  <div class="drag-hint">drag to explore</div>
+  <div class="bottombar">
+    <button class="nav-btn" id="btnPrev" disabled>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+    <button class="nav-btn" id="btnNext">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    const TOTAL = 9;
+    let current = 0;
+    let isAnimating = false;
+
+    const strip        = document.getElementById('strip');
+    const items        = document.querySelectorAll('.photo-item');
+    const btnPrev      = document.getElementById('btnPrev');
+    const btnNext      = document.getElementById('btnNext');
+    const progressFill = document.getElementById('progressFill');
+    const currentNum   = document.getElementById('currentNum');
+    const cursor       = document.getElementById('cursor');
+    const introOverlay = document.getElementById('introOverlay');
+
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top  = e.clientY + 'px';
+    });
+
+    items.forEach(item => {
+      gsap.set(item.querySelector('img'), { filter: 'grayscale(1) brightness(0.35)', scale: 1.06 });
+    });
+
+    setTimeout(() => {
+      introOverlay.classList.add('hidden');
+      setTimeout(() => introOverlay.style.display = 'none', 800);
+      isAnimating = false;
+      goTo(0, false);
+    }, 1800);
+
+    function getCenterX(index) {
+      const item = items[index];
+      const rect = item.getBoundingClientRect();
+      const stripRect = strip.getBoundingClientRect();
+      const itemCenter = rect.left - stripRect.left + rect.width / 2;
+      return itemCenter - window.innerWidth / 2;
+    }
+
+    function updateVisible() {
+      items.forEach((item, i) => {
+        const img = item.querySelector('img');
+        const dist = Math.abs(i - current);
+        gsap.killTweensOf(img);
+        if (dist === 0) {
+          gsap.set(img, { filter: 'grayscale(1) brightness(0.4)', scale: 1.06 });
+          gsap.to(img, {
+            filter: 'grayscale(0) brightness(1)',
+            scale: 1,
+            duration: 2.8,
+            ease: 'power1.inOut',
+            overwrite: true
+          });
+        } else if (dist === 1) {
+          gsap.to(img, {
+            filter: 'grayscale(0.7) brightness(0.55)',
+            scale: 1.03,
+            duration: 0.6,
+            ease: 'power2.out',
+            overwrite: true
+          });
+        } else {
+          gsap.to(img, {
+            filter: 'grayscale(1) brightness(0.35)',
+            scale: 1.06,
+            duration: 0.3,
+            ease: 'power2.out',
+            overwrite: true
+          });
+        }
+      });
+    }
+
+    function updateUI() {
+      const pad = n => String(n).padStart(2, '0');
+      currentNum.textContent = pad(current + 1);
+      progressFill.style.width = ((current / (TOTAL - 1)) * 100) + '%';
+      btnPrev.disabled = current === 0;
+      btnNext.disabled = current === TOTAL - 1;
+    }
+
+    function goTo(index, animate = true) {
+      if (isAnimating) return;
+      if (index < 0 || index >= TOTAL) return;
+      isAnimating = true;
+      current = index;
+      const offset = getCenterX(current);
+      if (animate) {
+        gsap.to(strip, {
+          x: -offset,
+          duration: 0.7,
+          ease: 'power3.inOut',
+          onComplete: () => { isAnimating = false; }
+        });
+      } else {
+        gsap.set(strip, { x: -offset });
+        isAnimating = false;
+      }
+      updateVisible();
+      updateUI();
+    }
+
+    btnPrev.addEventListener('click', () => goTo(current - 1));
+    btnNext.addEventListener('click', () => goTo(current + 1));
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') goTo(current + 1);
+      if (e.key === 'ArrowLeft')  goTo(current - 1);
+    });
+
+    let dragStartX = 0;
+    let dragStartStripX = 0;
+    let isDragging = false;
+
+    strip.addEventListener('mousedown', e => {
+      isDragging = true;
+      dragStartX = e.clientX;
+      dragStartStripX = gsap.getProperty(strip, 'x');
+      cursor.classList.add('drag');
+      gsap.killTweensOf(strip);
+    });
+
+    document.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      const dx = e.clientX - dragStartX;
+      gsap.set(strip, { x: dragStartStripX + dx });
+    });
+
+    document.addEventListener('mouseup', e => {
+      if (!isDragging) return;
+      isDragging = false;
+      cursor.classList.remove('drag');
+      const dx = e.clientX - dragStartX;
+      if (Math.abs(dx) > 60) {
+        goTo(dx < 0 ? current + 1 : current - 1);
+      } else {
+        goTo(current);
+      }
+    });
+
+    strip.addEventListener('touchstart', e => {
+      dragStartX = e.touches[0].clientX;
+      dragStartStripX = gsap.getProperty(strip, 'x');
+      gsap.killTweensOf(strip);
+    }, { passive: true });
+
+    strip.addEventListener('touchmove', e => {
+      const dx = e.touches[0].clientX - dragStartX;
+      gsap.set(strip, { x: dragStartStripX + dx });
+    }, { passive: true });
+
+    strip.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - dragStartX;
+      if (Math.abs(dx) > 50) {
+        goTo(dx < 0 ? current + 1 : current - 1);
+      } else {
+        goTo(current);
+      }
+    });
+
+    let wheelTimer = null;
+    window.addEventListener('wheel', e => {
+      e.preventDefault();
+      if (wheelTimer) return;
+      wheelTimer = setTimeout(() => { wheelTimer = null; }, 600);
+      goTo(e.deltaY > 0 ? current + 1 : current - 1);
+    }, { passive: false });
+
+    window.addEventListener('resize', () => { goTo(current, false); });
+  </script>
+</body>
+</html>
