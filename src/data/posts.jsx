@@ -3,6 +3,69 @@
 // Aggiornare con workflow N8N blog dopo il deploy
 
 export const posts = [
+
+{
+  "id": "aim-2026-06-30",
+  "titolo": "Perché il mio sito non appare nelle risposte di Gemini? Guida pratica alla visibilità AI per piccole imprese",
+  "data": "2026-06-29",
+  "categoria": "GEO/AEO",
+  "sommario": "Scopri perché Gemini ignora il tuo sito e come migliorare la tua visibilità AI senza team marketing. Strategie concrete di GEO optimization per essere trovati dai motori AI.",
+  "contenuto": [
+    { 
+      "tipo": "paragrafo", 
+      "testo": "Marco gestisce uno studio di commercialisti a Verona. Ha un sito ben posizionato su Google, pubblica regolarmente articoli e ha ottime recensioni. Eppure, quando un potenziale cliente chiede a Gemini 'Chi mi può aiutare con la dichiarazione dei redditi a Verona?', il suo nome non compare mai. La frustrazione è comprensibile: visibilità digitale costruita con anni di lavoro, ma totalmente invisibile sui motori AI." 
+    },
+    { 
+      "tipo": "paragrafo", 
+      "testo": "Secondo una ricerca del Corriere della Sera di aprile 2026, l'81% delle PMI usa strumenti basati su AI, ma la maggior parte ignora come farsi trovare da questi stessi strumenti. La visibilità AI richiede un approccio diverso dalla SEO tradizionale, e le piccole imprese senza team marketing rischiano di restare escluse da un canale sempre più strategico." 
+    },
+    { 
+      "tipo": "titoletto", 
+      "testo": "Come funziona davvero Gemini quando cerca informazioni" 
+    },
+    { 
+      "tipo": "paragrafo", 
+      "testo": "A differenza di Google Search, Gemini non si limita a indicizzare parole chiave. Analizza il contenuto semantico, privilegia fonti strutturate e autorevoli, e tende a ignorare pagine con informazioni frammentate o troppo commerciali. Per essere trovati da ChatGPT, Perplexity o Gemini serve una strategia di GEO optimization che combini contenuti chiari, dati strutturati e segnali di autorevolezza verificabili." 
+    },
+    { 
+      "tipo": "paragrafo", 
+      "testo": "Un errore comune è credere che basti avere un buon ranking SEO. In realtà, i motori AI valorizzano pagine che rispondono a domande precise, contengono dati fattuali verificabili e usano markup semantici come schema.org. Se il tuo sito è una vetrina statica, Gemini probabilmente lo salterà a favore di contenuti più informativi." 
+    },
+    { 
+      "tipo": "titoletto", 
+      "testo": "Due azioni pratiche da fare oggi (senza team marketing)" 
+    },
+    { 
+      "tipo": "paragrafo", 
+      "testo": "Primo consiglio: trasforma almeno tre pagine del tuo sito in risposte a domande reali dei tuoi clienti. Non 'Servizi di consulenza fiscale', ma 'Quanto costa la dichiarazione dei redditi per un freelance?'. Usa un linguaggio diretto, inserisci dati concreti (prezzi, tempistiche, requisiti) e cita fonti verificabili quando possibile. Questo tipo di contenuto è esattamente ciò che Gemini cerca per rispondere alle query degli utenti." 
+    },
+    { 
+      "tipo": "paragrafo", 
+      "testo": "Secondo consiglio: aggiungi markup schema.org almeno per la tua attività (LocalBusiness o ProfessionalService), i servizi principali e le FAQ. Puoi usare strumenti gratuiti come lo Schema Markup Generator di Google. Anche se l'implementazione tecnica sembra complessa, esistono plugin WordPress o moduli per principali CMS che semplificano il processo. Questo segnale strutturato aiuta i motori AI a comprendere chi sei e cosa offri." 
+    },
+    { 
+      "tipo": "titoletto", 
+      "testo": "Quando serve un controllo professionale della visibilità AI" 
+    },
+    { 
+      "tipo": "paragrafo", 
+      "testo": "Se hai già implementato questi accorgimenti ma il tuo sito continua a essere ignorato da Gemini, potrebbe esserci un problema più profondo: contenuti duplicati, conflitti tecnici, mancanza di citazioni esterne o segnali contrastanti nella tua presenza online. Strumenti come AI'm by VNS analizzano la tua visibilità effettiva su ChatGPT, Perplexity e Gemini, identificando esattamente dove e perché non compari. Validato su decine di casi reali in Italia e Olanda, il sistema fornisce un report concreto e azioni prioritarie, pensato proprio per piccole imprese senza risorse marketing dedicate." 
+    },
+    { 
+      "tipo": "titoletto", 
+      "testo": "La visibilità AI non è un lusso, è sopravvivenza digitale" 
+    },
+    { 
+      "tipo": "paragrafo", 
+      "testo": "I dati ISTAT 2025 mostrano che solo il 16,4% delle PMI italiane con almeno 10 addetti usa tecnologie AI in modo attivo, ma il trend è in crescita costante. Parallelamente, sempre più consumatori e aziende usano ChatGPT, Gemini e Perplexity come primo punto di ricerca, bypassando Google. Essere invisibili su questi canali significa perdere opportunità concrete di business, soprattutto per attività locali e professionisti che vivono di passaparola digitale." 
+    },
+    { 
+      "tipo": "paragrafo", 
+      "testo": "Se il tuo sito non appare nelle risposte di Gemini, non è un problema tecnico irrisolvibile: è un gap di ottimizzazione che puoi colmare con azioni mirate. Inizia dai due consigli pratici di questo articolo, monitora i risultati nelle prossime settimane e, se necessario, valuta un'analisi professionale. La visibilità digitale nel 2026 si gioca anche sui motori AI, e le piccole imprese non possono permettersi di restare fuori." 
+    }
+  ],
+  "attivo": true
+},
   {
     id: "audit-geo-automatico-vs-visibilita-reale-2026",
     titolo: "83/100 nel test GEO. Zero citazioni su Perplexity. Cosa manca davvero.",
