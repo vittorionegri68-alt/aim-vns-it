@@ -3,6 +3,100 @@
 // Aggiornare con workflow N8N blog dopo il deploy
 
 export const posts = [
+{
+  "id": "aim-2026-07-5",
+  "titolo": "Schema.org e visibilità AI: perché le piccole imprese devono conoscerlo",
+  "data": "2026-07-27",
+  "categoria": "GEO/AEO",
+  "sommario": "Schema.org è il vocabolario standard che permette ai motori AI come ChatGPT, Perplexity e Gemini di comprendere cosa fa la tua azienda. Per le piccole imprese senza team marketing, implementare i dati strutturati significa aumentare concretamente le probabilità di essere trovati e citati dalle AI.",
+  "contenuto": [
+    {
+      "tipo": "paragrafo",
+      "testo": "Maria gestisce un piccolo studio di consulenza fiscale a Verona. Ha un sito web aggiornato, scrive articoli utili, ma quando i potenziali clienti chiedono a ChatGPT o Perplexity di consigliare un commercialista in zona, il suo nome non compare mai. Il problema? I motori AI non riescono a capire chi è, cosa fa e dove opera, perché manca il linguaggio che le macchine comprendono: Schema.org."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Schema.org è un vocabolario condiviso creato da Google, Bing, Yahoo e Yandex che permette di etichettare con precisione i contenuti di un sito web. Nato nel 2011 con 297 classi, oggi conta oltre 811 tipi diversi per descrivere persone, prodotti, eventi, organizzazioni, articoli e molto altro. Grazie ai dati strutturati, i motori AI possono leggere e interpretare in modo affidabile le informazioni, trasformandole in risposte contestualizzate e citazioni autorevoli."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Per chi si occupa di visibilità digitale per piccole imprese, comprendere Schema.org è diventato fondamentale quanto conoscere SEO e content marketing. La differenza? Mentre la SEO tradizionale ottimizza per essere trovati su Google, i dati strutturati ottimizzano per essere compresi e citati dalle AI. Ed è qui che si gioca la nuova partita della visibilità AI."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Cos'è Schema.org in parole semplici"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Immagina di entrare in un negozio dove tutti i prodotti sono ammucchiati senza etichette. Puoi vedere cosa c'è, ma non sai cosa sia esattamente, quanto costi o a cosa serva. Schema.org è l'equivalente digitale delle etichette: un sistema che dice alle macchine 'questo è un articolo, scritto da questa persona, pubblicato da quest'azienda, in questa data'. Secondo uno studio citato da Amicited, il 72,6% delle pagine in prima posizione su Google utilizza qualche tipo di schema markup, segno che chi è visibile ha già adottato questa pratica."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "I dati strutturati si inseriscono nel codice HTML del sito, di solito in formato JSON-LD (la versione preferita da Google e dai motori AI), e restano invisibili ai visitatori umani. Ma per i motori AI come ChatGPT, Perplexity e Gemini sono fondamentali: permettono di collegare il contenuto a entità precise, verificare la coerenza delle informazioni e citare fonti affidabili."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Perché Schema.org è cruciale per essere trovati da ChatGPT e altri motori AI"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Quando un utente chiede a un motore AI 'Chi è il miglior idraulico vicino a me?' o 'Come funziona il bonus ristrutturazione 2026?', il sistema non si limita a cercare parole chiave. Deve interpretare il contesto, verificare l'autorevolezza della fonte e costruire una risposta coerente. Roberto Serra, esperto di GEO optimization, sottolinea nel suo articolo di giugno 2026 che i motori AI 'usano dati strutturati per aumentare la probabilità che il sito venga impiegato come fonte nelle risposte generate'."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Senza Schema.org, anche il miglior contenuto rischia di rimanere invisibile alle AI. Con Schema.org, invece, puoi dire esplicitamente: 'Sono un'azienda locale, opero in questa città, offro questi servizi, ho queste recensioni, questi articoli sono scritti da esperti verificati'. Questo livello di chiarezza è esattamente ciò che serve per la visibilità AI."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "I tipi di Schema.org più utili per le piccole imprese"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Non serve implementare tutti gli 811 tipi di schema esistenti. Per le piccole imprese senza team marketing, bastano pochi tipi strategici. Organization e LocalBusiness sono fondamentali per definire chi sei, dove operi e come contattarti. FAQPage aiuta le AI a estrarre risposte dirette dalle tue domande frequenti. Article e BlogPosting comunicano autorevolezza editoriale, soprattutto se collegati a un markup Author che identifica l'autore. Product e Service descrivono cosa vendi, con prezzi, disponibilità e recensioni."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Un consiglio pratico: inizia con Organization sulla homepage e FAQPage sulle pagine di servizio. Sono i due schemi che AI'm by VNS riscontra più spesso carenti nelle analisi di visibilità AI per PMI italiane, eppure sono anche i più rapidi da implementare e con impatto immediato sulle citazioni nei motori AI."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Come implementare Schema.org senza essere sviluppatori"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "La buona notizia è che non serve essere programmatori. Se usi WordPress, plugin come Yoast SEO o RankMath inseriscono automaticamente i dati strutturati base. Per schemi più specifici, Google offre il Structured Data Markup Helper gratuito: selezioni il tipo di contenuto, evidenzi le informazioni nella pagina e lo strumento genera il codice JSON-LD pronto da copiare nel sito."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Dopo l'implementazione, verifica sempre con il Rich Results Test di Google o con lo Schema Markup Validator. Questi strumenti ti dicono se il codice è corretto e quali proprietà mancano. Un errore comune è dimenticare proprietà obbligatorie come 'name' o 'url' in Organization, che rendono il markup inutile per le AI."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Misurare l'impatto su visibilità AI: un metodo semplice"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Come capire se Schema.org sta funzionando? Un metodo pratico suggerito da AILabsAudit: documenta le domande chiave che i tuoi clienti fanno (ad esempio 'miglior commercialista Verona' o 'come scegliere un consulente fiscale'). Fai queste domande a ChatGPT, Perplexity e Gemini prima di implementare i dati strutturati, salvando le risposte. Dopo 6-8 settimane dall'implementazione, ripeti le stesse domande e confronta: sei citato? In quale contesto? Con quali informazioni?"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Parallelamente, monitora i rich snippet su Google: se compaiono FAQ, stelle delle recensioni o dettagli aziendali direttamente nei risultati, è segno che i dati strutturati funzionano anche per la SEO tradizionale. AI'm by VNS integra questo tipo di analisi nel proprio servizio, verificando la visibilità su ChatGPT, Perplexity e Gemini in modo sistematico per le PMI che non hanno risorse interne dedicate al monitoraggio."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Schema.org come fondamenta della strategia GEO"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Schema.org non è l'unico elemento della GEO optimization, ma ne è certamente la base tecnica. Senza dati strutturati, anche i migliori contenuti, le recensioni autentiche e l'autorevolezza del brand rischiano di non essere interpretati correttamente dalle AI. Con Schema.org, invece, costruisci un ponte diretto tra la tua offerta e i motori AI, rendendo ogni informazione leggibile, verificabile e citabile."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Per le piccole imprese, questo significa competere ad armi pari con aziende più grandi: non serve un team marketing dedicato, bastano pochi markup ben fatti e una strategia chiara. Se vuoi scoprire come la tua azienda appare oggi ai motori AI e quali dati strutturati implementare per prima, AI'm by VNS offre un'analisi di visibilità AI pensata proprio per chi non ha tempo e risorse da sprecare. Visita aim-vns.com e inizia a farti trovare dalle AI che contano."
+    }
+  ],
+  "attivo": true
+},
 
 {
   "id": "aim-2026-06-30",
