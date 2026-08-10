@@ -1,4 +1,4 @@
-﻿// Risultati.jsx — AI'm by VNS IT
+// Risultati.jsx — AI'm by VNS IT
 // v2.0 — copy riscritta senza tecnicismi — giugno 2026
 import { useEffect, useRef, useState } from 'react'
 
@@ -30,7 +30,7 @@ const cases = [
   },
 ]
 
-function Bar({ before, after, animate }) {
+function Bar({ before, after, animate, delay = 0 }) {
   return (
     <div style={{ marginBottom: '12px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
@@ -53,7 +53,8 @@ function Bar({ before, after, animate }) {
       <div style={{ background: '#141414', height: '3px' }}>
         <div style={{ background: '#A0782A', height: '3px',
           width: animate ? `${after * 10}%` : '0%',
-          transition: 'width 0.8s ease' }} />
+          transition: 'width 1.6s cubic-bezier(0.16, 1, 0.3, 1)',
+          transitionDelay: `${delay}ms` }} />
       </div>
     </div>
   )
@@ -127,7 +128,7 @@ export default function Risultati() {
                   <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
                     fontSize: '10px', color: '#AAAAAA', letterSpacing: '0.2em',
                     textTransform: 'uppercase', marginBottom: '8px' }}>{m.motore}</div>
-                  <Bar before={m.before} after={m.after} animate={animate} />
+                  <Bar before={m.before} after={m.after} animate={animate} delay={j * 150} />
                 </div>
               ))}
 
