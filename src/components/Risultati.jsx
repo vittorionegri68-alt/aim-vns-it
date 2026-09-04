@@ -1,5 +1,5 @@
 // Risultati.jsx — AI'm by VNS IT
-// v2.0 — copy riscritta senza tecnicismi — giugno 2026
+// v2.1 — dati aggiornati 02-04/09/2026, entrambe le case study sui tre motori AI
 import { useEffect, useRef, useState } from 'react'
 
 const cases = [
@@ -10,10 +10,11 @@ const cases = [
     url: 'casa-cavour.com',
     siteUrl: 'https://www.casa-cavour.com',
     metriche: [
-      { motore: 'Perplexity', before: 0, after: 4.3 },
-      { motore: 'Gemini',     before: 0, after: 3.2 },
+      { motore: 'Perplexity', before: 0, after: 4.1 },
+      { motore: 'Gemini',     before: 0, after: 2.5 },
+      { motore: 'ChatGPT',    before: 0, after: 9 },
     ],
-    nota: 'Analisi aprile 2026 — prossimo aggiornamento luglio 2026',
+    nota: 'Perplexity e Gemini aggiornati al 2 settembre 2026, ChatGPT dal test manuale del 4 settembre. Il punteggio di ChatGPT segue un calcolo diverso (consigliata si o no), quindi non e confrontabile allo stesso modo degli altri due.',
   },
   {
     nome: 'RAB Romagna',
@@ -22,11 +23,11 @@ const cases = [
     url: 'romagna-affitti-brevi.it',
     siteUrl: 'https://www.romagna-affitti-brevi.it',
     metriche: [
-      { motore: 'AEO',  before: 0, after: 8.2 },
-      { motore: 'SEO',  before: 0, after: 7.2 },
-      { motore: 'GEO',  before: 0, after: 7.8 },
+      { motore: 'Perplexity', before: 0, after: 5.9 },
+      { motore: 'Gemini',     before: 0, after: 3.1 },
+      { motore: 'ChatGPT',    before: 0, after: 10 },
     ],
-    nota: 'Analisi aprile 2026 — sistema validato prima della commercializzazione',
+    nota: 'Perplexity e Gemini aggiornati al 2 settembre 2026, ChatGPT dal test manuale del 4 settembre. Il punteggio di ChatGPT segue un calcolo diverso (consigliata si o no), quindi non e confrontabile allo stesso modo degli altri due.',
   },
 ]
 
