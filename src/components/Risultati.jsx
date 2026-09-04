@@ -1,5 +1,5 @@
 // Risultati.jsx — AI'm by VNS IT
-// v2.1 — dati aggiornati 02-04/09/2026, entrambe le case study sui tre motori AI
+// v2.2 — nota leggibile + link dashboard pubblica per case study
 import { useEffect, useRef, useState } from 'react'
 
 const cases = [
@@ -9,6 +9,7 @@ const cases = [
     settore: 'Bed & Breakfast',
     url: 'casa-cavour.com',
     siteUrl: 'https://www.casa-cavour.com',
+    dashboardUrl: 'https://dashboard.casa-cavour.com',
     metriche: [
       { motore: 'Perplexity', before: 0, after: 4.1 },
       { motore: 'Gemini',     before: 0, after: 2.5 },
@@ -22,6 +23,7 @@ const cases = [
     settore: 'Affitti brevi multi-struttura',
     url: 'romagna-affitti-brevi.it',
     siteUrl: 'https://www.romagna-affitti-brevi.it',
+    dashboardUrl: 'https://dashboard.romagna-affitti-brevi.it',
     metriche: [
       { motore: 'Perplexity', before: 0, after: 5.9 },
       { motore: 'Gemini',     before: 0, after: 3.1 },
@@ -134,10 +136,19 @@ export default function Risultati() {
               ))}
 
               <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '10px',
-                color: '#222', letterSpacing: '0.1em', textTransform: 'uppercase',
+                color: '#AAAAAA', letterSpacing: '0.1em', textTransform: 'uppercase',
                 marginTop: '1rem', borderTop: '1px solid #141414', paddingTop: '1rem' }}>
                 {c.nota}
               </div>
+
+              <a href={c.dashboardUrl} target="_blank" rel="noopener noreferrer"
+                style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', fontWeight: 700,
+                  color: '#A0782A', textDecoration: 'none', display: 'inline-block',
+                  marginTop: '1.25rem', transition: 'color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#ffffff'}
+                onMouseLeave={e => e.currentTarget.style.color = '#A0782A'}>
+                Guarda i dati aggiornati →
+              </a>
             </div>
           ))}
         </div>
