@@ -18,6 +18,7 @@ export default function Nav() {
     { label: 'Risultati', href: '#risultati' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Blog', href: '#blog' },
+    { label: 'Contatti', href: '#contatti' },
   ]
 
   return (

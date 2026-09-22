@@ -4,17 +4,35 @@ import { useState } from 'react'
 import { config } from '../config.js'
 
 export default function Contatti() {
-  const [form, setForm] = useState({ nome: '', email: '', messaggio: '' })
+  const [form, setForm] = useState({ nome: '', email: '', messaggio: '', website: '' })
   const [inviato, setInviato] = useState(false)
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Richiesta da ${form.nome} — AI'm by VNS`)
-    const body = encodeURIComponent(`Nome: ${form.nome}\nEmail: ${form.email}\n\n${form.messaggio}`)
-    window.location.href = `mailto:info@aim-vns.com?subject=${subject}&body=${body}`
-    setInviato(true)
+    if (form.website) { setInviato(true); return }
+    const payload = {
+      name: form.nome.trim(),
+      email: form.email.trim(),
+      message: form.messaggio.trim(),
+      website: '',
+      source: location.pathname,
+    }
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      if (!res.ok) throw new Error('bad status')
+      setInviato(true)
+    } catch (err) {
+      const subject = encodeURIComponent(`Richiesta da ${form.nome} - AI'm by VNS`)
+      const mail = encodeURIComponent(`Nome: ${form.nome}\nEmail: ${form.email}\n\n${form.messaggio}`)
+      window.location.href = `mailto:info@aim-vns.com?subject=${subject}&body=${mail}`
+      setInviato(true)
+    }
   }
 
   const inputStyle = {
@@ -146,6 +164,8 @@ export default function Contatti() {
               <form onSubmit={handleSubmit}
                 style={{ display: 'flex', flexDirection: 'column', gap: '1px',
                   background: '#141414' }}>
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={form.website} onChange={handleChange}
+                  style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
                 <div style={{ background: '#0a0a0a', padding: '28px 28px 20px' }}>
                   <label style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700,
                     fontSize: '10px', color: '#AAAAAA', letterSpacing: '0.2em',
