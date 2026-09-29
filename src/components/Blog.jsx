@@ -115,6 +115,17 @@ function ArticoloEsteso({ post, onClose }) {
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
             >{blocco.etichetta} </a>
           )
+          if (blocco.tipo === 'immagine') return (
+            <figure key={i} style={{ margin: '2rem 0' }}>
+              <img src={blocco.testo} alt={blocco.etichetta || ''} loading="lazy"
+                style={{ width: '100%', height: 'auto', border: '1px solid #1A1A1A', borderRadius: '4px', display: 'block' }} />
+              {blocco.etichetta && (
+                <figcaption style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#777777', marginTop: '0.6rem', textAlign: 'center' }}>
+                  {blocco.etichetta}
+                </figcaption>
+              )}
+            </figure>
+          )
           return null
         })}
       </div>
