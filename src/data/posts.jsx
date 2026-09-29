@@ -4,6 +4,69 @@
 
 export const posts = [
 {
+  "id": "casa-cavour-rab-prima-risposta-chatgpt-2026",
+  "titolo": "Da invisibili a prima risposta su ChatGPT in 6 mesi: il test sulle nostre strutture",
+  "data": "2026-09-29",
+  "categoria": "Casi reali",
+  "sommario": "Il modo in cui gli ospiti scelgono dove dormire sta cambiando, da Google alle risposte di ChatGPT. Abbiamo testato le nostre strutture in Romagna con un audit indipendente. Ecco i risultati, con i numeri.",
+  "contenuto": [
+    {
+      "tipo": "paragrafo",
+      "testo": "Quando un ospite decide dove dormire, sempre più spesso non apre Google: chiede a ChatGPT, Perplexity o Gemini \"qual è il miglior appartamento vacanze a [città]\" e legge la risposta che l'AI genera. In quella risposta compaiono pochi nomi. Se il tuo non c'è, per quell'ospite non esisti, per quanto tu abbia ottime recensioni su Google o su Booking."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Il punto è tecnico e spesso ignorato: i motori AI non leggono gli annunci sulle OTA, i portali di categoria o le pagine Facebook. Leggono contenuto web pubblico e strutturato. Una struttura può essere piena di recensioni a cinque stelle e restare invisibile quando l'ospite chiede direttamente all'AI."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Il test sulle nostre strutture"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Non lo diciamo in teoria. Lo abbiamo applicato alle nostre due strutture in Romagna e misurato con un audit di visibilità AI indipendente il 29 settembre 2026."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Casa Cavour, appartamento vacanze a Bertinoro, oggi è la prima risposta su ChatGPT, Perplexity, Google e Claude, con un punteggio di visibilità di 100 su 100. Il 4 aprile la stessa struttura compariva solo su ChatGPT ed era assente altrove. In esattamente sei mesi, dal 4 aprile al 29 settembre 2026, da quasi invisibile a prima ovunque."
+    },
+    {
+      "tipo": "immagine",
+      "testo": "/assets/images/casa-cavour-visibilita-ai.png",
+      "etichetta": "Casa Cavour prima risposta su ChatGPT, Perplexity, Google e Claude, con punteggio di visibilità 100 su 100 (audit Geoptie, 29 settembre 2026)"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Romagna Affitti Brevi è un caso ancora in corso, ed è onesto raccontarlo così. È già la prima risposta su ChatGPT, ma su Perplexity è ancora dietro alle grandi OTA e ai portali. È la struttura a metà del percorso: il metodo funziona, il lavoro non è finito."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Perché una è prima e l'altra sta ancora salendo"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "La differenza non è magia, è la domanda. Se chiedi a un motore AI qualcosa di molto generico, tipo \"affitti brevi in Romagna\", quasi sempre risponde con Airbnb, Booking e i grandi portali: lì non si vince. Ma se la domanda è specifica, quella che fa davvero un ospite reale, tipo \"appartamento con giardino privato vicino alle cantine di Bertinoro per una coppia\", allora conta chi ha risposto a quella domanda con contenuto chiaro e pubblico."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "La strategia giusta non è competere sul generico contro Booking. È presidiare le domande precise che i tuoi ospiti fanno davvero."
+    },
+    {
+      "tipo": "titoletto",
+      "testo": "Cosa puoi fare oggi, anche da solo"
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Provaci adesso: chiedi a ChatGPT \"qual è il miglior [tuo tipo di struttura] a [tua città]\" e guarda se compari. Se non ci sei, il problema non è il mercato, è la tua visibilità AI. Poi metti online, sul tuo sito, il contenuto che oggi vive solo dentro Booking o Instagram: descrizioni, servizi, dintorni, risposte alle domande frequenti degli ospiti. Rispondi per iscritto alle domande reali che gli ospiti fanno prima di prenotare, con fatti concreti e verificabili. E non affidarti solo alle OTA: sui motori AI l'annuncio su un portale non ti rende visibile, il tuo contenuto pubblico sì."
+    },
+    {
+      "tipo": "paragrafo",
+      "testo": "Il modo in cui gli ospiti trovano dove dormire è cambiato. La buona notizia è che intervenire si può, ed è misurabile."
+    }
+  ],
+  "attivo": true
+},
+{
   "id": "aim-2026-07-5",
   "titolo": "Schema.org e visibilità AI: perché le piccole imprese devono conoscerlo",
   "data": "2026-07-27",
