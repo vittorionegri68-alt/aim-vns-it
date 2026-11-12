@@ -14,7 +14,7 @@ const pacchetti = [
       'Secondo controllo a 30 giorni per misurare i miglioramenti',
       'Suggerimenti per Google Business Profile',
     ],
-    prezzo: 'Da 180 €',
+    prezzo: 'Da 290 €',
     prezzoSub: 'Pagamento unico · Nessun abbonamento',
     cta: 'Richiedi il tuo audit',
     highlight: false,
@@ -35,8 +35,8 @@ const pacchetti = [
       'Interventi correttivi inclusi',
       'Supporto continuo via email',
     ],
-    prezzo: 'Da 480 €',
-    prezzoSub: '+ abbonamento annuale da 500 €',
+    prezzo: 'Da 800 €',
+    prezzoSub: '+ abbonamento annuale da 700 €',
     cta: 'Parliamo del tuo progetto',
     highlight: true,
   },
@@ -51,8 +51,8 @@ const pacchetti = [
       'Pubblicazione automatica su Instagram',
       'Report mensili invece che ogni tre mesi',
     ],
-    prezzo: 'Da 580 €',
-    prezzoSub: '+ abbonamento annuale da 780 €',
+    prezzo: 'Da 1.200 €',
+    prezzoSub: '+ abbonamento annuale da 1.100 €',
     cta: 'Parliamo del tuo progetto',
     highlight: false,
   },
@@ -168,7 +168,7 @@ export default function Servizi() {
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#AAAAAA',
           letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '1.5rem',
           textAlign: 'center' }}>
-          Tutti i prezzi sono IVA esclusa · Lingua aggiuntiva 100 € · Durata minima 12 mesi per Growth e Pro
+          Tutti i prezzi sono IVA esclusa · Lingua aggiuntiva 150 € · Durata minima 12 mesi per Growth e Pro
         </p>
       </div>
 

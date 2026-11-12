@@ -11,16 +11,29 @@ const sitiLive = [
     domain:'casa-cavour.com',
   },
   {
+    label: 'Officina bici . 2 lingue',
+    title: 'S40 Fietsservice',
+    desc: 'Officina di bici sportive a Nijkerk, Paesi Bassi. Sito in olandese e inglese, con le domande dei clienti e i dati strutturati per essere letto dai motori AI.',
+    extra: {
+      score: '34/40',
+      title: 'Audit tecnico il giorno della pubblicazione',
+      lines: ['Ricerca classica 8/10', 'Motori AI 9/10', 'Risposte dirette 8/10', 'Dotazione per l\'AI 9/10'],
+      note: 'Punto di partenza, non di arrivo. Misura quanto il sito è leggibile per la ricerca e per i motori AI, non la visibilità effettiva, che si costruisce nel tempo.',
+    },
+    url: 'https://s40.nl',
+    domain: 's40.nl · en.s40.nl',
+  },
+  {
     label: 'Appartamento vacanze . 2 lingue',
     title: 'Garibaldina 75',
-    desc: 'Appartamento in Romagna. Sito in italiano e inglese, costruito per la visibilità  sui motori AI.',
+    desc: 'Appartamento in Romagna. Sito in italiano e inglese, costruito per la visibilità sui motori AI. Collegato direttamente al portale Airbnb per la prenotazione sicura.',
     url: 'https://garibaldina-75.romagna-affitti-brevi.it',
     domain: 'garibaldina-75.romagna-affitti-brevi.it',
   },
   {
     label: 'Loft di lusso . 2 lingue',
     title: 'Samilla',
-    desc: 'Loft di lusso in Romagna. Design raffinato, posizionamento premium, due lingue.',
+    desc: 'Loft di lusso in Romagna. Design raffinato, posizionamento premium, due lingue. Collegato direttamente al portale Airbnb per la prenotazione sicura.',
     url: 'https://samilla.romagna-affitti-brevi.it',
     domain: 'samilla.romagna-affitti-brevi.it',
   },
@@ -81,14 +94,14 @@ export default function SitiWeb() {
               color: '#AAAAAA', lineHeight: 1.75, marginBottom: '16px',
               maxWidth: '560px',
             }}>
-              Non lavoriamo con template preconfezionati. Ogni sito viene costruito da zero sul carattere della tua attività : palette, tipografia, struttura e contenuti vengono scelti per te, non copiati da uno schema esistente.
+              Non lavoriamo con template preconfezionati. Ogni sito viene costruito da zero sul carattere della tua attività: palette, tipografia, struttura e contenuti vengono scelti per te, non copiati da uno schema esistente.
             </p>
             <p style={{
               fontFamily: "'Inter', sans-serif", fontSize: 'clamp(14px,1.2vw,15px)',
               color: '#AAAAAA', lineHeight: 1.75, marginBottom: '36px',
               maxWidth: '560px',
             }}>
-              Abbiamo 18 stili di partenza, ognuno con una identità visiva distinta. Sono punti di riferimento, non gabbie: colori, font e struttura vengono personalizzati in ogni dettaglio.
+              Abbiamo 18 stili di partenza, ognuno con una identitàvisiva distinta. Sono punti di riferimento, non gabbie: colori, font e struttura vengono personalizzati in ogni dettaglio.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
@@ -117,19 +130,19 @@ export default function SitiWeb() {
             fontFamily: "'Inter', sans-serif", fontWeight: 700,
             fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase',
             color: '#A0782A', marginBottom: '12px',
-          }}>Siti già  online</div>
+          }}>Siti già online</div>
           <p style={{
             fontFamily: "'Inter', sans-serif", fontSize: 'clamp(14px,1.2vw,15px)',
             color: '#AAAAAA', lineHeight: 1.7, maxWidth: '560px',
             marginBottom: 'clamp(28px,3vw,40px)',
           }}>
-            Non mockup: siti reali, costruiti con lo stesso sistema. Ogni sito è stato progettato su misura per l' attività  che rappresenta.
+            Non mockup: siti reali, costruiti con lo stesso sistema. Ogni sito è stato progettato su misura per l' attività che rappresenta.
           </p>
         </div>
 
         <div className="sitiweb-grid" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3,1fr)',
+          gridTemplateColumns: 'repeat(4,1fr)',
           gap: '2px',
           marginBottom: 'clamp(32px,4vw,48px)',
         }}>
@@ -164,6 +177,31 @@ export default function SitiWeb() {
                 fontFamily: "'Inter', sans-serif", fontSize: '13px',
                 color: '#AAAAAA', lineHeight: 1.65, marginBottom: '16px',
               }}>{s.desc}</p>
+
+              {s.extra && (
+                <div style={{
+                  borderTop: '1px solid #1c1c1c', borderLeft: '2px solid #A0782A',
+                  background: '#0a0a0a', padding: '12px 14px', margin: '0 0 16px 0',
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '6px' }}>
+                    <span style={{
+                      fontFamily: "'Oswald', sans-serif", fontWeight: 700,
+                      fontSize: '26px', color: '#A0782A', letterSpacing: '0.02em',
+                    }}>{s.extra.score}</span>
+                    <span style={{
+                      fontFamily: "'Inter', sans-serif", fontWeight: 700,
+                      fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase',
+                      color: '#ffffff',
+                    }}>{s.extra.title}</span>
+                  </div>
+                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#AAAAAA', lineHeight: 1.6, marginBottom: '8px' }}>
+                    {s.extra.lines.join(' · ')}
+                  </div>
+                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#888888', lineHeight: 1.6 }}>
+                    {s.extra.note}
+                  </div>
+                </div>
+              )}
               <div style={{
                 fontFamily: "'Inter', sans-serif", fontWeight: 700,
                 fontSize: '11px', color: '#A0782A', letterSpacing: '0.05em',
@@ -198,10 +236,9 @@ export default function SitiWeb() {
       </div>
 
       <style>{`
-        .sitiweb-grid { grid-template-columns: repeat(3,1fr); }
-        @media (max-width: 900px) {
-          .sitiweb-grid { grid-template-columns: 1fr !important; }
-        }
+        .sitiweb-grid { grid-template-columns: repeat(4,1fr); }
+        @media (max-width: 1100px) { .sitiweb-grid { grid-template-columns: repeat(2,1fr) !important; } }
+        @media (max-width: 700px) { .sitiweb-grid { grid-template-columns: 1fr !important; } }
         @media (max-width: 600px) {
           .sitiweb-main a { width: 100%; text-align: center; }
         }
