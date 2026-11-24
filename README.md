@@ -63,7 +63,7 @@ aim-vns-it/
     │   ├── Hero.jsx        # Headline 3 righe + data strip
     │   ├── HowItWorks.jsx  # 3 step
     │   ├── Risultati.jsx   # Case study + barre animate
-    │   ├── Servizi.jsx     # 3 pacchetti Starter/Growth/Pro
+    │   ├── Servizi.jsx     # 3 pacchetti Starter/Sito completo/Growth
     │   ├── FAQ.jsx         # Accordion 10 domande GEO
     │   ├── Blog.jsx        # 3 articoli GEO/AEO
     │   ├── Contatti.jsx    # Form + WhatsApp + email

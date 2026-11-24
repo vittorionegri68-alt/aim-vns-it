@@ -13,7 +13,7 @@ export const qanda = [
   },
   {
     q: "Quanto costa il servizio?",
-    a: "Abbiamo tre pacchetti: Starter per chi vuole capire la situazione e sistemare le basi, Growth per chi vuole un sito nuovo e risultati nel tempo, Pro per chi vuole la massima visibilità con aggiornamenti mensili e presenza su Instagram. Contattaci per un preventivo su misura.",
+    a: "Abbiamo tre pacchetti: Starter per chi ha già un sito e vuole capire la situazione e sistemare le basi, Sito completo per chi vuole un sito nuovo fatto per essere trovato fin dal primo giorno, Growth per chi vuole anche la gestione continua con articoli, dashboard e report. Contattaci per un preventivo su misura.",
   },
   {
     q: "Quanto tempo ci vuole per vedere i risultati?",

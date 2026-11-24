@@ -1,14 +1,14 @@
-﻿// Servizi.jsx — AI'm by VNS IT
-// v2.0 — copy riscritta senza tecnicismi — giugno 2026
+﻿// Servizi.jsx, AI'm by VNS IT
+// v3.0, nuova scala pacchetti (Starter, Sito completo, Growth), novembre 2026
 import { useEffect, useRef } from 'react'
 
 const pacchetti = [
   {
     nome: 'Starter',
     tag: 'Primo passo',
-    desc: 'Hai un sito web ma non sai se ChatGPT ti trova? Controlliamo com\'e\' la tua situazione adesso, ti diciamo cosa non funziona e consegniamo tutto il necessario per sistemarlo. Pagamento unico, nessun abbonamento.',
+    desc: "Hai un sito web ma non sai se ChatGPT ti trova? Controlliamo com'è la tua situazione adesso, ti diciamo cosa non funziona e consegniamo tutto il necessario per sistemarlo. Pagamento unico, nessun abbonamento.",
     incluso: [
-      'Prima analisi gratuita — nessun impegno',
+      'Prima analisi gratuita, nessun impegno',
       'Controllo completo di come ti vedono i motori AI',
       'File tecnici ottimizzati pronti per il tuo sito',
       'Secondo controllo a 30 giorni per misurare i miglioramenti',
@@ -20,41 +20,42 @@ const pacchetti = [
     highlight: false,
   },
   {
-    nome: 'Growth',
-    tag: 'Servizio principale',
-    desc: 'Costruiamo il tuo sito da zero, fatto per essere trovato da ChatGPT fin dal primo giorno. Poi lo teniamo aggiornato con contenuti nuovi e ti mostriamo come crescono i risultati, con numeri reali. Hai gia\' un sito? Parliamone: valutiamo ogni situazione insieme.',
+    nome: 'Sito completo',
+    tag: 'Per partire',
+    desc: "Costruiamo il tuo sito da zero, fatto per essere trovato da ChatGPT fin dal primo giorno, con la pagina delle domande dei tuoi clienti e il primo articolo del blog. Alla consegna il sito è tuo, sul tuo profilo. Pagamento unico, nessun abbonamento.",
     incluso: [
       'Analisi della situazione prima di iniziare',
       'Creazione del sito ottimizzato per i motori AI',
-      'Google Business Profile — configurazione inclusa',
+      'Pagina domande e risposte con le 10 domande reali dei tuoi clienti',
+      'Primo articolo del blog',
+      'Google Business Profile: configurazione inclusa',
+      'Indicizzazione sui motori di ricerca',
       'Verifica tecnica prima della pubblicazione',
-      'Contenuti pensati per le domande reali dei tuoi clienti',
-      'Articolo sul blog ogni due settimane, automatico',
+      'Anteprima pronta entro 3 giorni dal ricevimento di tutto il materiale',
+      'Controllo a 30 giorni per misurare i miglioramenti',
+    ],
+    prezzo: 'Da 800 €',
+    prezzoSub: 'Pagamento unico · Nessun abbonamento',
+    cta: 'Parliamo del tuo progetto',
+    highlight: false,
+  },
+  {
+    nome: 'Growth',
+    tag: 'Servizio principale',
+    desc: "Tutto il Sito completo, più la gestione continua: un nuovo articolo sul blog ogni due settimane, una dashboard con i tuoi dati sempre aggiornati e i report per vedere come crescono i risultati, con numeri reali. La relazione con i tuoi clienti rimane a te.",
+    incluso: [
+      'Tutto il pacchetto Sito completo',
+      'Articolo sul blog ogni due settimane, gestito da noi',
+      'Dashboard personale: i tuoi dati di visibilità sempre aggiornati',
       'Report mensili i primi 3 mesi, poi ogni tre mesi',
       'Chiamata con Vittorio per analizzare i dati insieme',
       'Interventi correttivi inclusi',
       'Supporto continuo via email',
     ],
     prezzo: 'Da 800 €',
-    prezzoSub: '+ abbonamento annuale da 700 €',
+    prezzoSub: '+ abbonamento annuale da 900 €',
     cta: 'Parliamo del tuo progetto',
     highlight: true,
-  },
-  {
-    nome: 'Pro',
-    tag: 'Visibilita\' massima',
-    desc: 'Tutto il Growth, piu\' una pagina di domande e risposte sul tuo sito, una dashboard con i tuoi dati sempre aggiornati e la pubblicazione automatica su Instagram. La relazione con i tuoi clienti rimane a te.',
-    incluso: [
-      'Tutto il pacchetto Growth',
-      'Pagina domande e risposte con le 10 domande reali dei tuoi clienti',
-      'Dashboard personale — i tuoi dati di visibilita\' sempre aggiornati',
-      'Pubblicazione automatica su Instagram',
-      'Report mensili invece che ogni tre mesi',
-    ],
-    prezzo: 'Da 1.200 €',
-    prezzoSub: '+ abbonamento annuale da 1.100 €',
-    cta: 'Parliamo del tuo progetto',
-    highlight: false,
   },
 ]
 
@@ -127,7 +128,7 @@ export default function Servizi() {
                   <li key={j} style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px',
                     color: '#AAAAAA', padding: '6px 0', borderBottom: '1px solid #141414',
                     display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ color: '#A0782A', fontSize: '10px' }}>—</span>
+                    <span style={{ color: '#A0782A', fontSize: '10px' }}>-</span>
                     {item}
                   </li>
                 ))}
@@ -168,7 +169,15 @@ export default function Servizi() {
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#AAAAAA',
           letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '1.5rem',
           textAlign: 'center' }}>
-          Tutti i prezzi sono IVA esclusa · Lingua aggiuntiva 150 € · Durata minima 12 mesi per Growth e Pro
+          Tutti i prezzi sono IVA esclusa · Lingua aggiuntiva 150 € · Abbonamento annuale: si rinnova o si disdice prima della scadenza
+        </p>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#AAAAAA',
+          lineHeight: 1.7, margin: '1rem auto 0', maxWidth: '720px', textAlign: 'center' }}>
+          Growth firmato insieme alla creazione del sito: sconto del 10% sul totale del primo anno.
+        </p>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#AAAAAA',
+          lineHeight: 1.7, margin: '1rem auto 0', maxWidth: '720px', textAlign: 'center' }}>
+          Vuoi gestire il sito in autonomia con Claude? Prepariamo tutto sul tuo computer, prezzo su richiesta. Gli eventuali costi di Claude si valutano caso per caso: nei casi più comuni, per ora, è sufficiente il profilo gratuito.
         </p>
       </div>
 
