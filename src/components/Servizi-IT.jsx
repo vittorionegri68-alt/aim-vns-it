@@ -1,10 +1,10 @@
 ﻿// Servizi.jsx, AI'm by VNS IT
-// v3.0, nuova scala pacchetti (Starter, Sito completo, Growth), novembre 2026
+// v3.1, nuova scala pacchetti (Avvio, Sito completo, Crescita come upgrade), novembre 2026
 import { useEffect, useRef } from 'react'
 
 const pacchetti = [
   {
-    nome: 'Starter',
+    nome: 'Avvio',
     tag: 'Primo passo',
     desc: "Hai un sito web ma non sai se ChatGPT ti trova? Controlliamo com'è la tua situazione adesso, ti diciamo cosa non funziona e consegniamo tutto il necessario per sistemarlo. Pagamento unico, nessun abbonamento.",
     incluso: [
@@ -40,11 +40,10 @@ const pacchetti = [
     highlight: false,
   },
   {
-    nome: 'Growth',
-    tag: 'Servizio principale',
-    desc: "Tutto il Sito completo, più la gestione continua: un nuovo articolo sul blog ogni due settimane, una dashboard con i tuoi dati sempre aggiornati e i report per vedere come crescono i risultati, con numeri reali. La relazione con i tuoi clienti rimane a te.",
+    nome: 'Crescita',
+    tag: 'Upgrade del Sito completo',
+    desc: "Dai al tuo nuovo sito la spinta che si merita. Il Sito completo ti rende visibile ai motori AI; Crescita lo tiene in movimento: un nuovo articolo sul blog ogni due settimane, una dashboard con i tuoi dati sempre aggiornati e report con numeri reali. La relazione con i tuoi clienti rimane a te.",
     incluso: [
-      'Tutto il pacchetto Sito completo',
       'Articolo sul blog ogni due settimane, gestito da noi',
       'Dashboard personale: i tuoi dati di visibilità sempre aggiornati',
       'Report mensili i primi 3 mesi, poi ogni tre mesi',
@@ -52,8 +51,9 @@ const pacchetti = [
       'Interventi correttivi inclusi',
       'Supporto continuo via email',
     ],
-    prezzo: 'Da 800 €',
-    prezzoSub: '+ abbonamento annuale da 900 €',
+    prezzo: 'Da 900 €',
+    prezzoSub: 'Abbonamento annuale · Si aggiunge al Sito completo',
+    nota: 'Insieme al Sito completo: sconto del 10% sul totale del primo anno.',
     cta: 'Parliamo del tuo progetto',
     highlight: true,
   },
@@ -141,6 +141,8 @@ export default function Servizi() {
                   letterSpacing: '0.02em', lineHeight: 1 }}>{p.prezzo}</div>
                 <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px',
                   color: '#AAAAAA', marginTop: '4px', letterSpacing: '0.05em' }}>{p.prezzoSub}</div>
+                {p.nota && <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px',
+                  color: '#A0782A', marginTop: '10px', lineHeight: 1.5 }}>{p.nota}</div>}
               </div>
 
               <a href="https://calendly.com/aim-vns-info/30min" target="_blank" rel="noopener" style={{
@@ -170,10 +172,6 @@ export default function Servizi() {
           letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '1.5rem',
           textAlign: 'center' }}>
           Tutti i prezzi sono IVA esclusa · Lingua aggiuntiva 150 € · Abbonamento annuale: si rinnova o si disdice prima della scadenza
-        </p>
-        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#AAAAAA',
-          lineHeight: 1.7, margin: '1rem auto 0', maxWidth: '720px', textAlign: 'center' }}>
-          Growth firmato insieme alla creazione del sito: sconto del 10% sul totale del primo anno.
         </p>
         <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '12px', color: '#AAAAAA',
           lineHeight: 1.7, margin: '1rem auto 0', maxWidth: '720px', textAlign: 'center' }}>

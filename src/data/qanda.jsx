@@ -13,7 +13,7 @@ export const qanda = [
   },
   {
     q: "Quanto costa il servizio?",
-    a: "Abbiamo tre pacchetti: Starter per chi ha già un sito e vuole capire la situazione e sistemare le basi, Sito completo per chi vuole un sito nuovo fatto per essere trovato fin dal primo giorno, Growth per chi vuole anche la gestione continua con articoli, dashboard e report. Contattaci per un preventivo su misura.",
+    a: "Abbiamo tre pacchetti: Avvio per chi ha già un sito e vuole capire la situazione e sistemare le basi, Sito completo per chi vuole un sito nuovo fatto per essere trovato fin dal primo giorno, Crescita come upgrade del Sito completo per chi vuole anche la gestione continua con articoli, dashboard e report. Se Crescita viene scelto insieme al Sito completo, c'è lo sconto del 10% sul totale del primo anno. Contattaci per un preventivo su misura.",
   },
   {
     q: "Quanto tempo ci vuole per vedere i risultati?",
