@@ -48,7 +48,7 @@ export default function HowItWorks() {
             color: '#A0782A' }}>Come funziona</div>
           <div style={{ height: '1px', flex: 1, background: '#141414', margin: '0 1.5rem' }} />
           <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '10px',
-            color: '#222', letterSpacing: '0.15em' }}>01 — 03</div>
+            color: '#222', letterSpacing: '0.15em' }}>01 - 03</div>
         </div>
 
         {/* Steps */}
